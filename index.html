@@ -1,0 +1,2172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="theme-color" content="#0F3325">
+<title>Oriva Dairy - Smart Cattle & Farm Management System with Marketplace</title>
+<meta name="description" content="Oriva Dairy digitises your farm - cattle records, milk production, health & expenses in one place, with a built-in marketplace to sell livestock and dairy direct to buyers.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#F7F3E9;
+  --cream-2:#F0EADB;
+  --paper:#FDFBF4;
+  --sage:#E7EEE2;
+  --ink:#16241B;
+  --ink-soft:#4C5F54;
+  --green:#1E5B40;
+  --green-deep:#0F3325;
+  --green-black:#0A231A;
+  --amber:#E3A63C;
+  --amber-deep:#B57E1F;
+  --line:rgba(22,36,27,.13);
+  --line-light:rgba(247,243,233,.14);
+  --r:18px;
+  --shadow-soft:0 24px 50px -22px rgba(15,51,37,.28);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+  max-width:100vw;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:0;
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+::selection{background:var(--amber);color:var(--green-deep)}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:var(--cream-2)}
+::-webkit-scrollbar-thumb{background:#B9C4B4;border-radius:99px;border:3px solid var(--cream-2)}
+::-webkit-scrollbar-thumb:hover{background:var(--green)}
+
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button{font-family:inherit}
+:focus-visible{outline:2.5px solid var(--amber-deep);outline-offset:3px;border-radius:4px}
+section[id]{scroll-margin-top:86px}
+.ic{width:18px;height:18px;flex:none}
+
+.container{width:min(1180px,92%);margin-inline:auto;max-width:100%;overflow:hidden}
+.section{padding:clamp(72px,9vw,118px) 0;position:relative;overflow:hidden;max-width:100%}
+.bg-sage{background:var(--sage)}
+.bg-cream2{background:var(--cream-2)}
+.bg-deep{background:var(--green-deep)}
+
+.sec-head{max-width:660px;margin-bottom:clamp(40px,6vw,62px)}
+.sec-head.center{margin-inline:auto;text-align:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:11px;
+  font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--green);margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:30px;height:2px;background:var(--amber);border-radius:2px}
+.bg-deep .eyebrow,.on-dark .eyebrow{color:var(--amber)}
+.bg-deep .eyebrow::before{background:var(--amber)}
+h2{
+  font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.015em;
+  font-size:clamp(30px,4.4vw,46px);line-height:1.12;color:var(--ink);
+}
+.bg-deep h2{color:var(--cream)}
+h2 .accent{font-style:italic;font-weight:500;color:var(--amber-deep)}
+.bg-deep h2 .accent{color:var(--amber)}
+.lead{font-size:16.5px;color:var(--ink-soft);margin-top:16px;line-height:1.75;font-weight:400}
+.bg-deep .lead{color:rgba(247,243,233,.78)}
+
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:15px 28px;border-radius:999px;border:1px solid transparent;
+  font-size:15px;font-weight:600;line-height:1;cursor:pointer;text-decoration:none;
+  transition:transform .25s,box-shadow .25s,background .25s,color .25s,border-color .25s;
+}
+.btn .ic{width:17px;height:17px;transition:transform .25s}
+.btn:hover .ic{transform:translateX(3px)}
+.btn-amber{background:var(--amber);color:var(--paper)}
+.btn-amber:hover{background:#EFB44F;transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(181,126,31,.5)}
+.btn-green{background:var(--green);color:var(--cream)}
+.btn-green:hover{background:#174A34;transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(15,51,37,.55)}
+.btn-ghost{border-color:rgba(247,243,233,.45);color:var(--cream);background:transparent}
+.btn-ghost:hover{background:rgba(247,243,233,.12);border-color:var(--cream);transform:translateY(-2px)}
+.btn-sm{padding:11px 20px;font-size:13.5px}
+.link-arrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;
+  color:var(--green);text-decoration:none;
+}
+.link-arrow .ic{width:16px;height:16px;transition:transform .25s}
+.link-arrow:hover .ic{transform:translateX(4px)}
+
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;letter-spacing:.05em;padding:5px 11px;border-radius:999px;line-height:1.2}
+.pill .ic{width:12px;height:12px}
+.pill-ok{background:rgba(30,91,64,.1);color:var(--green)}
+.pill-wait{background:rgba(227,166,60,.16);color:var(--amber-deep)}
+.pill-soft{background:rgba(22,36,27,.06);color:var(--ink-soft)}
+.pill-amber{background:var(--amber);color:var(--green-deep)}
+.pill-light{background:rgba(253,251,244,.94);color:var(--green-deep)}
+
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px 0;transition:padding .3s,background .3s,box-shadow .3s;
+  width:100%;max-width:100vw;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:100%}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand-mark{width:42px;height:42px;flex:none}
+.brand-name{font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:var(--cream);letter-spacing:-.01em;transition:color .3s}
+.brand-name span{color:var(--amber);font-style:italic;font-weight:500}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{
+  position:relative;text-decoration:none;font-size:14px;font-weight:500;
+  color:rgba(247,243,233,.85);transition:color .25s;padding:4px 0;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:-2px;width:100%;height:2px;
+  background:var(--amber);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-links a:hover,.nav-links a.active{color:var(--cream)}
+.nav-actions{display:flex;align-items:center;gap:16px}
+.nav-burger{
+  display:none;width:44px;height:44px;border:1px solid rgba(247,243,233,.35);border-radius:50%;
+  background:transparent;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  transition:border-color .25s;
+}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--cream);border-radius:2px;transition:transform .3s,opacity .25s}
+body.menu-open .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+body.menu-open .nav-burger span:nth-child(2){opacity:0}
+body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.nav.scrolled{background:rgba(253,251,244,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:10px 0;box-shadow:0 8px 24px -14px rgba(15,51,37,.2)}
+.nav.scrolled .brand-name{color:var(--ink)}
+.nav.scrolled .nav-links a{color:var(--ink-soft)}
+.nav.scrolled .nav-links a:hover,.nav.scrolled .nav-links a.active{color:var(--green)}
+.nav.scrolled .nav-burger{border-color:var(--line)}
+.nav.scrolled .nav-burger span{background:var(--ink)}
+body.menu-open .nav{background:transparent;box-shadow:none;backdrop-filter:none}
+body.menu-open .brand-name{color:var(--cream)}
+body.menu-open .nav-burger{border-color:rgba(247,243,233,.35)}
+body.menu-open .nav-burger span{background:var(--cream)}
+
+.mnav{
+  position:fixed;inset:0;z-index:95;background:var(--green-deep);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:110px 8% 140px;transform:translateX(100%);
+  transition:transform .45s cubic-bezier(.75,0,.2,1);overflow-y:auto;overflow-x:hidden;
+  max-width:100vw;
+}
+.mnav.open{transform:none}
+.mnav-links{list-style:none;display:flex;flex-direction:column;gap:4px;max-width:100%}
+.mnav-links a{
+  display:flex;align-items:baseline;gap:14px;text-decoration:none;
+  font-family:'Fraunces',serif;font-size:clamp(26px,6.5vw,36px);font-weight:600;color:var(--cream);
+  padding:8px 0;opacity:0;transform:translateY(34px);
+  transition:opacity .4s,transform .45s cubic-bezier(.2,.65,.2,1),color .25s;
+}
+.mnav-links a i{font-family:'Outfit';font-style:normal;font-size:12px;font-weight:600;color:var(--amber);letter-spacing:.15em}
+.mnav-links a:hover{color:var(--amber)}
+.mnav.open .mnav-links a{opacity:1;transform:none;transition-delay:calc(.08s * var(--i) + .15s)}
+.mnav-foot{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;
+  opacity:0;transform:translateY(20px);transition:.45s .6s;max-width:100%}
+.mnav.open .mnav-foot{opacity:1;transform:none}
+.mnav-foot a{color:rgba(247,243,233,.75);text-decoration:none;font-size:14px;font-weight:500}
+.mnav-foot a:hover{color:var(--amber)}
+
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;color:var(--cream);max-width:100%}
+.hero-bg{position:absolute;inset:0;overflow:hidden}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,26,18,.9) 0%,rgba(7,26,18,.52) 34%,rgba(7,26,18,.28) 58%,rgba(7,26,18,.55) 100%)}
+.hero-inner{position:relative;z-index:2;margin-top:0;padding-bottom:30px;padding-top:140px;max-width:100%}
+.hero-copy{max-width:660px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;
+  letter-spacing:.26em;text-transform:uppercase;color:rgba(247,243,233,.85);
+}
+.hero-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);animation:pulse 2.4s infinite}
+.hero-title{
+  font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.02em;
+  font-size:clamp(2.55rem,6vw,5.1rem);line-height:1.05;margin:22px 0 24px;
+  max-width:100%;word-wrap:break-word;
+}
+.hero-title .hl{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.hero-title .hl>span{display:inline-block;transform:translateY(112%);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.hero-title .hl:nth-child(1)>span{animation-delay:.1s}
+.hero-title .hl:nth-child(2)>span{animation-delay:.2s}
+.hero-title .hl:nth-child(3)>span{animation-delay:.3s}
+.hero-title em{font-style:italic;font-weight:500;color:var(--amber)}
+.hero-sub{
+  font-size:16.5px;line-height:1.75;color:rgba(247,243,233,.82);max-width:560px;
+}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px);
+  border-top:1px solid var(--line-light);margin-top:52px;padding-top:24px;
+}
+.hs-n{display:block;font-family:'Fraunces',serif;font-size:clamp(24px,2.6vw,32px);font-weight:600}
+.hs-n b{color:var(--amber);font-weight:600}
+.hs-l{display:block;font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,233,.6);margin-top:4px}
+
+.hero-cards{
+  position:absolute;
+  right:6.5%;
+  top:165px;
+  z-index:3;
+  width:340px;
+}
+.hero-passport{
+  position:relative;
+  width:100%;
+  transform:rotate(-1.2deg);
+  background:var(--paper);
+  border:0;
+  border-radius:20px;
+  box-shadow:0 0 0 1px rgba(30,91,64,.1), 0 35px 70px -18px rgba(4,16,10,.55);
+  color:var(--ink);
+  overflow:hidden;
+  transition:transform .5s cubic-bezier(.2,.65,.2,1);
+  cursor:pointer;
+  -webkit-font-smoothing:antialiased !important;
+  -moz-osx-font-smoothing:grayscale !important;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  transform-style:preserve-3d;
+  will-change:transform;
+  text-rendering:optimizeLegibility;
+}
+.hero-passport:hover{
+  transform:translateY(-10px) rotate(0deg);
+}
+
+.hp-topband{
+  background:linear-gradient(135deg,var(--green) 0%, var(--green-deep) 100%);
+  color:var(--cream);
+  padding:15px 20px 40px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  position:relative;
+}
+.hp-topband::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:20px;
+  background:var(--paper);
+  clip-path:polygon(0 100%, 100% 100%, 50% 0);
+}
+.hp-topband strong{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:11px;font-weight:700;letter-spacing:.22em;
+}
+.hp-topband strong .ic{width:16px;height:16px;color:var(--amber)}
+.hp-verified{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:9.5px;font-weight:700;letter-spacing:.14em;
+  background:var(--amber);color:var(--green-deep);
+  padding:6px 12px;border-radius:999px;
+  box-shadow:0 2px 8px rgba(227,166,60,.35);
+}
+.hp-verified .ic{width:12px;height:12px}
+
+.hp-photo-strip{
+  display:flex;gap:14px;
+  padding:0 20px;
+  margin-top:-30px;
+  position:relative;z-index:2;
+  max-width:100%;
+}
+.hp-photo{
+  width:82px;height:82px;
+  border-radius:18px;
+  overflow:hidden;
+  flex:none;
+  border:4px solid var(--paper);
+  box-shadow:0 12px 24px -10px rgba(15,51,37,.45);
+  background:var(--sage);
+  position:relative;
+  transition:transform .4s cubic-bezier(.2,.65,.2,1);
+}
+.hero-passport:hover .hp-photo{
+  transform:scale(1.05);
+}
+.hp-photo img{width:100%;height:100%;object-fit:cover}
+.hp-photo-badge{
+  position:absolute;bottom:4px;right:4px;
+  width:24px;height:24px;border-radius:50%;
+  background:var(--amber);
+  display:grid;place-items:center;
+  border:2px solid var(--paper);
+}
+.hp-photo-badge .ic{width:14px;height:14px;color:var(--green-deep)}
+
+.hp-meta{flex:1;padding-top:20px;min-width:0}
+.hp-meta strong{
+  font-family:'Fraunces',serif;
+  font-size:18px;font-weight:600;
+  display:block;
+  letter-spacing:-.015em;
+  line-height:1.2;
+  margin-bottom:4px;
+  word-wrap:break-word;
+}
+.hp-meta em{
+  display:block;
+  font-style:normal;
+  font-size:11.5px;
+  color:var(--ink-soft);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:8px;
+}
+.hp-meta .pill{
+  margin-top:2px;
+  font-size:10px;
+  padding:4px 10px;
+}
+
+.hp-body{
+  padding:18px 20px 8px;
+  max-width:100%;
+}
+.hp-rows{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 16px;
+}
+.hp-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:9px 0;
+  border-bottom:1px dashed var(--line);
+  font-size:13px;
+  gap:10px;
+  transition:background .3s, padding .3s;
+}
+.hp-row:hover{
+  background:rgba(30,91,64,.04);
+  padding-left:6px;
+  padding-right:6px;
+  margin-left:-6px;
+  margin-right:-6px;
+  border-radius:6px;
+}
+.hp-row span{
+  color:var(--ink-soft);
+  font-weight:500;
+  font-size:12.5px;
+}
+.hp-row b{
+  font-weight:600;
+  color:var(--ink);
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  word-break:break-word;
+  font-size:13px;
+}
+.hp-row b .ic{
+  width:13px;height:13px;
+  color:var(--green);
+  flex:none;
+}
+
+.hp-foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 20px 18px;
+  gap:14px;
+  border-top:1px dashed var(--line);
+  margin-top:8px;
+  max-width:100%;
+  background:rgba(231,238,226,.3);
+}
+.hp-qr{
+  width:60px;height:60px;
+  background:#fff;
+  border:1.5px solid var(--line);
+  border-radius:12px;
+  padding:6px;
+  color:var(--ink);
+  position:relative;
+  overflow:hidden;
+  flex:none;
+  box-shadow:0 4px 12px -4px rgba(15,51,37,.15);
+  transition:transform .3s;
+}
+.hero-passport:hover .hp-qr{
+  transform:scale(1.08);
+}
+.hp-qr svg{
+  width:100%;height:100%;
+  shape-rendering:crispEdges;
+}
+.hp-qr::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 40%,
+    var(--amber) 48%,
+    var(--amber) 52%,
+    transparent 60%,
+    transparent 100%
+  );
+  opacity:.6;
+  animation:qrScan 2.5s ease-in-out infinite;
+  mix-blend-mode:screen;
+  pointer-events:none;
+}
+.hp-foot-txt{
+  flex:1;
+  font-size:11px;
+  color:var(--ink-soft);
+  line-height:1.5;
+  min-width:0;
+}
+.hp-foot-txt b{
+  color:var(--green);
+  font-weight:700;
+  display:block;
+  font-size:12.5px;
+  letter-spacing:.02em;
+  margin-bottom:3px;
+}
+
+.hero-yield{
+  position:absolute;
+  left:-150px;
+  bottom:26px;
+  z-index:-1;
+  width:188px;
+  background:var(--paper);
+  border-radius:15px;
+  box-shadow:0 0 0 1px rgba(30,91,64,.1), 0 22px 44px -14px rgba(4,16,10,.5);
+  color:var(--ink);
+  padding:13px 14px 12px;
+  transform:rotate(1.4deg);
+  transition:transform .5s cubic-bezier(.2,.65,.2,1), z-index .25s ease, box-shadow .3s;
+  cursor:pointer;
+  -webkit-font-smoothing:antialiased !important;
+  -moz-osx-font-smoothing:grayscale !important;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  transform-style:preserve-3d;
+  will-change:transform;
+  text-rendering:optimizeLegibility;
+}
+.hero-passport:hover ~ .hero-yield{
+  transform:rotate(1.4deg) translateY(-5px);
+  z-index:-1;
+}
+.hero-yield:hover{
+  z-index:10;
+  transform:rotate(0deg) translateY(-7px) scale(1.02);
+  box-shadow:0 30px 60px -10px rgba(4,16,10,.65);
+}
+.hy-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.hy-ic{
+  width:30px;height:30px;flex:none;border-radius:9px;
+  background:rgba(30,91,64,.1);color:var(--green);
+  display:grid;place-items:center;
+}
+.hy-ic .ic{width:15px;height:15px}
+.hy-head strong{display:block;font-size:11.5px;font-weight:600;line-height:1.25}
+.hy-head em{display:block;font-style:normal;font-size:9.5px;color:var(--ink-soft);letter-spacing:.04em;margin-top:1px}
+.hy-up{
+  margin-left:auto;display:inline-flex;align-items:center;gap:3px;
+  font-size:9.5px;font-weight:700;color:var(--green);
+  background:rgba(30,91,64,.08);padding:3px 7px;border-radius:999px;
+  flex:none;
+}
+.hy-up .ic{width:11px;height:11px}
+.hy-num{
+  font-family:'Fraunces',serif;font-size:26px;font-weight:600;
+  line-height:1;color:var(--ink);
+}
+.hy-num small{font-family:'Outfit';font-size:12px;font-weight:600;color:var(--ink-soft);margin-left:3px}
+.hy-bars{display:flex;align-items:flex-end;gap:4px;height:38px;margin-top:10px}
+.hy-bars span{flex:1;height:var(--h);background:rgba(30,91,64,.75);border-radius:3px 3px 2px 2px;min-width:0}
+.hy-bars span.max{background:var(--amber)}
+.hy-days{display:flex;gap:4px;margin-top:5px}
+.hy-days i{flex:1;text-align:center;font-style:normal;font-size:8px;font-weight:700;color:var(--ink-soft)}
+
+@keyframes qrScan{
+  0%,100%{transform:translateY(-100%)}
+  50%{transform:translateY(100%)}
+}
+@keyframes rise{to{transform:translateY(0)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(227,166,60,.5)}70%{box-shadow:0 0 0 8px rgba(227,166,60,0)}100%{box-shadow:0 0 0 0 rgba(227,166,60,0)}}
+
+.marquee{background:var(--green-deep);overflow:hidden;padding:15px 0;border-block:1px solid var(--line-light);max-width:100%}
+.mq-track{display:flex;width:max-content;animation:mq 35s linear infinite}
+.marquee:hover .mq-track{animation-play-state:paused}
+.mq-item{
+  display:inline-flex;align-items:center;gap:14px;padding:0 26px;white-space:nowrap;
+  font-size:12.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,243,233,.8);
+}
+.mq-item .ic{width:14px;height:14px;color:var(--amber)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+.about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(44px,6vw,84px);align-items:center;max-width:100%}
+.about-media{position:relative;padding:0 44px 56px 0;max-width:100%}
+.am-main{border-radius:22px;overflow:hidden;aspect-ratio:4/4.6;position:relative;box-shadow:var(--shadow-soft);max-width:100%}
+.am-main img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.about-media:hover .am-main img{transform:scale(1.04)}
+.am-tag{
+  position:absolute;left:16px;bottom:16px;background:rgba(253,251,244,.94);
+  padding:9px 15px;border-radius:999px;font-size:12px;font-weight:600;color:var(--green-deep);
+  display:inline-flex;align-items:center;gap:7px;
+}
+.am-tag .ic{width:13px;height:13px;color:var(--amber-deep)}
+.am-sub{position:absolute;right:0;bottom:0;width:52%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;border:7px solid var(--cream);box-shadow:var(--shadow-soft);max-width:100%}
+.am-sub img{width:100%;height:100%;object-fit:cover}
+.am-badge{position:absolute;left:-8px;top:-8px;width:126px;height:126px;z-index:2}
+.am-badge .spin{position:absolute;inset:0;animation:spin 25s linear infinite}
+.am-badge text{font-size:11.2px;font-weight:600;letter-spacing:2.6px;fill:var(--green-deep)}
+.am-badge .core{position:absolute;inset:33px;background:var(--amber);border-radius:50%;display:grid;place-items:center;color:var(--green-deep)}
+.am-badge .core .ic{width:24px;height:24px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.about-copy h2{margin-bottom:18px}
+.about-copy p{color:var(--ink-soft);font-size:16px;line-height:1.8;margin-bottom:16px;word-wrap:break-word}
+.about-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin:28px 0 26px}
+.about-list li{display:flex;gap:15px;align-items:flex-start}
+.about-list .al-ic{width:44px;height:44px;flex:none;border-radius:13px;background:var(--green);color:var(--cream);display:grid;place-items:center}
+.about-list .al-ic .ic{width:19px;height:19px}
+.about-list strong{display:block;font-size:15.5px;font-weight:600}
+.about-list em{display:block;font-style:normal;font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+.about-note{font-family:'Fraunces',serif;font-style:italic;font-size:16.5px;color:var(--green);border-left:2.5px solid var(--amber);padding-left:16px}
+
+.stats{background:var(--green-deep);padding:clamp(56px,7vw,84px) 0;position:relative;overflow:hidden;max-width:100%}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);position:relative;max-width:100%}
+.stat{padding:6px 30px;border-left:1px solid var(--line-light);max-width:100%}
+.stat:first-child{border-left:0;padding-left:0}
+.stat-n{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,4.4vw,54px);color:var(--cream);line-height:1;display:flex;align-items:baseline;gap:3px;flex-wrap:wrap}
+.stat-n .pre{font-size:.45em;font-weight:500;color:rgba(247,243,233,.75)}
+.stat-n em{font-style:normal;font-size:.55em;color:var(--amber)}
+.stat-l{display:block;margin-top:10px;font-size:13px;font-weight:500;color:rgba(247,243,233,.62)}
+
+.feature-grid{display:grid;grid-template-columns:1fr 1.06fr;gap:clamp(36px,5vw,72px);align-items:start;max-width:100%}
+.feature-list{display:flex;flex-direction:column;max-width:100%}
+.feature-item{
+  display:flex;gap:18px;align-items:flex-start;width:100%;text-align:left;cursor:pointer;
+  background:none;border:0;border-top:1px solid var(--line);padding:22px 6px;position:relative;
+  transition:padding .25s;
+}
+.feature-item:last-child{border-bottom:1px solid var(--line)}
+.f-num{font-size:12px;font-weight:600;letter-spacing:.12em;color:var(--ink-soft);min-width:34px;padding-top:8px;transition:color .25s}
+.f-body{flex:1;min-width:0}
+.f-title{font-family:'Fraunces',serif;font-size:clamp(20px,2.3vw,25px);font-weight:600;color:var(--ink);transition:color .25s}
+.f-line{display:block;font-size:14px;color:var(--ink-soft);margin-top:5px;max-height:0;opacity:0;overflow:hidden;transition:max-height .4s,opacity .4s}
+.feature-item.is-active .f-line{max-height:44px;opacity:1}
+.feature-item.is-active .f-num{color:var(--amber-deep)}
+.feature-item.is-active .f-title{color:var(--green)}
+.f-arrow{width:38px;height:38px;flex:none;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink-soft);transition:.3s;margin-top:3px}
+.f-arrow .ic{width:16px;height:16px;transition:transform .3s}
+.feature-item:hover .f-arrow{border-color:var(--green);color:var(--green)}
+.feature-item.is-active .f-arrow{background:var(--green);border-color:var(--green);color:var(--cream)}
+.feature-item.is-active .f-arrow .ic{transform:rotate(45deg)}
+.f-acc{display:none}
+.feature-panel{position:sticky;top:106px;max-width:100%}
+.fp-media{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow-soft);transition:opacity .25s,transform .25s;max-width:100%}
+.fp-media img{width:100%;height:100%;object-fit:cover}
+.fp-cat{position:absolute;top:15px;left:15px}
+.fp-chips{position:absolute;left:15px;bottom:15px;display:flex;gap:8px;flex-wrap:wrap}
+.fp-info{padding-top:22px;transition:opacity .25s,transform .25s;max-width:100%}
+.fp-info h3{font-family:'Fraunces',serif;font-size:23px;font-weight:600;margin-bottom:10px}
+.fp-info p{color:var(--ink-soft);font-size:15px;line-height:1.75;word-wrap:break-word}
+.feature-panel .link-arrow{margin-top:16px}
+.feature-panel.swap .fp-media,.feature-panel.swap .fp-info{opacity:0;transform:translateY(10px)}
+
+.milk{overflow:hidden;max-width:100%}
+.milk-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(40px,5vw,70px);align-items:center;position:relative;max-width:100%}
+.milk-stats{display:flex;gap:clamp(22px,3vw,42px);margin-top:34px;flex-wrap:wrap}
+.ms .ms-n{font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:600;color:var(--amber);line-height:1}
+.ms .ms-l{display:block;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,243,233,.6);margin-top:8px}
+.chart-card{background:var(--paper);border-radius:22px;padding:clamp(18px,2.4vw,28px);box-shadow:0 30px 60px -30px rgba(0,0,0,.5);color:var(--ink);max-width:100%;overflow:hidden}
+.chart-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.chart-head h3{font-family:'Fraunces',serif;font-size:17px;font-weight:600}
+.seg{display:inline-flex;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:4px;gap:2px}
+.seg-btn{border:0;background:none;padding:8px 17px;border-radius:999px;font-size:12.5px;font-weight:600;color:var(--ink-soft);cursor:pointer;transition:.2s}
+.seg-btn.is-active{background:var(--green);color:var(--cream)}
+.chart-canvas{position:relative;max-width:100%}
+.chart-canvas svg{width:100%;height:auto;display:block;max-width:100%}
+.c-grid line{stroke:rgba(22,36,27,.09);stroke-width:1}
+.c-grid text{font-size:11px;fill:#8A968D;font-family:'Outfit'}
+.c-line{stroke:var(--green);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.c-area{fill:var(--green);opacity:.1}
+.c-dot{fill:#fff;stroke:var(--green);stroke-width:2.5;transform-box:fill-box;transform-origin:center}
+.c-target{stroke:var(--amber-deep);stroke-width:1.6;stroke-dasharray:6 6}
+.c-target-lbl{font-size:10.5px;font-weight:600;fill:var(--amber-deep);font-family:'Outfit'}
+.c-hover{fill:var(--amber);opacity:0;transition:opacity .15s;stroke:#fff;stroke-width:2.5}
+.chart-tip{
+  position:absolute;transform:translate(-50%,-118%);background:var(--green-deep);color:var(--cream);
+  padding:9px 13px;border-radius:10px;font-size:12px;line-height:1.5;white-space:nowrap;
+  pointer-events:none;opacity:0;transition:opacity .15s;box-shadow:0 10px 22px -8px rgba(0,0,0,.45);z-index:3;
+}
+.chart-tip b{font-weight:600}
+.chart-tip .delta{display:block;font-size:11px;color:var(--amber)}
+.chart-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:16px;padding-top:15px;border-top:1px dashed var(--line)}
+.legend{display:flex;gap:20px;font-size:12px;font-weight:500;color:var(--ink-soft)}
+.lg{display:inline-flex;align-items:center;gap:7px}
+.lg-line{width:20px;height:3px;border-radius:3px;background:var(--green)}
+.lg-dash{width:20px;border-top:2.5px dashed var(--amber-deep)}
+.chart-note{font-size:11.5px;color:var(--ink-soft)}
+
+.trace-grid{display:grid;grid-template-columns:1fr .95fr;gap:clamp(44px,6vw,80px);align-items:center;max-width:100%}
+.trace-steps{list-style:none;position:relative;padding-left:8px;max-width:100%}
+.trace-steps::before{content:"";position:absolute;left:31px;top:22px;bottom:40px;border-left:2px dashed rgba(30,91,64,.3)}
+.ts-step{display:flex;gap:22px;padding:0 0 34px 0;position:relative}
+.ts-step:last-child{padding-bottom:0}
+.ts-num{
+  width:48px;height:48px;flex:none;border-radius:50%;background:var(--cream);border:1.5px solid var(--green);
+  display:grid;place-items:center;font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--green);
+  position:relative;z-index:1;transition:.3s;
+}
+.ts-step:hover .ts-num{background:var(--green);color:var(--cream)}
+.ts-step h4{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:7px}
+.ts-step p{font-size:14.5px;color:var(--ink-soft);line-height:1.7;max-width:420px;word-wrap:break-word}
+.trace-visual{position:relative;display:grid;place-items:center;padding:34px 0 80px;max-width:100%}
+.tv-ring{position:absolute;width:400px;height:400px;border-radius:50%;border:1.5px dashed rgba(30,91,64,.28);animation:spin 65s linear infinite;max-width:100%}
+.passport{
+  width:min(380px,100%);background:var(--paper);border-radius:18px;
+  box-shadow:0 0 0 1px rgba(30,91,64,.08), 0 35px 70px -30px rgba(15,51,37,.4);
+  transform:rotate(-1.6deg);
+  transition:transform .5s cubic-bezier(.2,.65,.2,1);
+  position:relative;z-index:1;max-width:100%;
+  -webkit-font-smoothing:antialiased !important;
+  -moz-osx-font-smoothing:grayscale !important;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  transform-style:preserve-3d;
+  will-change:transform;
+  text-rendering:optimizeLegibility;
+}
+.passport:hover{
+  transform:rotate(0deg) translateY(-6px);
+}
+.pp-head{background:var(--green);color:var(--cream);padding:15px 20px;border-radius:18px 18px 0 0;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pp-head strong{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.22em}
+.pp-head strong .ic{width:15px;height:15px;color:var(--amber)}
+.pp-head span{font-size:11px;font-weight:600;background:rgba(247,243,233,.14);padding:5px 10px;border-radius:999px}
+.pp-body{padding:20px;display:grid;grid-template-columns:1fr auto;gap:20px;max-width:100%}
+.pp-rows div{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.pp-rows div:last-child{border-bottom:0}
+.pp-rows span{color:var(--ink-soft)}
+.pp-rows b{font-weight:600;word-break:break-word}
+.pp-qr{display:flex;flex-direction:column;align-items:center;gap:8px}
+.pp-qr .qr-frame{width:106px;height:106px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px;color:var(--ink)}
+.pp-qr .qr-frame svg{width:100%;height:100%;shape-rendering:crispEdges}
+.pp-qr small{font-size:10px;font-weight:600;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase}
+.pp-foot{padding:13px 20px;border-top:1px dashed var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11.5px;color:var(--ink-soft);max-width:100%}
+.pp-verified{position:absolute;top:-16px;right:-14px;transform:rotate(6deg);box-shadow:0 10px 22px -8px rgba(181,126,31,.45)}
+
+.role-tabs{display:inline-flex;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px;gap:4px;flex-wrap:wrap;justify-content:center;max-width:100%}
+.role-tab{
+  border:0;background:none;padding:11px 22px;border-radius:999px;cursor:pointer;
+  display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:var(--ink-soft);transition:.25s;
+}
+.role-tab .ic{width:16px;height:16px}
+.role-tab:hover{color:var(--green)}
+.role-tab.is-active{background:var(--green);color:var(--cream)}
+.role-panel{display:grid;grid-template-columns:1fr 1.12fr;gap:clamp(36px,5vw,64px);align-items:center;margin-top:54px;transition:opacity .3s,transform .3s;max-width:100%}
+.role-panel.swap{opacity:0;transform:translateY(12px)}
+.role-copy h3{font-family:'Fraunces',serif;font-size:clamp(24px,3vw,31px);font-weight:600;margin-bottom:14px}
+.role-copy>p{color:var(--ink-soft);font-size:15.5px;line-height:1.75;margin-bottom:22px;word-wrap:break-word}
+.role-copy ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+.role-copy li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--ink);font-weight:500}
+.role-copy li .ic{width:18px;height:18px;color:var(--amber-deep);margin-top:2px;flex:none}
+
+.mock{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-soft);max-width:100%}
+.mock-chrome{display:flex;align-items:center;gap:7px;padding:12px 15px;border-bottom:1px solid var(--line);background:var(--cream)}
+.mdot{width:10px;height:10px;border-radius:50%;background:rgba(22,36,27,.14)}
+.mock-url{margin-left:9px;flex:1;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:11.5px;color:var(--ink-soft);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mock-body{padding:18px;max-width:100%}
+.mock-search{display:flex;align-items:center;gap:10px;background:var(--cream);border:1px solid var(--line);border-radius:11px;padding:11px 14px;font-size:12.5px;color:var(--ink-soft);margin-bottom:14px}
+.mock-search .ic{width:15px;height:15px;flex:none}
+.mock-search span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mock-tiles{display:grid;grid-template-columns:1fr 1fr;gap:13px;max-width:100%}
+.mt-img{aspect-ratio:4/2.9;border-radius:10px;background-size:cover;background-position:center;background-color:var(--sage);max-width:100%}
+.mt-info{padding-top:10px}
+.mt-info strong{display:block;font-size:13px;font-weight:600;word-wrap:break-word}
+.mt-info em{display:block;font-style:normal;font-size:12px;color:var(--ink-soft);margin:3px 0 8px}
+.mock-note{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:15px;padding-top:13px}
+.mock-note .ic{width:15px;height:15px;color:var(--amber-deep);flex:none}
+.mock-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}
+.mock-h strong{font-family:'Fraunces',serif;font-size:16px;font-weight:600}
+.mock-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 2px;border-bottom:1px dashed var(--line)}
+.mock-row strong{display:block;font-size:13px;font-weight:600;word-wrap:break-word}
+.mock-row em{display:block;font-style:normal;font-size:11px;color:var(--ink-soft);margin-top:2px}
+.mock-vcard{margin-top:15px;background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:13px 15px;max-width:100%}
+.mv-head{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--green);margin-bottom:9px}
+.mv-head .ic{width:15px;height:15px;color:var(--amber-deep)}
+.mv-row{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--ink-soft);padding:4px 0}
+.mv-row .ic{width:13px;height:13px;color:var(--green)}
+.mv-row b{margin-left:auto;color:var(--ink);font-weight:600}
+.mock-table{margin-bottom:16px;max-width:100%}
+.mt-row{display:grid;grid-template-columns:1.1fr 1fr .8fr .9fr;gap:8px;align-items:center;padding:9px 4px;border-bottom:1px dashed var(--line);font-size:12px}
+.mt-row.mt-head{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--line)}
+.mt-row .pill{justify-self:start}
+.mock-bars{display:flex;align-items:flex-end;gap:7px;height:62px;margin:16px 2px 4px;max-width:100%}
+.mb-col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;min-width:0}
+.mb-col span{display:block;height:var(--h);background:var(--green);border-radius:4px 4px 2px 2px;opacity:.85}
+.mb-col.max span{background:var(--amber);opacity:1}
+.mb-col small{font-size:9px;color:var(--ink-soft);text-align:center;margin-top:5px;font-weight:600}
+
+.mk-head{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap;margin-bottom:clamp(34px,5vw,52px)}
+.mk-head .sec-head{margin-bottom:0}
+.mk-nav{display:flex;gap:11px;padding-bottom:6px}
+.mk-btn{width:50px;height:50px;border-radius:50%;border:1px solid var(--line);background:var(--paper);display:grid;place-items:center;cursor:pointer;color:var(--ink);transition:.25s}
+.mk-btn .ic{width:19px;height:19px}
+.mk-btn:hover:not(:disabled){background:var(--green);border-color:var(--green);color:var(--cream);transform:translateY(-2px)}
+.mk-btn:disabled{opacity:.35;cursor:default}
+.mk-scroll{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 28px;scrollbar-width:none;max-width:100%}
+.mk-scroll::-webkit-scrollbar{display:none}
+.mk-card{
+  flex:0 0 318px;scroll-snap-align:start;background:var(--paper);border:1px solid var(--line);
+  border-radius:20px;overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .35s,box-shadow .35s,border-color .35s;max-width:100%;
+}
+.mk-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-soft);border-color:rgba(30,91,64,.3)}
+.mk-card.is-featured{flex-basis:540px;border-color:rgba(181,126,31,.45)}
+.mk-media{position:relative;aspect-ratio:16/10;overflow:hidden}
+.mk-card.is-featured .mk-media{aspect-ratio:auto;flex:0 0 52%}
+.mk-card.is-featured{flex-direction:row}
+.mk-card.is-featured .mk-body{display:flex;flex-direction:column}
+.mk-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.mk-card:hover .mk-media img{transform:scale(1.05)}
+.mk-badges{position:absolute;top:13px;left:13px;right:13px;display:flex;gap:7px;flex-wrap:wrap}
+.mk-body{padding:19px;flex:1;max-width:100%}
+.mk-cat{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-deep)}
+.mk-name{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin:7px 0 4px;line-height:1.25;word-wrap:break-word}
+.mk-specs{display:flex;gap:16px;flex-wrap:wrap;margin:13px 0 15px}
+.mk-spec{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:var(--ink-soft)}
+.mk-spec .ic{width:14px;height:14px;color:var(--green)}
+.mk-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:15px;margin-top:auto;flex-wrap:wrap}
+.mk-price{font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:var(--green);line-height:1.1}
+.mk-price small{display:block;font-family:'Outfit';font-size:11px;font-weight:500;color:var(--ink-soft);margin-top:2px}
+.mk-hint{font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
+.mk-hint .ic{width:15px;height:15px;color:var(--amber-deep)}
+
+.testi{max-width:780px;margin-inline:auto;text-align:center;position:relative}
+.t-stage{transition:opacity .35s,transform .35s}
+.t-stage.fade{opacity:0;transform:translateY(12px)}
+.t-mark{font-family:'Fraunces',serif;font-size:110px;line-height:.4;color:var(--amber);opacity:.5;height:44px}
+.t-stage blockquote{
+  font-family:'Fraunces',serif;font-size:clamp(19px,2.8vw,26px);font-weight:500;line-height:1.5;
+  color:var(--ink);letter-spacing:-.01em;word-wrap:break-word;
+}
+.t-person{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:32px;flex-wrap:wrap}
+.t-person img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:3px solid var(--paper);box-shadow:0 6px 16px -6px rgba(15,51,37,.35)}
+.t-person .tp-txt{text-align:left}
+.t-person strong{display:block;font-size:15px;font-weight:600}
+.t-person span{display:block;font-size:13px;color:var(--ink-soft)}
+.t-stars{display:flex;gap:2px;margin-left:6px}
+.t-stars .ic{width:15px;height:15px;color:var(--amber);fill:var(--amber)}
+.t-controls{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:36px}
+.t-btn{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--paper);display:grid;place-items:center;cursor:pointer;color:var(--ink);transition:.25s}
+.t-btn .ic{width:18px;height:18px}
+.t-btn:hover{background:var(--green);border-color:var(--green);color:var(--cream)}
+.t-dots{display:flex;gap:8px}
+.t-dot{width:9px;height:9px;border-radius:50%;border:0;background:rgba(22,36,27,.18);cursor:pointer;transition:.25s;padding:0}
+.t-dot.is-active{background:var(--green);transform:scale(1.3)}
+
+.faq-wrap{max-width:780px;margin-inline:auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item:first-child{border-top:1px solid var(--line)}
+.faq-q{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  background:none;border:0;cursor:pointer;text-align:left;padding:24px 4px;
+  font-family:'Fraunces',serif;font-size:clamp(16.5px,2vw,19.5px);font-weight:600;color:var(--ink);transition:color .25s;
+}
+.faq-q:hover{color:var(--green)}
+.faq-q .fq-ic{width:36px;height:36px;flex:none;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.3s;color:var(--ink-soft)}
+.faq-q .fq-ic .ic{width:15px;height:15px;transition:transform .3s}
+.faq-item.open .faq-q{color:var(--green)}
+.faq-item.open .fq-ic{background:var(--green);border-color:var(--green);color:var(--cream)}
+.faq-item.open .fq-ic .ic{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s}
+.faq-a p{padding:0 52px 24px 4px;color:var(--ink-soft);font-size:15px;line-height:1.8;word-wrap:break-word}
+
+.cta{overflow:hidden;max-width:100%}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(44px,6vw,80px);align-items:center;position:relative;max-width:100%}
+.cta-contacts{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:32px}
+.cta-contacts li{display:flex;align-items:center;gap:15px}
+.cta-contacts .cc-ic{width:46px;height:46px;flex:none;border-radius:14px;background:rgba(247,243,233,.09);border:1px solid var(--line-light);display:grid;place-items:center;color:var(--amber)}
+.cta-contacts .cc-ic .ic{width:19px;height:19px}
+.cta-contacts span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,233,.55)}
+.cta-contacts b{display:block;font-size:15.5px;font-weight:500;color:var(--cream);word-break:break-word}
+.cta-card{background:var(--paper);border-radius:22px;padding:clamp(26px,3.4vw,38px);color:var(--ink);box-shadow:0 35px 70px -35px rgba(0,0,0,.5);max-width:100%}
+.cta-card h3{font-family:'Fraunces',serif;font-size:24px;font-weight:600;margin-bottom:6px}
+.cta-card>p{font-size:14px;color:var(--ink-soft);margin-bottom:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:100%}
+.field{margin-bottom:16px;min-width:0}
+.field label{display:block;font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+.field input,.field select,.field textarea{
+  width:100%;background:var(--cream);border:1px solid var(--line);border-radius:12px;
+  padding:13px 16px;font-family:'Outfit';font-size:15px;color:var(--ink);transition:border-color .2s,box-shadow .2s;
+}
+.field textarea{resize:vertical;min-height:96px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(30,91,64,.1)}
+.field input.err,.field select.err,.field textarea.err{border-color:#C0472F;box-shadow:0 0 0 3px rgba(192,71,47,.08)}
+.select-wrap{position:relative}
+.select-wrap select{appearance:none;-webkit-appearance:none;padding-right:42px;cursor:pointer}
+.select-wrap>.ic{position:absolute;right:15px;top:50%;transform:translateY(-50%);pointer-events:none;width:16px;height:16px;color:var(--ink-soft)}
+.cta-form-note{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-soft);margin-top:14px;justify-content:center}
+.cta-form-note .ic{width:13px;height:13px;color:var(--green)}
+
+.footer{background:var(--green-black);color:rgba(247,243,233,.72);overflow:hidden;max-width:100%}
+.foot-news{border-bottom:1px solid var(--line-light);padding:46px 0;max-width:100%}
+.foot-news-in{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;max-width:100%}
+.foot-news h3{font-family:'Fraunces',serif;font-size:clamp(23px,3vw,30px);font-weight:600;color:var(--cream)}
+.foot-news p{font-size:14px;margin-top:6px}
+.news-form{display:flex;gap:10px;flex:1;max-width:460px;min-width:0}
+.news-form input{
+  flex:1;min-width:0;background:rgba(247,243,233,.06);border:1px solid rgba(247,243,233,.18);border-radius:999px;
+  padding:14px 20px;font-family:'Outfit';font-size:14.5px;color:var(--cream);transition:.25s;
+}
+.news-form input::placeholder{color:rgba(247,243,233,.42)}
+.news-form input:focus{outline:none;border-color:var(--amber);background:rgba(247,243,233,.1)}
+.foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.35fr;gap:clamp(30px,4vw,54px);padding:60px 0 54px;max-width:100%}
+.foot-brand p{font-size:14px;line-height:1.8;margin:18px 0 22px;max-width:300px;word-wrap:break-word}
+.foot-social{display:flex;gap:10px}
+.foot-social a{
+  width:42px;height:42px;border-radius:50%;border:1px solid rgba(247,243,233,.18);display:grid;place-items:center;
+  color:rgba(247,243,233,.8);transition:.25s;
+}
+.foot-social a:hover{background:var(--amber);border-color:var(--amber);color:var(--green-deep);transform:translateY(-2px)}
+.foot-social svg{width:18px;height:18px}
+.foot-col h4{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-bottom:20px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.foot-col a{font-size:14px;text-decoration:none;color:rgba(247,243,233,.68);transition:.25s;display:inline-flex;align-items:center;gap:0;cursor:pointer;background:none;border:0;font-family:'Outfit';padding:0}
+.foot-col a:hover{color:var(--amber);padding-left:5px}
+.foot-contact li{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.65;margin-bottom:14px;word-break:break-word}
+.foot-contact .ic{width:17px;height:17px;color:var(--amber);flex:none;margin-top:3px}
+.foot-contact a{text-decoration:none;color:rgba(247,243,233,.72)}
+.foot-contact a:hover{color:var(--amber)}
+.foot-water{
+  font-family:'Fraunces',serif;font-weight:700;text-align:center;line-height:.78;user-select:none;pointer-events:none;
+  font-size:clamp(42px,11vw,160px);letter-spacing:.02em;
+  color:transparent;-webkit-text-stroke:1px rgba(247,243,233,.1);
+  padding-top:8px;
+  margin-bottom:10px;
+  overflow:hidden;white-space:nowrap;max-width:100%;
+}
+.foot-bottom{border-top:1px solid var(--line-light);padding:24px 0;max-width:100%}
+.foot-bottom-in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;max-width:100%}
+.foot-bottom-in .fb-links{display:flex;gap:22px}
+.foot-bottom-in button{background:none;border:0;color:rgba(247,243,233,.62);font-size:13px;cursor:pointer;font-family:'Outfit';transition:.25s;padding:0}
+.foot-bottom-in button:hover{color:var(--amber)}
+.foot-made{display:inline-flex;align-items:center;gap:7px;color:rgba(247,243,233,.55)}
+.foot-made .ic{width:14px;height:14px;color:var(--amber)}
+
+.bnav{
+  position:fixed;left:0;right:0;bottom:0;z-index:999;
+  background:rgba(253,251,244,.96);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);
+  box-shadow:0 -10px 24px -12px rgba(15,51,37,.2);
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:none;width:100%;max-width:100vw;
+}
+.bnav-inner{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:4px;
+  max-width:540px;margin-inline:auto;
+}
+.bnav-item{
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  background:none;border:0;cursor:pointer;
+  padding:8px 4px;border-radius:14px;
+  color:var(--ink-soft);
+  transition:background .25s, color .25s, transform .25s;
+  font-family:inherit;text-decoration:none;
+  position:relative;
+}
+.bnav-item .ic{width:22px;height:22px;transition:transform .3s}
+.bnav-item span{font-size:10px;font-weight:600;letter-spacing:.03em}
+.bnav-item:hover,.bnav-item.active{color:var(--green);background:rgba(30,91,64,.06)}
+.bnav-item.active .ic{transform:translateY(-2px)}
+.bnav-item.active::before{
+  content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%);
+  width:24px;height:3px;border-radius:0 0 3px 3px;background:var(--amber);
+}
+.bnav-item .dot{
+  position:absolute;top:6px;right:calc(50% - 18px);
+  width:7px;height:7px;border-radius:50%;background:var(--amber);
+  border:1.5px solid var(--paper);
+}
+.bnav.menu-mode .bnav-item{color:var(--cream)}
+.bnav.menu-mode .bnav-item:hover,.bnav.menu-mode .bnav-item.active{color:var(--amber);background:rgba(247,243,233,.07)}
+.bnav.menu-mode{background:rgba(15,51,37,.96);border-top-color:rgba(247,243,233,.12)}
+
+.toasts{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:998;display:flex;flex-direction:column;gap:10px;max-width:min(380px,calc(100vw - 28px))}
+.toast{
+  display:flex;gap:12px;align-items:flex-start;background:var(--green-deep);color:var(--cream);
+  border:1px solid rgba(247,243,233,.12);padding:15px 18px;border-radius:14px;cursor:pointer;
+  box-shadow:0 18px 40px -14px rgba(0,0,0,.5);animation:toastIn .4s cubic-bezier(.2,.85,.3,1.15) both;
+  font-size:14px;line-height:1.55;
+}
+.toast .ic{width:19px;height:19px;color:var(--amber);flex:none;margin-top:1px}
+.toast.out{animation:toastOut .3s ease both}
+@keyframes toastIn{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes toastOut{to{opacity:0;transform:translateY(12px) scale(.97)}}
+
+.modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:20px;visibility:hidden;opacity:0;transition:opacity .3s,visibility .3s}
+.modal.open{visibility:visible;opacity:1}
+.modal-back{position:absolute;inset:0;background:rgba(7,22,15,.58);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.modal-card{
+  position:relative;background:var(--paper);border-radius:22px;padding:clamp(26px,4vw,38px);
+  width:min(540px,100%);max-height:90vh;overflow-y:auto;color:var(--ink);
+  transform:translateY(24px) scale(.97);transition:transform .35s cubic-bezier(.2,.65,.2,1);box-shadow:0 40px 80px -35px rgba(0,0,0,.55);
+}
+.modal.open .modal-card{transform:none}
+.modal-x{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--cream);display:grid;place-items:center;cursor:pointer;color:var(--ink);transition:.25s}
+.modal-x:hover{background:var(--green);border-color:var(--green);color:var(--cream);transform:rotate(90deg)}
+.modal-x .ic{width:17px;height:17px}
+.modal-card h3{font-family:'Fraunces',serif;font-size:25px;font-weight:600;padding-right:44px}
+.modal-card .modal-sub{font-size:14px;color:var(--ink-soft);margin:10px 0 24px;line-height:1.7}
+.modal-info-text{font-size:14.5px;color:var(--ink-soft);line-height:1.85;word-wrap:break-word}
+
+.to-top{
+  position:fixed;right:22px;bottom:calc(90px + env(safe-area-inset-bottom));z-index:120;width:50px;height:50px;border-radius:50%;
+  background:var(--green);color:var(--cream);border:0;display:grid;place-items:center;cursor:pointer;
+  opacity:0;transform:translateY(14px);pointer-events:none;transition:.35s;box-shadow:0 12px 28px -10px rgba(15,51,37,.55);
+}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{background:var(--amber);color:var(--green-deep)}
+.to-top .ic{width:19px;height:19px}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s cubic-bezier(.2,.65,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:1440px){
+  .hero-cards{right:4.5%}
+}
+@media (max-width:1280px){
+  .hero-cards{display:none}
+}
+@media (max-width:1024px){
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .bnav{display:block}
+  .foot-bottom{padding-bottom:calc(105px + env(safe-area-inset-bottom))}
+  .about-grid,.trace-grid,.milk-grid,.cta-grid{grid-template-columns:1fr}
+  .about-media{max-width:540px}
+  .trace-visual{margin-top:10px}
+  .feature-grid{grid-template-columns:1fr}
+  .feature-panel{display:none}
+  .feature-item .f-line{max-height:none;opacity:1}
+  .f-acc{display:block;max-height:0;overflow:hidden;transition:max-height .45s}
+  .feature-item.is-active .f-acc{max-height:760px}
+  .f-acc img{border-radius:14px;aspect-ratio:16/10;object-fit:cover;width:100%;margin:16px 0 12px}
+  .f-acc .fp-chips{position:static;margin-bottom:12px}
+  .f-acc p{color:var(--ink-soft);font-size:14.5px;line-height:1.75}
+  .role-panel{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:34px 0}
+  .stat:nth-child(3){border-left:0;padding-left:0}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:768px){
+  .nav-actions .btn{display:none}
+  .mk-card{flex-basis:min(340px,84vw)}
+  .mk-card.is-featured{flex-basis:90vw;flex-direction:column}
+  .mk-card.is-featured .mk-media{aspect-ratio:16/10;flex:none}
+  .mk-head{flex-direction:column;align-items:stretch}
+  .mk-nav{justify-content:flex-end}
+  .hero-stats{gap:22px 34px}
+  .form-grid{grid-template-columns:1fr}
+  .foot-news-in{flex-direction:column;align-items:flex-start}
+  .news-form{width:100%}
+  .ts-step p{max-width:none}
+  .mock-tiles{grid-template-columns:1fr}
+  .hero-inner{padding-top:90px}
+}
+@media (max-width:560px){
+  .stats-grid{grid-template-columns:1fr;gap:30px}
+  .stat{border-left:0;padding:0}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-ctas .btn{flex:1;justify-content:center}
+  .faq-a p{padding-right:8px}
+  .toasts{left:14px;right:14px;bottom:calc(90px + env(safe-area-inset-bottom));max-width:none}
+  .t-person{flex-direction:column;gap:12px}
+  .t-person .tp-txt{text-align:center}
+  .t-stars{margin-left:0;margin-top:6px}
+  .bnav-item span{font-size:9.5px}
+  .bnav-item .ic{width:20px;height:20px}
+  .hero-inner{padding-top:110px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  .hero-title .hl>span{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+<a class="brand" href="#home" aria-label="Oriva Dairy home">
+  <img src="logo.png" alt="Oriva Dairy Logo" style="height:42px; width:auto;">
+  <span class="brand-name">Oriva<span> Dairy</span></span>
+</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#milk">Milk Data</a></li>
+        <li><a href="#trace">Traceability</a></li>
+        <li><a href="#market">Marketplace</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-amber btn-sm" data-demo>Book a Demo</button>
+      <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <ul class="mnav-links">
+    <li><a href="#home" style="--i:0"><i>01</i>Home</a></li>
+    <li><a href="#about" style="--i:1"><i>02</i>About</a></li>
+    <li><a href="#features" style="--i:2"><i>03</i>Features</a></li>
+    <li><a href="#milk" style="--i:3"><i>04</i>Milk Data</a></li>
+    <li><a href="#trace" style="--i:4"><i>05</i>Traceability</a></li>
+    <li><a href="#market" style="--i:5"><i>06</i>Marketplace</a></li>
+    <li><a href="#stories" style="--i:6"><i>07</i>Stories</a></li>
+    <li><a href="#faq" style="--i:7"><i>08</i>FAQ</a></li>
+    <li><a href="#contact" style="--i:8"><i>09</i>Contact</a></li>
+  </ul>
+  <div class="mnav-foot">
+    <a href="tel:+923001234567">+92 300 123 4567</a>
+    <button class="btn btn-amber btn-sm" data-demo>Book a Demo</button>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img id="heroImg" src="hero-bg3.png" alt="Dairy farm at sunrise with cattle grazing" fetchpriority="high">
+  </div>
+  <div class="hero-scrim"></div>
+
+  <div class="hero-cards" aria-hidden="true">
+    <aside class="hero-passport">
+      <div class="hp-topband">
+        <strong><i data-lucide="qr-code" class="ic"></i>CATTLE PASSPORT</strong>
+        <span class="hp-verified"><i data-lucide="badge-check" class="ic"></i>VERIFIED</span>
+      </div>
+      <div class="hp-photo-strip">
+        <div class="hp-photo">
+          <img src="https://picsum.photos/seed/oriva-cow-face/200/200.jpg" alt="Sahiwal cow portrait">
+          <div class="hp-photo-badge">
+            <i data-lucide="shield-check" class="ic"></i>
+          </div>
+        </div>
+        <div class="hp-meta">
+          <strong>Simental . Breed</strong>
+          <em>Farm No. 7 · Okara</em>
+          <span class="pill pill-ok"><i data-lucide="award" class="ic"></i>Top Producer</span>
+        </div>
+      </div>
+      <div class="hp-body">
+        <div class="hp-rows">
+          <div class="hp-row">
+            <span>Age</span>
+            <b><i data-lucide="cake" class="ic"></i>4 yr 2 mo</b>
+          </div>
+          <div class="hp-row">
+            <span>Weight</span>
+            <b><i data-lucide="weight" class="ic"></i>480 kg</b>
+          </div>
+          <div class="hp-row">
+            <span>Milk yield</span>
+            <b><i data-lucide="droplets" class="ic"></i>16.2 L/day</b>
+          </div>
+          <div class="hp-row">
+            <span>Last FMD shot</span>
+            <b><i data-lucide="syringe" class="ic"></i>Mar 2025</b>
+          </div>
+        </div>
+      </div>
+      <div class="hp-foot">
+        <div class="hp-qr" id="hpQrBox"></div>
+        <div class="hp-foot-txt">
+          <b>Scan for live record</b>
+          Buyers verify the full history in one tap
+        </div>
+      </div>
+    </aside>
+
+    <aside class="hero-yield">
+      <div class="hy-head">
+        <span class="hy-ic"><i data-lucide="droplets" class="ic"></i></span>
+        <div>
+          <strong>Today's Herd Yield</strong>
+          <em>Farm No. 7 · Morning</em>
+        </div>
+        <span class="hy-up"><i data-lucide="trending-up" class="ic"></i>8.8%</span>
+      </div>
+      <div class="hy-num">655<small>L</small></div>
+      <div class="hy-bars">
+        <span style="--h:55%"></span>
+        <span style="--h:70%"></span>
+        <span style="--h:62%"></span>
+        <span style="--h:80%"></span>
+        <span style="--h:73%"></span>
+        <span style="--h:86%"></span>
+        <span class="max" style="--h:100%"></span>
+      </div>
+      <div class="hy-days"><i>M</i><i>T</i><i>W</i><i>T</i><i>F</i><i>S</i><i>S</i></div>
+    </aside>
+  </div>
+
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="hero-eyebrow"><span class="dot"></span>Smart Cattle & Farm Management</span>
+      <h1 class="hero-title">
+        <span class="hl"><span>Every cow, every litre,</span></span>
+        <span class="hl"><span>every <em>rupee,</em> all</span></span>
+        <span class="hl"><span>in one smart place.</span></span>
+      </h1>
+      <p class="hero-sub">Oriva Dairy turns paper ledgers into a smart digital system - cattle records, milk production, health and expenses in one place, with a built-in marketplace to sell livestock and dairy direct to buyers.</p>
+      <div class="hero-ctas">
+        <a href="#market" class="btn btn-amber">Explore the Marketplace <i data-lucide="arrow-right" class="ic"></i></a>
+        <button class="btn btn-ghost" data-demo>Book a Free Demo</button>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hs"><span class="hs-n">2,400+</span><span class="hs-l">Cattle tracked</span></div>
+      <div class="hs"><span class="hs-n">120+</span><span class="hs-l">Farms onboarded</span></div>
+      <div class="hs"><span class="hs-n"><b>Zero</b></span><span class="hs-l">Broker commissions</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="mq-track" id="mqTrack"></div></div>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-media reveal">
+        <div class="am-main">
+          <img src="https://picsum.photos/seed/oriva-farm/800/1000.jpg" alt="Farmer managing cattle on a dairy farm" loading="lazy">
+          <span class="am-tag"><i data-lucide="sunrise" class="ic"></i>Morning milking · Farm No. 7</span>
+        </div>
+        <div class="am-sub">
+          <img src="https://picsum.photos/seed/oriva-cows/640/480.jpg" alt="Herd of dairy cows in the shed" loading="lazy">
+        </div>
+        <div class="am-badge" aria-hidden="true">
+          <svg class="spin" viewBox="0 0 126 126">
+            <defs><path id="badgeCirc" d="M63,63 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs>
+            <text><textPath href="#badgeCirc">ORIVA DAIRY · FARM TO FAMILY · SINCE 2024 ·</textPath></text>
+          </svg>
+          <span class="core"><i data-lucide="sprout" class="ic"></i></span>
+        </div>
+      </div>
+      <div class="about-copy reveal" data-delay="120">
+        <div class="sec-head" style="margin-bottom:0">
+          <span class="eyebrow">Why Oriva</span>
+          <h2>From paper registers to a farm that <span class="accent">practically runs itself.</span></h2>
+        </div>
+        <p>Most dairy farms still run on notebooks - milk in one, medicines in another, and the money in someone's head. Oriva Dairy puts the entire operation into one secure system your whole team can use.</p>
+        <p>And because a farm is also a business, we built the marketplace in: list your animals and dairy with their verified records, deal with buyers directly, and keep the margin you used to give away to brokers.</p>
+        <ul class="about-list">
+          <li>
+            <span class="al-ic"><i data-lucide="qr-code" class="ic"></i></span>
+            <div><strong>One Tag ID per animal</strong><em>Breed, weight, lineage, lactation stage - full history for life.</em></div>
+          </li>
+          <li>
+            <span class="al-ic"><i data-lucide="heart-pulse" class="ic"></i></span>
+            <div><strong>Health records buyers can verify</strong><em>Vaccinations and treatments, provable with a single scan.</em></div>
+          </li>
+          <li>
+            <span class="al-ic"><i data-lucide="banknote" class="ic"></i></span>
+            <div><strong>Direct livestock & dairy sales</strong><em>No middlemen, no commissions - buyers come straight to you.</em></div>
+          </li>
+        </ul>
+        <p class="about-note">The Oriva promise: your records stay yours, always.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat reveal"><span class="stat-n"><span class="count" data-count="1.4" data-decimals="1">0</span><em>M+</em></span><span class="stat-l">Litres of milk logged</span></div>
+    <div class="stat reveal" data-delay="100"><span class="stat-n"><span class="count" data-count="6800">0</span><em>+</em></span><span class="stat-l">QR cattle tags issued</span></div>
+    <div class="stat reveal" data-delay="200"><span class="stat-n"><span class="pre">Rs</span><span class="count" data-count="3.2" data-decimals="1">0</span><em>Cr+</em></span><span class="stat-l">Marketplace trade enabled</span></div>
+    <div class="stat reveal" data-delay="300"><span class="stat-n"><span class="count" data-count="1900">0</span><em>+</em></span><span class="stat-l">Buyer inquiries connected</span></div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The Platform</span>
+      <h2>Everything your farm needs. <span class="accent">Nothing it doesn't.</span></h2>
+      <p class="lead">Six tools that replace a drawer full of registers - select any one to see it in action.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-list" id="featureList" role="tablist" aria-label="Platform features"></div>
+      <div class="feature-panel reveal" data-delay="150" id="featurePanel">
+        <div class="fp-media">
+          <img id="fpImg" src="" alt="">
+          <span class="fp-cat pill pill-light" id="fpCat"></span>
+          <div class="fp-chips" id="fpChips"></div>
+        </div>
+        <div class="fp-info">
+          <h3 id="fpTitle"></h3>
+          <p id="fpDesc"></p>
+          <a href="#platform" class="link-arrow">Explore the dashboards <i data-lucide="arrow-right" class="ic"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-deep milk on-dark" id="milk">
+  <div class="container">
+    <div class="milk-grid">
+      <div class="reveal">
+        <div class="sec-head" style="margin-bottom:0">
+          <span class="eyebrow">Milk Analytics</span>
+          <h2>Your herd's pulse, <span class="accent">in litres.</span></h2>
+          <p class="lead">Every morning and evening yield, logged per animal and turned into decisions. See the trend, catch the dip, and know exactly which cows carry your farm - before the month-end surprise.</p>
+        </div>
+        <div class="milk-stats">
+          <div class="ms"><span class="ms-n">655 L</span><span class="ms-l">Today's yield</span></div>
+          <div class="ms"><span class="ms-n">+8.8%</span><span class="ms-l">vs last Sunday</span></div>
+          <div class="ms"><span class="ms-n">16.0 L</span><span class="ms-l">Average per cow</span></div>
+        </div>
+      </div>
+      <div class="chart-card reveal" data-delay="150">
+        <div class="chart-head">
+          <h3>Weekly herd yield - litres / day</h3>
+          <div class="seg">
+            <button class="seg-btn is-active" data-week="this">This week</button>
+            <button class="seg-btn" data-week="last">Last week</button>
+          </div>
+        </div>
+        <div class="chart-canvas" id="chartCanvas">
+          <div class="chart-tip" id="chartTip"></div>
+        </div>
+        <div class="chart-foot">
+          <div class="legend">
+            <span class="lg"><span class="lg-line"></span>Daily yield</span>
+            <span class="lg"><span class="lg-dash"></span>Target - 600 L</span>
+          </div>
+          <span class="chart-note">Sample data · Demo Farm No. 7</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-sage" id="trace">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>One scan. <span class="accent">Complete trust.</span></h2>
+      <p class="lead">Every animal on Oriva carries a QR passport that stays live for its whole life on the farm - and follows it to its next home.</p>
+    </div>
+    <div class="trace-grid">
+      <ol class="trace-steps reveal">
+        <li class="ts-step">
+          <span class="ts-num">01</span>
+          <div>
+            <h4>Tag & register</h4>
+            <p>Print the QR tag, register the animal with its unique Tag ID, and its digital passport is live in minutes.</p>
+          </div>
+        </li>
+        <li class="ts-step">
+          <span class="ts-num">02</span>
+          <div>
+            <h4>Record the daily rhythm</h4>
+            <p>Milk, health, feed, expenses - quick forms take seconds, and every entry lands on the right animal's record automatically.</p>
+          </div>
+        </li>
+        <li class="ts-step">
+          <span class="ts-num">03</span>
+          <div>
+            <h4>Sell with proof</h4>
+            <p>List on the marketplace or deal in person - buyers scan the QR and see the verified history straight from your farm.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="trace-visual reveal" data-delay="150">
+        <span class="tv-ring" aria-hidden="true"></span>
+        <div class="passport">
+          <span class="pill pill-amber pp-verified"><i data-lucide="badge-check" class="ic"></i>Verified record</span>
+          <div class="pp-head">
+            <strong><i data-lucide="qr-code" class="ic"></i>CATTLE PASSPORT</strong>
+            <span>ORV-0847</span>
+          </div>
+          <div class="pp-body">
+            <div class="pp-rows">
+              <div><span>Tag No.</span><b>ORV-0847</b></div>
+              <div><span>Breed</span><b>Sahiwal</b></div>
+              <div><span>Born</span><b>Mar 2021</b></div>
+              <div><span>Weight</span><b>480 kg</b></div>
+              <div><span>Milk yield</span><b>16.2 L/day</b></div>
+            </div>
+            <div class="pp-qr">
+              <div class="qr-frame" id="qrBox"></div>
+              <small>Scan for live record</small>
+            </div>
+          </div>
+          <div class="pp-foot">
+            <span>Issued by Oriva Dairy · Farm No. 7</span>
+            <i data-lucide="shield-check" class="ic" style="color:var(--green)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="platform">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">One Platform, Three Doors</span>
+      <h2>Built for every side <span class="accent">of the trade.</span></h2>
+      <p class="lead">Farmers run operations, buyers get transparency, visitors browse freely - everyone gets their own door.</p>
+    </div>
+    <div style="text-align:center" class="reveal" data-delay="100">
+      <div class="role-tabs" role="tablist">
+        <button class="role-tab is-active" data-role="market" role="tab"><i data-lucide="store" class="ic"></i>Public Marketplace</button>
+        <button class="role-tab" data-role="buyer" role="tab"><i data-lucide="users" class="ic"></i>Buyer Dashboard</button>
+        <button class="role-tab" data-role="admin" role="tab"><i data-lucide="tractor" class="ic"></i>Farm Admin</button>
+      </div>
+    </div>
+    <div class="role-panel reveal" data-delay="200" id="rolePanel">
+      <div class="role-copy" id="roleCopy"></div>
+      <div id="roleMock"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-cream2" id="market">
+  <div class="container">
+    <div class="mk-head reveal">
+      <div class="sec-head">
+        <span class="eyebrow">Live Listings</span>
+        <h2>Healthy animals. Honest prices. <span class="accent">Zero brokers.</span></h2>
+        <p class="lead">A taste of what's on the Oriva marketplace right now - every listing backed by a verified farm record.</p>
+      </div>
+      <div class="mk-nav">
+        <button class="mk-btn" id="mkPrev" aria-label="Previous listings"><i data-lucide="chevron-left" class="ic"></i></button>
+        <button class="mk-btn" id="mkNext" aria-label="Next listings"><i data-lucide="chevron-right" class="ic"></i></button>
+      </div>
+    </div>
+    <div class="mk-scroll" id="mkScroll"></div>
+    <p class="mk-hint reveal"><i data-lucide="move-horizontal" class="ic"></i>Swipe or use the arrows - full marketplace aap ke dashboard mein milega.</p>
+  </div>
+</section>
+
+<section class="section bg-sage" id="stories">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Farmer Stories</span>
+      <h2>Farms that <span class="accent">made the switch.</span></h2>
+    </div>
+    <div class="testi reveal" data-delay="120" id="testiBox">
+      <div class="t-stage" id="tStage">
+        <div class="t-mark" aria-hidden="true">&ldquo;</div>
+        <blockquote id="tQuote"></blockquote>
+        <div class="t-person">
+          <img id="tAvatar" src="" alt="Farmer portrait">
+          <div class="tp-txt"><strong id="tName"></strong><span id="tMeta"></span></div>
+          <div class="t-stars" id="tStars"></div>
+        </div>
+      </div>
+      <div class="t-controls">
+        <button class="t-btn" id="tPrev" aria-label="Previous story"><i data-lucide="chevron-left" class="ic"></i></button>
+        <div class="t-dots" id="tDots"></div>
+        <button class="t-btn" id="tNext" aria-label="Next story"><i data-lucide="chevron-right" class="ic"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Questions</span>
+      <h2>Everything people ask <span class="accent">before switching.</span></h2>
+    </div>
+    <div class="faq-wrap reveal" data-delay="100" id="faqWrap"></div>
+  </div>
+</section>
+
+<section class="section bg-deep cta on-dark" id="contact">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="reveal">
+        <div class="sec-head" style="margin-bottom:0">
+          <span class="eyebrow">Get Started</span>
+          <h2>Ready to leave the <span class="accent">ledgers</span> behind?</h2>
+          <p class="lead">Book a free walkthrough - we'll set up your farm, import your herd, and show you the numbers that matter. No card, no commitment.</p>
+        </div>
+        <ul class="cta-contacts">
+          <li><span class="cc-ic"><i data-lucide="phone" class="ic"></i></span><div><span>Call or WhatsApp</span><b>+92 300 123 4567</b></div></li>
+          <li><span class="cc-ic"><i data-lucide="mail" class="ic"></i></span><div><span>Email</span><b>hello@orivadairy.com</b></div></li>
+          <li><span class="cc-ic"><i data-lucide="map-pin" class="ic"></i></span><div><span>Visit</span><b>12-KM Ferozepur Road, Lahore</b></div></li>
+          <li><span class="cc-ic"><i data-lucide="clock" class="ic"></i></span><div><span>Hours</span><b>Mon – Sat · 9:00 – 18:00</b></div></li>
+        </ul>
+      </div>
+      <div class="cta-card reveal" data-delay="150">
+        <h3>Request a callback</h3>
+        <p>Fill this in - hum 24 ghantay ke andar aap se raabta karenge.</p>
+        <form id="ctaForm" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="cfName">Your name</label><input id="cfName" type="text" placeholder="e.g. Muhammad Aslam"></div>
+            <div class="field"><label for="cfPhone">Phone</label><input id="cfPhone" type="tel" placeholder="+92 3xx xxxxxxx"></div>
+          </div>
+          <div class="field">
+            <label for="cfSize">Farm size</label>
+            <div class="select-wrap">
+              <select id="cfSize">
+                <option value="">Select herd size</option>
+                <option>Under 10 animals</option>
+                <option>10 – 50 animals</option>
+                <option>50 – 200 animals</option>
+                <option>200+ animals</option>
+              </select>
+              <i data-lucide="chevron-down" class="ic"></i>
+            </div>
+          </div>
+          <div class="field"><label for="cfMsg">Anything specific? <span style="text-transform:none;letter-spacing:0;color:var(--ink-soft)">(optional)</span></label><textarea id="cfMsg" placeholder="Bulk milk supply, QR tags, old records import…"></textarea></div>
+          <button type="submit" class="btn btn-amber" style="width:100%;justify-content:center">Request Callback <i data-lucide="send" class="ic"></i></button>
+        </form>
+        <p class="cta-form-note"><i data-lucide="shield-check" class="ic"></i>Aap ki maloomat mehfooz rehti hai - kabhi share nahi hoti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="foot-news">
+    <div class="container foot-news-in">
+      <div>
+        <h3>The Oriva Brief</h3>
+        <p>Market rates, farm tips & product updates. Once a month - no noise.</p>
+      </div>
+      <form class="news-form" id="newsForm" novalidate>
+        <input type="email" id="newsEmail" placeholder="Apni email likhein…" aria-label="Email address">
+        <button type="submit" class="btn btn-amber btn-sm">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#home" style="text-decoration:none">
+  <img src="logo.png" alt="Oriva Dairy Logo" style="height:42px; width:auto;">
+  <span class="brand-name">Oriva<span>Dairy</span></span>
+</a>
+        <p>A smart cattle & farm management system with an integrated marketplace - helping farmers run healthier herds, record every litre, and sell direct to buyers.</p>
+        <div class="foot-social">
+          <a href="https://facebook.com/orivadairy" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://instagram.com/orivadairy" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href="https://youtube.com/@orivadairy" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+          <a href="https://x.com/orivadairy" target="_blank" rel="noopener" aria-label="X / Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#features">Cattle Management</a></li>
+          <li><a href="#features">Health & Vaccination</a></li>
+          <li><a href="#milk">Milk Production</a></li>
+          <li><a href="#features">Expense Tracking</a></li>
+          <li><a href="#features">Reports & Analytics</a></li>
+          <li><a href="#trace">QR Traceability</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Marketplace</h4>
+        <ul>
+          <li><a href="#market">Browse Livestock</a></li>
+          <li><a href="#market">Dairy Products</a></li>
+          <li><a href="#market">Bulk Milk Supply</a></li>
+          <li><a href="#contact">Sell With Us</a></li>
+          <li><a href="#platform">Buyer Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">Why Oriva</a></li>
+          <li><a href="#stories">Farmer Stories</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button data-demo style="background:none;border:0;color:rgba(247,243,233,.68);font-size:14px;cursor:pointer;transition:.25s;display:inline-flex" onmouseover="this.style.color='#E3A63C'" onmouseout="this.style.color='rgba(247,243,233,.68)'">Book a Demo</button></li>
+        </ul>
+        <ul class="foot-contact" style="margin-top:26px">
+          <li><i data-lucide="map-pin" class="ic"></i><span>12-KM Ferozepur Road,<br>Lahore, Punjab, Pakistan</span></li>
+          <li><i data-lucide="phone" class="ic"></i><a href="tel:+923001234567">+92 300 123 4567</a></li>
+          <li><i data-lucide="mail" class="ic"></i><a href="mailto:hello@orivadairy.com">hello@orivadairy.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-water" aria-hidden="true">ORIVA DAIRY</div>
+  </div>
+
+  <div class="foot-bottom">
+    <div class="container foot-bottom-in">
+      <span>© <span id="year"></span> Oriva Dairy. All rights reserved.</span>
+      <span class="fb-links">
+        <button data-info="privacy">Privacy Policy</button>
+        <button data-info="terms">Terms of Service</button>
+      </span>
+      <span class="foot-made"><i data-lucide="sprout" class="ic"></i>Grown with care for our farmers</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="bnav" id="bnav" aria-label="App navigation">
+  <div class="bnav-inner">
+    <a class="bnav-item active" href="#home" data-section="home">
+      <i data-lucide="home" class="ic"></i>
+      <span>Home</span>
+    </a>
+    <a class="bnav-item" href="#features" data-section="features">
+      <i data-lucide="cat" class="ic"></i>
+      <span>Cattle</span>
+    </a>
+    <a class="bnav-item" href="#milk" data-section="milk">
+      <i data-lucide="droplets" class="ic"></i>
+      <span>Milk</span>
+    </a>
+    <a class="bnav-item" href="#market" data-section="market">
+      <i data-lucide="store" class="ic"></i>
+      <span>Market</span>
+      <span class="dot"></span>
+    </a>
+    <button class="bnav-item" id="bnavMenu" type="button" aria-label="Open menu">
+      <i data-lucide="menu" class="ic"></i>
+      <span>Menu</span>
+    </button>
+  </div>
+</nav>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-back" id="modalBack"></div>
+  <div class="modal-card">
+    <button class="modal-x" id="modalClose" aria-label="Close"><i data-lucide="x" class="ic"></i></button>
+    <h3 id="modalTitle"></h3>
+    <p class="modal-sub" id="modalSub"></p>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts"></div>
+<button class="to-top" id="toTop" aria-label="Back to top"><i data-lucide="arrow-up" class="ic"></i></button>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+const $  = (s, c=document) => c.querySelector(s);
+const $$ = (s, c=document) => [...c.querySelectorAll(s)];
+function refreshIcons(){ if (window.lucide) lucide.createIcons(); }
+
+const FEATURES = [
+  { icon:'qr-code', cat:'Herd Registry', title:'Cattle Management', line:'A living passport for every animal',
+    desc:'Register every animal with a unique Tag ID and a dynamic QR code. Breed, age, weight, lineage, lactation stage and photo history - one profile that stays current for life.',
+    chips:['Tag ID + QR','Lineage & lactation','Photo timeline'], img:'https://picsum.photos/seed/oriva-f1/960/680.jpg' },
+  { icon:'heart-pulse', cat:'Health Records', title:'Health & Vaccination', line:'Every jab and treatment, on record',
+    desc:'Schedule FMD, HS and deworming cycles, log treatments in seconds, and keep a complete medical history per animal - verifiable by any buyer with one scan.',
+    chips:['Vaccination calendar','Treatment logs','Buyer-verifiable'], img:'https://picsum.photos/seed/oriva-f2/960/680.jpg' },
+  { icon:'milk', cat:'Production', title:'Milk Production Tracking', line:'Morning & evening, per animal',
+    desc:'Log AM/PM yields per cow or for the whole herd. Daily totals, weekly trends and best-producer rankings - spot a dip the day it happens, not a month later.',
+    chips:['AM / PM logging','Weekly trends','Top-producer ranking'], img:'https://picsum.photos/seed/oriva-f3/960/680.jpg' },
+  { icon:'wallet', cat:'Finance', title:'Expenses & Income', line:'Every rupee in and out, categorised',
+    desc:'Feed, medicine, labour, equipment and milk sales - recorded and categorised as you enter them. Know your cost per litre without touching a calculator.',
+    chips:['Auto categories','Cost per litre','Sale receipts'], img:'https://picsum.photos/seed/oriva-f4/960/680.jpg' },
+  { icon:'trending-up', cat:'Insights', title:'Reports & Analytics', line:'Profit & loss without the accountant',
+    desc:'One-tap financial summaries - profit & loss, per-animal profitability, herd performance. Run the farm on numbers, not on memory.',
+    chips:['P&L summary','Per-animal profit','Herd ranking'], img:'https://picsum.photos/seed/oriva-f5/960/680.jpg' },
+  { icon:'store', cat:'Marketplace', title:'Built-in Marketplace', line:'Sell direct and keep the margin',
+    desc:'List livestock and dairy products with their verified records attached. Buyers send inquiries straight to you - no broker, no commission, no waiting.',
+    chips:['Livestock listings','Dairy & bulk milk','Direct inquiries'], img:'https://picsum.photos/seed/oriva-f6/960/680.jpg' },
+];
+
+const LISTINGS = [
+  { featured:true, img:'oriva-m1/1040/720', cat:'Cattle · Sahiwal', name:'Sahiwal Cow - ORV-0847', badges:['Top producer'],
+    specs:[['cake','4 yr 2 mo'],['weight','480 kg'],['droplets','16.2 L/day']], price:'Rs 135,000', per:'price negotiable' },
+  { img:'oriva-m2/800/600', cat:'Cattle · Holstein Friesian', name:'HF Cow - ORV-0912',
+    specs:[['cake','3 yr 6 mo'],['weight','590 kg'],['droplets','24 L/day']], price:'Rs 185,000', per:'firm price' },
+  { img:'oriva-m3/800/600', cat:'Cattle · Nili-Ravi', name:'Nili-Ravi Buffalo - ORV-1043',
+    specs:[['cake','5 yr'],['weight','620 kg'],['droplets','12 L/day']], price:'Rs 265,000', per:'price negotiable' },
+  { img:'oriva-m4/800/600', cat:'Cattle · Jersey', name:'Jersey Heifer - ORV-1108',
+    specs:[['cake','18 mo'],['weight','320 kg'],['calendar','1st calf in 4 mo']], price:'Rs 95,000', per:'firm price' },
+  { img:'oriva-m5/800/600', cat:'Dairy · Bulk Supply', name:'Fresh Cow Milk - Daily',
+    specs:[['package','30 – 300 L/day'],['droplets','4.8% fat'],['clock','Morning pickup']], price:'Rs 120', per:'per litre' },
+  { img:'oriva-m6/800/600', cat:'Dairy · Desi Ghee', name:'A2 Desi Ghee - 1 kg Jar',
+    specs:[['package','1 kg glass jar'],['droplets','Granular A2'],['calendar','Made Apr 2025']], price:'Rs 2,800', per:'per kg' },
+];
+
+const TESTIMONIALS = [
+  { quote:'Earlier I would find out a cow\u2019s milk was dropping weeks too late. Now I see it the same day. Oriva paid for itself in the very first month.',
+    name:'Muhammad Aslam', meta:'Aslam Dairy Farm · Okara', img:'https://picsum.photos/seed/oriva-t1/120/120.jpg' },
+  { quote:'I sold two buffaloes directly through the marketplace at a better price than any broker ever gave me - and the buyer trusted the records instantly.',
+    name:'Rana Farooq', meta:'Farooq Livestock · Sahiwal', img:'https://picsum.photos/seed/oriva-t2/120/120.jpg' },
+  { quote:'Vaccination records, expenses, milk yields - all in one place. My accountant keeps asking which software we use.',
+    name:'Ayesha Khan', meta:'Green Valley Dairy · Islamabad', img:'https://picsum.photos/seed/oriva-t3/120/120.jpg' },
+];
+
+const FAQS = [
+  { q:'Is Oriva Dairy suitable for small farms?',
+    a:'Yes. The system is designed for farms from 5 animals to 500+. You can start on a free plan, register your herd in an afternoon, and upgrade only when you need marketplace listings or advanced reports.' },
+  { q:'Do buyers need an account to browse animals?',
+    a:'No. The marketplace is public - anyone can browse listings and view animal details. A free buyer account is only needed to send inquiries, track them, and access the full records of reserved animals.' },
+  { q:'How does the QR code system actually work?',
+    a:'Every registered animal gets a unique Tag ID with a dynamic QR code. Scan it and the animal\u2019s live profile opens - breed, weight, milk history and vaccination records. Print it as an ear tag or neck collar, and buyers can verify everything on the spot.' },
+  { q:'Can I sell milk in bulk to businesses?',
+    a:'Yes. Alongside livestock, you can list dairy products and publish bulk milk supply offers - cafes, hotels and processors can send you bulk requests directly through the platform.' },
+  { q:'What happens to my old paper records?',
+    a:'Nothing gets lost. During onboarding we help you digitise existing registers - cattle histories, vaccination dates and expenses - so your farm starts with its real past, not a blank slate.' },
+  { q:'Does it work on my phone?',
+    a:'Oriva Dairy is a fully responsive web platform. It runs in any modern browser on phones, tablets and desktops - no app download or installation needed.' },
+];
+
+const ROLES = {
+  market: {
+    heading:'Browse the yard, no account needed.',
+    intro:'The public marketplace is open to everyone - visit, explore, and only sign up when you\u2019re ready to deal.',
+    points:['Verified animal profiles - breed, age, weight, milk yield & photos','Transparent pricing straight from the farm','Send purchase inquiries & bulk milk requests in a tap'],
+    mock:`<div class="mock">
+      <div class="mock-chrome"><span class="mdot"></span><span class="mdot"></span><span class="mdot"></span><span class="mock-url">orivadairy.com/marketplace</span></div>
+      <div class="mock-body">
+        <div class="mock-search"><i data-lucide="search" class="ic"></i><span>Search breed, city or Tag ID…</span><i data-lucide="sliders-horizontal" class="ic"></i></div>
+        <div class="mock-tiles">
+          <div><div class="mt-img" style="background-image:url('https://picsum.photos/seed/oriva-rt1/440/320.jpg')"></div>
+            <div class="mt-info"><strong>Sahiwal Cow · ORV-0847</strong><em>Rs 135,000 · 16.2 L/day</em><span class="pill pill-ok"><i data-lucide="shield-check" class="ic"></i>Vaccinated</span></div></div>
+          <div><div class="mt-img" style="background-image:url('https://picsum.photos/seed/oriva-rt2/440/320.jpg')"></div>
+            <div class="mt-info"><strong>HF Cow · ORV-0912</strong><em>Rs 185,000 · 24 L/day</em><span class="pill pill-ok"><i data-lucide="shield-check" class="ic"></i>Vaccinated</span></div></div>
+        </div>
+        <div class="mock-note"><i data-lucide="qr-code" class="ic"></i>Scan any tag\u2019s QR code to open its live farm record.</div>
+      </div></div>`
+  },
+  buyer: {
+    heading:'Your inquiries and orders, in one place.',
+    intro:'A free buyer account turns scattered phone calls into a clean pipeline you can actually track.',
+    points:['Track every livestock inquiry & bulk milk request','View verified health records of your reserved animals','Access any animal\u2019s live record through its dynamic QR code'],
+    mock:`<div class="mock">
+      <div class="mock-chrome"><span class="mdot"></span><span class="mdot"></span><span class="mdot"></span><span class="mock-url">app.orivadairy.com/buyer/inquiries</span></div>
+      <div class="mock-body">
+        <div class="mock-h"><strong>My Inquiries</strong><span class="pill pill-soft">3 active</span></div>
+        <div class="mock-row"><div><strong>Sahiwal Cow · ORV-0847</strong><em>Sent 12 Mar · Aslam Dairy Farm</em></div><span class="pill pill-ok">Confirmed</span></div>
+        <div class="mock-row"><div><strong>Nili-Ravi Buffalo · ORV-1043</strong><em>Sent 08 Mar · Green Valley</em></div><span class="pill pill-wait">Negotiating</span></div>
+        <div class="mock-row"><div><strong>Bulk Milk · 80 L/day</strong><em>Sent 02 Mar · Monthly contract</em></div><span class="pill pill-wait">Pending</span></div>
+        <div class="mock-vcard">
+          <div class="mv-head"><i data-lucide="badge-check" class="ic"></i>Reserved animal - verified record</div>
+          <div class="mv-row"><i data-lucide="syringe" class="ic"></i>FMD vaccination<b>12 Jan 2025</b></div>
+          <div class="mv-row"><i data-lucide="syringe" class="ic"></i>HS vaccination<b>03 Mar 2025</b></div>
+          <div class="mv-row"><i data-lucide="droplets" class="ic"></i>Average yield<b>16.2 L/day</b></div>
+        </div>
+      </div></div>`
+  },
+  admin: {
+    heading:'The whole farm, on one screen.',
+    intro:'The admin dashboard is mission control - every animal, litre and rupee, always current.',
+    points:['Full herd registry with unique Tag IDs & QR passports','Daily milk, health, expense & sale logging with quick forms','One-click financial reports and herd performance summaries'],
+    mock:`<div class="mock">
+      <div class="mock-chrome"><span class="mdot"></span><span class="mdot"></span><span class="mdot"></span><span class="mock-url">app.orivadairy.com/admin/herd</span></div>
+      <div class="mock-body">
+        <div class="mock-h"><strong>Herd Overview</strong><span class="pill pill-soft">148 animals</span></div>
+        <div class="mock-table">
+          <div class="mt-row mt-head"><span>Tag</span><span>Breed</span><span>Today</span><span>Status</span></div>
+          <div class="mt-row"><span>ORV-0847</span><span>Sahiwal</span><span>16.2 L</span><span class="pill pill-ok">Healthy</span></div>
+          <div class="mt-row"><span>ORV-0912</span><span>H. Friesian</span><span>24.0 L</span><span class="pill pill-ok">Healthy</span></div>
+          <div class="mt-row"><span>ORV-1043</span><span>Nili-Ravi</span><span>11.8 L</span><span class="pill pill-wait">Watch</span></div>
+          <div class="mt-row"><span>ORV-1108</span><span>Jersey</span><span>-</span><span class="pill pill-soft">Heifer</span></div>
+        </div>
+        <div class="mock-bars">
+          <div class="mb-col" style="--h:78%"><span></span><small>M</small></div>
+          <div class="mb-col" style="--h:85%"><span></span><small>T</small></div>
+          <div class="mb-col" style="--h:88%"><span></span><small>W</small></div>
+          <div class="mb-col" style="--h:83%"><span></span><small>T</small></div>
+          <div class="mb-col max" style="--h:95%"><span></span><small>F</small></div>
+          <div class="mb-col" style="--h:90%"><span></span><small>S</small></div>
+          <div class="mb-col" style="--h:96%"><span></span><small>S</small></div>
+        </div>
+        <div class="mock-note"><i data-lucide="trending-up" class="ic"></i>This week\u2019s herd yield - 4,214 L total.</div>
+      </div></div>`
+  }
+};
+
+function toast(msg){
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.innerHTML = `<i data-lucide="check" class="ic"></i><span>${msg}</span>`;
+  $('#toasts').appendChild(el);
+  refreshIcons();
+  const kill = () => { el.classList.add('out'); setTimeout(()=>el.remove(), 300); };
+  el.addEventListener('click', kill);
+  setTimeout(kill, 4200);
+}
+
+const nav = $('#nav'), toTop = $('#toTop');
+const navLinks = $$('.nav-links a');
+const bnavItems = $$('.bnav-item[data-section]');
+const spySections = $$('section[id]');
+let ticking = false;
+
+function onScroll(){
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 40);
+  toTop.classList.toggle('show', y > 650);
+
+  let active = 'home';
+  spySections.forEach(s => { if (s.offsetTop - 180 <= y) active = s.id; });
+
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+active));
+  bnavItems.forEach(b => b.classList.toggle('active', b.dataset.section === active));
+
+  ticking = false;
+}
+window.addEventListener('scroll', () => { if(!ticking){ requestAnimationFrame(onScroll); ticking = true; } }, {passive:true});
+onScroll();
+toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+const burger = $('#burger'), mnav = $('#mnav'), bnav = $('#bnav'), bnavMenuBtn = $('#bnavMenu');
+function setMenu(open){
+  mnav.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
+  bnav.classList.toggle('menu-mode', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+  burger.setAttribute('aria-expanded', open);
+}
+burger.addEventListener('click', () => setMenu(!mnav.classList.contains('open')));
+bnavMenuBtn.addEventListener('click', () => setMenu(!mnav.classList.contains('open')));
+$$('.mnav-links a, .mnav-foot .btn').forEach(el => el.addEventListener('click', () => setMenu(false)));
+$$('.bnav-item[href]').forEach(el => el.addEventListener('click', () => {
+  if (mnav.classList.contains('open')) setMenu(false);
+}));
+
+const MQ = ['Sahiwal','Holstein Friesian','Jersey','Nili-Ravi Buffalo','QR Traceability','Vaccination Verified','Bulk Milk Supply','Direct-to-Buyer Sales','Zero Brokerage','A2 Dairy Products'];
+$('#mqTrack').innerHTML = MQ.map(t => `<span class="mq-item"><i data-lucide="sprout" class="ic"></i>${t}</span>`).join('').repeat(2);
+
+const featureList = $('#featureList');
+let fActive = 0, fAuto = null, fUserStopped = false;
+
+featureList.innerHTML = FEATURES.map((f,i) => `
+  <button class="feature-item ${i===0?'is-active':''}" data-i="${i}" role="tab" aria-selected="${i===0}">
+    <span class="f-num">0${i+1}</span>
+    <span class="f-body">
+      <span class="f-title">${f.title}</span>
+      <span class="f-line">${f.line}</span>
+      <span class="f-acc">
+        <img src="${f.img}" alt="${f.title}" loading="lazy">
+        <span class="fp-chips">${f.chips.map(c=>`<span class="pill pill-light"><i data-lucide="${f.icon}" class="ic"></i>${c}</span>`).join('')}</span>
+        <p>${f.desc}</p>
+      </span>
+    </span>
+    <span class="f-arrow"><i data-lucide="plus" class="ic"></i></span>
+  </button>`).join('');
+
+function fillPanel(i){
+  const f = FEATURES[i];
+  $('#fpImg').src = f.img; $('#fpImg').alt = f.title;
+  $('#fpCat').textContent = f.cat;
+  $('#fpTitle').textContent = f.title;
+  $('#fpDesc').textContent = f.desc;
+  $('#fpChips').innerHTML = f.chips.map(c => `<span class="pill pill-light"><i data-lucide="${f.icon}" class="ic"></i>${c}</span>`).join('');
+  refreshIcons();
+}
+function selectFeature(i, instant=false){
+  fActive = i;
+  $$('.feature-item').forEach((el,idx) => {
+    el.classList.toggle('is-active', idx===i);
+    el.setAttribute('aria-selected', idx===i);
+  });
+  if (instant){ fillPanel(i); return; }
+  const panel = $('#featurePanel');
+  panel.classList.add('swap');
+  setTimeout(() => { fillPanel(i); panel.classList.remove('swap'); }, 220);
+}
+fillPanel(0);
+FEATURES.forEach(f => { const im = new Image(); im.src = f.img; });
+
+featureList.addEventListener('click', e => {
+  const item = e.target.closest('.feature-item'); if(!item) return;
+  const i = +item.dataset.i;
+  fUserStopped = true; clearInterval(fAuto);
+  if (window.innerWidth <= 1024 && i === fActive && item.classList.contains('is-active')){
+    item.classList.remove('is-active'); return;
+  }
+  selectFeature(i);
+});
+const fObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !fUserStopped && !fAuto){
+    fAuto = setInterval(() => selectFeature((fActive+1) % FEATURES.length), 5200);
+  }
+}, {threshold:.25});
+fObs.observe($('#features'));
+
+const CHART = {
+  this: { days:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'], values:[540,585,610,572,634,618,655] },
+  last: { days:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'], values:[508,540,566,552,588,574,602] },
+  target: 600, w:640, h:300, l:46, r:20, t:26, b:34, min:480, max:690
+};
+function smoothPath(pts){
+  if (pts.length < 3) return 'M' + pts.map(p=>p.join(',')).join(' L');
+  let d = `M ${pts[0][0]},${pts[0][1]}`;
+  for (let i=0; i<pts.length-1; i++){
+    const p0 = pts[Math.max(0,i-1)], p1 = pts[i], p2 = pts[i+1], p3 = pts[Math.min(pts.length-1,i+2)];
+    d += ` C ${p1[0]+(p2[0]-p0[0])/6},${p1[1]+(p2[1]-p0[1])/6} ${p2[0]-(p3[0]-p1[0])/6},${p2[1]-(p3[1]-p1[1])/6} ${p2[0]},${p2[1]}`;
+  }
+  return d;
+}
+function renderChart(week, animate){
+  const d = CHART[week], C = CHART;
+  const n = d.values.length;
+  const x = i => C.l + i * (C.w - C.l - C.r) / (n-1);
+  const y = v => C.t + (C.max - v) / (C.max - C.min) * (C.h - C.t - C.b);
+  const pts = d.values.map((v,i) => [x(i), y(v)]);
+  const line = smoothPath(pts);
+  const area = line + ` L ${pts[n-1][0]},${C.h-C.b} L ${pts[0][0]},${C.h-C.b} Z`;
+  const grid = [520,580,640].map(v =>
+    `<line x1="${C.l}" y1="${y(v)}" x2="${C.w-C.r}" y2="${y(v)}"></line><text x="${C.l-8}" y="${y(v)+4}" text-anchor="end">${v}</text>`).join('');
+  const xlabels = d.days.map((day,i) => `<text x="${x(i)}" y="${C.h-10}" text-anchor="middle">${day}</text>`).join('');
+  const dots = pts.map(p => `<circle class="c-dot" cx="${p[0]}" cy="${p[1]}" r="4.5"></circle>`).join('');
+  const ty = y(C.target);
+  $('#chartCanvas').innerHTML = `
+    <div class="chart-tip" id="chartTip"></div>
+    <svg id="milkSvg" viewBox="0 0 ${C.w} ${C.h}" role="img" aria-label="Weekly milk yield chart">
+      <g class="c-grid">${grid}${xlabels}</g>
+      <line class="c-target" x1="${C.l}" y1="${ty}" x2="${C.w-C.r}" y2="${ty}"></line>
+      <text class="c-target-lbl" x="${C.w-C.r}" y="${ty-7}" text-anchor="end">Target ${C.target} L</text>
+      <path class="c-area" d="${area}"></path>
+      <path class="c-line" d="${line}"></path>
+      <g>${dots}</g>
+      <circle class="c-hover" id="cHover" r="7" opacity="0"></circle>
+      <rect x="${C.l}" y="${C.t}" width="${C.w-C.l-C.r}" height="${C.h-C.t-C.b}" fill="transparent" id="cHit" style="cursor:crosshair"></rect>
+    </svg>`;
+
+  const lineEl = $('#milkSvg .c-line'), areaEl = $('#milkSvg .c-area'), dotEls = $$('#milkSvg .c-dot');
+  if (animate){
+    const L = lineEl.getTotalLength();
+    lineEl.style.strokeDasharray = L; lineEl.style.strokeDashoffset = L;
+    lineEl.getBoundingClientRect();
+    lineEl.style.transition = 'stroke-dashoffset 1s cubic-bezier(.4,0,.2,1)';
+    lineEl.style.strokeDashoffset = 0;
+    areaEl.style.opacity = 0; areaEl.style.transition = 'opacity .7s .3s';
+    requestAnimationFrame(()=>{ areaEl.style.opacity = ''; });
+    dotEls.forEach((el,i) => {
+      el.style.opacity = 0; el.style.transform = 'scale(0)';
+      el.style.transition = `opacity .35s ${.35+i*.08}s, transform .4s cubic-bezier(.34,1.56,.64,1) ${.35+i*.08}s`;
+      requestAnimationFrame(()=>{ el.style.opacity = 1; el.style.transform = 'scale(1)'; });
+    });
+  }
+  const svg = $('#milkSvg'), tip = $('#chartTip'), hov = $('#cHover');
+  $('#cHit').addEventListener('mousemove', e => {
+    const rect = svg.getBoundingClientRect();
+    const vx = (e.clientX - rect.left) / rect.width * C.w;
+    let bi = 0, bd = Infinity;
+    pts.forEach((p,i) => { const dd = Math.abs(p[0]-vx); if (dd < bd){ bd = dd; bi = i; } });
+    const [px,py] = pts[bi], val = d.values[bi], delta = val - C.target;
+    hov.setAttribute('cx', px); hov.setAttribute('cy', py); hov.style.opacity = 1;
+    tip.style.opacity = 1;
+    tip.style.left = (px / C.w * 100) + '%';
+    tip.style.top  = (py / C.h * 100) + '%';
+    tip.innerHTML = `<b>${d.days[bi]}</b> · ${val} L<span class="delta">${delta>=0?'+':''}${delta} L vs target</span>`;
+  });
+  $('#cHit').addEventListener('mouseleave', () => { tip.style.opacity = 0; hov.style.opacity = 0; });
+}
+const chartObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting){ renderChart('this', true); chartObs.disconnect(); }
+}, {threshold:.35});
+chartObs.observe($('#chartCanvas'));
+$$('.seg-btn').forEach(b => b.addEventListener('click', () => {
+  if (b.classList.contains('is-active')) return;
+  $$('.seg-btn').forEach(x => x.classList.remove('is-active'));
+  b.classList.add('is-active');
+  renderChart(b.dataset.week, true);
+}));
+
+function buildQRTarget(container){
+  const N = 25, svgNS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${N} ${N}`);
+  let seed = 20250407;
+  const rnd = () => (seed = seed * 16807 % 2147483647) / 2147483647;
+  const inFinder = (x,y) => (x<8 && y<8) || (x>=N-8 && y<8) || (x<8 && y>=N-8);
+  let cells = '';
+  for (let yy=0; yy<N; yy++) for (let xx=0; xx<N; xx++){
+    if (inFinder(xx,yy)) continue;
+    if (rnd() > 0.52) cells += `<rect x="${xx}" y="${yy}" width="1" height="1" fill="currentColor"></rect>`;
+  }
+  const finder = (x0,y0) => `<rect x="${x0}" y="${y0}" width="7" height="7" fill="currentColor"></rect>
+    <rect x="${x0+1}" y="${y0+1}" width="5" height="5" fill="#fff"></rect>
+    <rect x="${x0+2}" y="${y0+2}" width="3" height="3" fill="currentColor"></rect>`;
+  svg.innerHTML = cells + finder(0,0) + finder(N-7,0) + finder(0,N-7);
+  container.appendChild(svg);
+}
+buildQRTarget($('#qrBox'));
+buildQRTarget($('#hpQrBox'));
+
+function renderRole(key){
+  const r = ROLES[key];
+  $('#roleCopy').innerHTML = `
+    <h3>${r.heading}</h3><p>${r.intro}</p>
+    <ul>${r.points.map(p => `<li><i data-lucide="check-circle-2" class="ic"></i>${p}</li>`).join('')}</ul>`;
+  $('#roleMock').innerHTML = r.mock;
+  refreshIcons();
+}
+renderRole('market');
+$$('.role-tab').forEach(t => t.addEventListener('click', () => {
+  if (t.classList.contains('is-active')) return;
+  $$('.role-tab').forEach(x => x.classList.remove('is-active'));
+  t.classList.add('is-active');
+  const panel = $('#rolePanel');
+  panel.classList.add('swap');
+  setTimeout(() => { renderRole(t.dataset.role); panel.classList.remove('swap'); }, 260);
+}));
+
+const mkScroll = $('#mkScroll');
+mkScroll.innerHTML = LISTINGS.map((l,i) => `
+  <article class="mk-card ${l.featured ? 'is-featured' : ''} reveal" data-delay="${i*70}">
+    <div class="mk-media">
+      <img src="https://picsum.photos/seed/${l.img}.jpg" alt="${l.name}" loading="lazy">
+      <div class="mk-badges">
+        ${(l.badges||[]).map(b => `<span class="pill pill-amber">${b}</span>`).join('')}
+        <span class="pill pill-ok"><i data-lucide="shield-check" class="ic"></i>Verified record</span>
+      </div>
+    </div>
+    <div class="mk-body">
+      <span class="mk-cat">${l.cat}</span>
+      <h3 class="mk-name">${l.name}</h3>
+      <div class="mk-specs">${l.specs.map(([ic,tx]) => `<span class="mk-spec"><i data-lucide="${ic}" class="ic"></i>${tx}</span>`).join('')}</div>
+      <div class="mk-foot">
+        <div class="mk-price">${l.price}<small>${l.per}</small></div>
+        <button class="btn btn-amber btn-sm" data-inquire="${l.name}">Send Inquiry <i data-lucide="arrow-right" class="ic"></i></button>
+      </div>
+    </div>
+  </article>`).join('');
+
+const mkPrev = $('#mkPrev'), mkNext = $('#mkNext');
+function mkStep(dir){
+  const card = $('.mk-card');
+  const step = card.getBoundingClientRect().width + 22;
+  mkScroll.scrollBy({ left: dir * step, behavior:'smooth' });
+}
+mkPrev.addEventListener('click', () => mkStep(-1));
+mkNext.addEventListener('click', () => mkStep(1));
+mkScroll.addEventListener('scroll', () => {
+  mkPrev.disabled = mkScroll.scrollLeft <= 4;
+  mkNext.disabled = mkScroll.scrollLeft >= mkScroll.scrollWidth - mkScroll.clientWidth - 4;
+}, {passive:true});
+
+let tIdx = 0, tTimer = null;
+$('#tStars').innerHTML = '<i data-lucide="star" class="ic"></i>'.repeat(5);
+function renderTesti(i){
+  const t = TESTIMONIALS[i];
+  $('#tQuote').textContent = t.quote;
+  $('#tName').textContent = t.name;
+  $('#tMeta').textContent = t.meta;
+  $('#tAvatar').src = t.img;
+  $$('.t-dot').forEach((d,idx) => d.classList.toggle('is-active', idx===i));
+  refreshIcons();
+}
+$('#tDots').innerHTML = TESTIMONIALS.map((_,i) => `<button class="t-dot ${i===0?'is-active':''}" aria-label="Story ${i+1}"></button>`).join('');
+function cycleTesti(dir=1){
+  tIdx = (tIdx + dir + TESTIMONIALS.length) % TESTIMONIALS.length;
+  const stage = $('#tStage');
+  stage.classList.add('fade');
+  setTimeout(() => { renderTesti(tIdx); stage.classList.remove('fade'); }, 300);
+}
+renderTesti(0);
+$('#tPrev').addEventListener('click', () => { cycleTesti(-1); resetTestiTimer(); });
+$('#tNext').addEventListener('click', () => { cycleTesti(1); resetTestiTimer(); });
+$$('.t-dot').forEach((d,i) => d.addEventListener('click', () => {
+  const stage = $('#tStage'); stage.classList.add('fade');
+  setTimeout(() => { tIdx = i; renderTesti(i); stage.classList.remove('fade'); }, 300);
+  resetTestiTimer();
+}));
+function resetTestiTimer(){ clearInterval(tTimer); tTimer = setInterval(() => cycleTesti(1), 6500); }
+resetTestiTimer();
+$('#testiBox').addEventListener('mouseenter', () => clearInterval(tTimer));
+$('#testiBox').addEventListener('mouseleave', resetTestiTimer);
+
+$('#faqWrap').innerHTML = FAQS.map(f => `
+  <div class="faq-item">
+    <button class="faq-q">${f.q}<span class="fq-ic"><i data-lucide="plus" class="ic"></i></span></button>
+    <div class="faq-a"><p>${f.a}</p></div>
+  </div>`).join('');
+$$('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const open = item.classList.contains('open');
+    $$('.faq-item').forEach(x => { x.classList.remove('open'); x.querySelector('.faq-a').style.maxHeight = null; });
+    if (!open){
+      item.classList.add('open');
+      const a = item.querySelector('.faq-a');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+
+const modal = $('#modal');
+let lastFocus = null;
+function openModal(opts){
+  lastFocus = document.activeElement;
+  $('#modalTitle').textContent = opts.title;
+  const sub = $('#modalSub');
+  sub.style.display = opts.sub ? '' : 'none';
+  sub.innerHTML = opts.sub || '';
+  const body = $('#modalBody');
+  if (opts.mode === 'info'){
+    body.innerHTML = `<div class="modal-info-text">${opts.text}</div>`;
+  } else {
+    const isDemo = opts.mode === 'demo';
+    body.innerHTML = `
+      <form id="modalForm" novalidate>
+        <div class="form-grid">
+          <div class="field"><label>Your name</label><input id="mfName" type="text" placeholder="Full name"></div>
+          <div class="field"><label>Phone</label><input id="mfPhone" type="tel" placeholder="+92 3xx xxxxxxx"></div>
+        </div>
+        ${isDemo ? `
+        <div class="field"><label>Farm size</label>
+          <div class="select-wrap">
+            <select id="mfSize">
+              <option value="">Select herd size</option>
+              <option>Under 10 animals</option><option>10 – 50 animals</option>
+              <option>50 – 200 animals</option><option>200+ animals</option>
+            </select><i data-lucide="chevron-down" class="ic"></i>
+          </div></div>` : `
+        <div class="field"><label>Message</label><textarea id="mfMsg" placeholder="Quantity, budget, visit timing…">${opts.subject ? 'I am interested in ' + opts.subject + '.' : ''}</textarea></div>`}
+        <button type="submit" class="btn btn-amber" style="width:100%;justify-content:center">
+          ${isDemo ? 'Request Demo' : 'Send Inquiry'} <i data-lucide="send" class="ic"></i>
+        </button>
+      </form>`;
+    $('#modalForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const name = $('#mfName'), phone = $('#mfPhone');
+      let ok = true;
+      [name, phone].forEach(el => {
+        const bad = !el.value.trim() || (el.type==='tel' && !/^[+\d][\d\s\-()]{7,}$/.test(el.value.trim()));
+        el.classList.toggle('err', bad); if (bad) ok = false;
+      });
+      if (!ok){ toast('Meherbani kar ke apna naam aur sahi phone number likhein.'); return; }
+      closeModal();
+      toast(isDemo
+        ? 'Demo request mil gayi! Hum 24 ghantay ke andar aap ko call karenge.'
+        : 'Inquiry bhej di gayi! Farm aap se jald raabta karega.');
+    });
+  }
+  refreshIcons();
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => { const first = $('#modalBody input, #modalBody select'); if (first) first.focus(); }, 350);
+}
+function closeModal(){
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+  if (lastFocus) lastFocus.focus();
+}
+$('#modalClose').addEventListener('click', closeModal);
+$('#modalBack').addEventListener('click', closeModal);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape'){ closeModal(); setMenu(false); }
+});
+document.addEventListener('click', e => {
+  const inq = e.target.closest('[data-inquire]');
+  if (inq){
+    openModal({ mode:'inquiry', title:'Send Purchase Inquiry',
+      sub:`You\u2019re inquiring about <strong>${inq.dataset.inquire}</strong>. Apna detail likhein - farm seeda aap se raabta karega.` });
+    return;
+  }
+  const demo = e.target.closest('[data-demo]');
+  if (demo){
+    openModal({ mode:'demo', title:'Book a Free Demo',
+      sub:'Hum aap ki farm ke numbers ke sath 20 minute ka walkthrough karenge - koi obligation nahi.' });
+    return;
+  }
+  const info = e.target.closest('[data-info]');
+  if (info){
+    const texts = {
+      privacy:'Oriva Dairy aap ki maloomat sirf service chalane ke liye istemal karta hai - cattle records, inquiries aur contact details kabhi kisi teesre shakhs ko sell nahi hoti. Aap jab chahein, apna poora data export ya delete karwa sakte hain.',
+      terms:'Oriva Dairy farm owners ko cattle, milk, health, expense records aur direct marketplace faraham karta hai. Listings par di gayi tafseelat farm owner ki zimmedari hai; platform har listing ke peeche verified farm record attach karta hai taake buyers bharosa kar sakein.'
+    };
+    openModal({ mode:'info', title: info.dataset.info === 'privacy' ? 'Privacy Policy' : 'Terms of Service', text: texts[info.dataset.info] });
+  }
+});
+
+function bindSimpleForm(formSel, inputs, onOk){
+  $(formSel).addEventListener('submit', e => {
+    e.preventDefault();
+    let ok = true;
+    inputs.forEach(sel => {
+      const el = $(sel); if (!el) return;
+      let bad = !el.value.trim();
+      if (el.type === 'tel' && !bad) bad = !/^[+\d][\d\s\-()]{7,}$/.test(el.value.trim());
+      if (el.type === 'email' && !bad) bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+      el.classList.toggle('err', bad); if (bad) ok = false;
+    });
+    if (!ok){ toast('Meherbani kar ke zaroori fields sahi tarike se bharein.'); return; }
+    onOk();
+  });
+}
+bindSimpleForm('#ctaForm', ['#cfName','#cfPhone','#cfSize'], () => {
+  toast('Shukriya! Callback request mil gayi - hum 24 ghantay mein raabta karenge.');
+  $('#ctaForm').reset();
+});
+bindSimpleForm('#newsForm', ['#newsEmail'], () => {
+  toast('Aap The Oriva Brief ke subscriber ban gaye. Welcome aboard!');
+  $('#newsForm').reset();
+});
+document.addEventListener('input', e => { if (e.target.classList.contains('err')) e.target.classList.remove('err'); });
+
+function initReveal(){
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting){
+        const el = en.target;
+        if (el.dataset.delay) el.style.transitionDelay = el.dataset.delay + 'ms';
+        el.classList.add('in');
+        setTimeout(() => { el.style.transitionDelay = ''; }, 1000);
+        obs.unobserve(el);
+      }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  $$('.reveal').forEach(el => obs.observe(el));
+
+  const cObs = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target, target = parseFloat(el.dataset.count), dec = +(el.dataset.decimals || 0);
+      const t0 = performance.now(), dur = 1600;
+      const fmt = v => dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-US');
+      (function tick(t){
+        const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt(target * e);
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+      cObs.unobserve(el);
+    });
+  }, {threshold:.5});
+  $$('.count').forEach(el => cObs.observe(el));
+}
+initReveal();
+
+$('#year').textContent = new Date().getFullYear();
+refreshIcons();
+</script>
+</body>
+</html>
