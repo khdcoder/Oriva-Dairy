@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="theme-color" content="#0F3325">
+<title>About Us - Oriva Dairy | From Paper Ledgers to Smart Farms</title>
+<meta name="description" content="Learn about Oriva Dairy - our story, mission, and the team building Pakistan's smartest cattle & farm management platform with a direct-to-buyer marketplace.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#F7F3E9;
+  --cream-2:#F0EADB;
+  --paper:#FDFBF4;
+  --sage:#E7EEE2;
+  --ink:#16241B;
+  --ink-soft:#4C5F54;
+  --green:#1E5B40;
+  --green-deep:#0F3325;
+  --green-black:#0A231A;
+  --amber:#E3A63C;
+  --amber-deep:#B57E1F;
+  --line:rgba(22,36,27,.13);
+  --line-light:rgba(247,243,233,.14);
+  --r:18px;
+  --shadow-soft:0 24px 50px -22px rgba(15,51,37,.28);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+  max-width:100vw;
+  -webkit-font-smoothing:antialiased;
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+::selection{background:var(--amber);color:var(--green-deep)}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:var(--cream-2)}
+::-webkit-scrollbar-thumb{background:#B9C4B4;border-radius:99px;border:3px solid var(--cream-2)}
+::-webkit-scrollbar-thumb:hover{background:var(--green)}
+
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button{font-family:inherit}
+:focus-visible{outline:2.5px solid var(--amber-deep);outline-offset:3px;border-radius:4px}
+section[id]{scroll-margin-top:86px}
+.ic{width:18px;height:18px;flex:none}
+
+.container{width:min(1180px,92%);margin-inline:auto;max-width:100%;overflow:visible}
+.section{padding:clamp(72px,9vw,118px) 0;position:relative;overflow:visible;max-width:100%}
+.bg-sage{background:var(--sage)}
+.bg-cream2{background:var(--cream-2)}
+.bg-deep{background:var(--green-deep)}
+
+.sec-head{max-width:660px;margin-bottom:clamp(40px,6vw,62px)}
+.sec-head.center{margin-inline:auto;text-align:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:11px;
+  font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--green);margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:30px;height:2px;background:var(--amber);border-radius:2px}
+.bg-deep .eyebrow,.on-dark .eyebrow{color:var(--amber)}
+.bg-deep .eyebrow::before{background:var(--amber)}
+h2{
+  font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.015em;
+  font-size:clamp(30px,4.4vw,46px);line-height:1.12;color:var(--ink);
+}
+.bg-deep h2{color:var(--cream)}
+h2 .accent{font-style:italic;font-weight:500;color:var(--amber-deep)}
+.bg-deep h2 .accent{color:var(--amber)}
+.lead{font-size:16.5px;color:var(--ink-soft);margin-top:16px;line-height:1.75;font-weight:400}
+.bg-deep .lead{color:rgba(247,243,233,.78)}
+
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:15px 28px;border-radius:999px;border:1px solid transparent;
+  font-size:15px;font-weight:600;line-height:1;cursor:pointer;text-decoration:none;
+  transition:transform .25s,box-shadow .25s,background .25s,color .25s,border-color .25s;
+}
+.btn .ic{width:17px;height:17px;transition:transform .25s}
+.btn:hover .ic{transform:translateX(3px)}
+.btn-amber{background:var(--amber);color:var(--paper)}
+.btn-amber:hover{background:#EFB44F;transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(181,126,31,.5)}
+.btn-green{background:var(--green);color:var(--cream)}
+.btn-green:hover{background:#174A34;transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(15,51,37,.55)}
+.btn-ghost{border-color:rgba(247,243,233,.45);color:var(--cream);background:transparent}
+.btn-ghost:hover{background:rgba(247,243,233,.12);border-color:var(--cream);transform:translateY(-2px)}
+.btn-sm{padding:11px 20px;font-size:13.5px}
+.link-arrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;
+  color:var(--green);text-decoration:none;
+}
+.link-arrow .ic{width:16px;height:16px;transition:transform .25s}
+.link-arrow:hover .ic{transform:translateX(4px)}
+
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;letter-spacing:.05em;padding:5px 11px;border-radius:999px;line-height:1.2}
+.pill .ic{width:12px;height:12px}
+.pill-ok{background:rgba(30,91,64,.1);color:var(--green)}
+.pill-soft{background:rgba(22,36,27,.06);color:var(--ink-soft)}
+.pill-amber{background:var(--amber);color:var(--green-deep)}
+.pill-light{background:rgba(253,251,244,.94);color:var(--green-deep)}
+
+/* ===== NAV ===== */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px 0;transition:padding .3s,background .3s,box-shadow .3s;
+  width:100%;max-width:100vw;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:100%}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand-mark{width:42px;height:42px;flex:none}
+.brand-name{font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:var(--cream);letter-spacing:-.01em;transition:color .3s}
+.brand-name span{color:var(--amber);font-style:italic;font-weight:500}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{
+  position:relative;text-decoration:none;font-size:14px;font-weight:500;
+  color:rgba(247,243,233,.85);transition:color .25s;padding:4px 0;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:-2px;width:100%;height:2px;
+  background:var(--amber);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-links a:hover,.nav-links a.active{color:var(--cream)}
+.nav-actions{display:flex;align-items:center;gap:16px}
+.nav-burger{
+  display:none;width:44px;height:44px;border:1px solid rgba(247,243,233,.35);border-radius:50%;
+  background:transparent;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--cream);border-radius:2px}
+body.menu-open .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+body.menu-open .nav-burger span:nth-child(2){opacity:0}
+body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.nav.scrolled{background:rgba(253,251,244,.9);backdrop-filter:blur(12px);padding:10px 0;box-shadow:0 8px 24px -14px rgba(15,51,37,.2)}
+.nav.scrolled .brand-name{color:var(--ink)}
+.nav.scrolled .nav-links a{color:var(--ink-soft)}
+.nav.scrolled .nav-links a:hover,.nav.scrolled .nav-links a.active{color:var(--green)}
+.nav.scrolled .nav-burger{border-color:var(--line)}
+.nav.scrolled .nav-burger span{background:var(--ink)}
+
+.mnav{
+  position:fixed;inset:0;z-index:95;background:var(--green-deep);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:110px 8% 140px;transform:translateX(100%);
+  transition:transform .45s cubic-bezier(.75,0,.2,1);overflow-y:auto;
+  max-width:100vw;
+}
+.mnav.open{transform:none}
+.mnav-links{list-style:none;display:flex;flex-direction:column;gap:4px;max-width:100%}
+.mnav-links a{
+  display:flex;align-items:baseline;gap:14px;text-decoration:none;
+  font-family:'Fraunces',serif;font-size:clamp(26px,6.5vw,36px);font-weight:600;color:var(--cream);
+  padding:8px 0;opacity:0;transform:translateY(34px);
+  transition:opacity .4s,transform .45s cubic-bezier(.2,.65,.2,1),color .25s;
+}
+.mnav-links a i{font-family:'Outfit';font-style:normal;font-size:12px;font-weight:600;color:var(--amber);letter-spacing:.15em}
+.mnav-links a:hover{color:var(--amber)}
+.mnav.open .mnav-links a{opacity:1;transform:none;transition-delay:calc(.08s * var(--i) + .15s)}
+.mnav-foot{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;
+  opacity:0;transform:translateY(20px);transition:.45s .6s;max-width:100%}
+.mnav.open .mnav-foot{opacity:1;transform:none}
+.mnav-foot a{color:rgba(247,243,233,.75);text-decoration:none;font-size:14px;font-weight:500}
+
+/* ===== HERO ===== */
+.about-hero{
+  position:relative;min-height:88vh;min-height:88svh;
+  display:flex;align-items:center;overflow:hidden;color:var(--cream);
+  padding:140px 0 80px;
+}
+.about-hero-bg{position:absolute;inset:0;overflow:hidden}
+.about-hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.05)}
+.about-hero-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,26,18,.92) 0%,rgba(7,26,18,.65) 50%,rgba(7,26,18,.45) 100%)}
+.about-hero-inner{position:relative;z-index:2;max-width:100%}
+.breadcrumb{
+  display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:500;
+  color:rgba(247,243,233,.7);margin-bottom:24px;letter-spacing:.08em;
+}
+.breadcrumb a{color:rgba(247,243,233,.7);text-decoration:none;transition:color .25s}
+.breadcrumb a:hover{color:var(--amber)}
+.breadcrumb .sep{color:rgba(247,243,233,.4)}
+
+.about-hero h1{
+  font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.02em;
+  font-size:clamp(2.4rem,5.5vw,4.8rem);line-height:1.05;margin-bottom:24px;
+  max-width:880px;
+}
+.about-hero h1 em{font-style:italic;font-weight:500;color:var(--amber)}
+.about-hero .hero-sub{
+  font-size:17.5px;line-height:1.75;color:rgba(247,243,233,.82);max-width:680px;
+}
+.about-hero .hero-meta{
+  display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;
+  padding-top:28px;border-top:1px solid var(--line-light);
+}
+.hm-item{display:flex;align-items:center;gap:12px}
+.hm-item .ic{width:18px;height:18px;color:var(--amber)}
+.hm-item b{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--cream)}
+.hm-item span{font-size:13px;color:rgba(247,243,233,.65);margin-left:6px}
+
+/* ===== ORIGIN STORY ===== */
+.origin-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(44px,6vw,84px);align-items:center;
+}
+.origin-media{
+  position:relative;aspect-ratio:4/5;border-radius:22px;overflow:visible;box-shadow:var(--shadow-soft);
+}
+.origin-media-main{
+  border-radius:22px;overflow:hidden;aspect-ratio:4/5;position:relative;
+  box-shadow:var(--shadow-soft);
+}
+.origin-media-main img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.origin-media:hover .origin-media-main img{transform:scale(1.04)}
+
+.origin-quote-card{
+  position:absolute;left:40px;bottom:-30px;max-width:360px;
+  background:var(--paper);border-radius:18px;padding:26px 26px 22px;
+  box-shadow:0 30px 60px -24px rgba(0,0,0,.45);
+  transform:rotate(-1.5deg);
+  transition:transform .5s;
+  z-index:3;
+}
+.origin-quote-card:hover{transform:rotate(0deg) translateY(-4px)}
+.origin-quote-card::before{
+  content:"\201C";font-family:'Fraunces',serif;font-size:70px;line-height:.3;
+  color:var(--amber);display:block;margin-bottom:10px;
+}
+.origin-quote-card p{
+  font-family:'Fraunces',serif;font-size:15px;font-weight:500;line-height:1.55;
+  color:var(--ink);font-style:italic;
+}
+.origin-quote-card .oq-author{
+  display:flex;align-items:center;gap:10px;margin-top:18px;padding-top:14px;
+  border-top:1px dashed var(--line);
+}
+.origin-quote-card .oq-author .oq-avatar{
+  width:38px;height:38px;border-radius:50%;background:var(--sage);
+  display:grid;place-items:center;color:var(--green);
+}
+.origin-quote-card .oq-author .oq-avatar .ic{width:18px;height:18px}
+.origin-quote-card .oq-author b{display:block;font-family:'Outfit';font-style:normal;font-size:13px;font-weight:600}
+.origin-quote-card .oq-author em{display:block;font-style:normal;font-size:11px;color:var(--ink-soft)}
+
+.origin-copy h2{margin-bottom:22px}
+.origin-copy p{color:var(--ink-soft);font-size:16px;line-height:1.8;margin-bottom:16px}
+.origin-copy .dropcap{
+  font-family:'Fraunces',serif;font-size:62px;float:left;line-height:.9;
+  color:var(--green);font-weight:600;padding:6px 12px 0 0;
+}
+.origin-highlight{
+  background:var(--sage);border-radius:16px;padding:20px 22px;margin-top:24px;
+  border-left:3px solid var(--amber);
+}
+.origin-highlight p{
+  font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--green);
+  line-height:1.6;margin:0;
+}
+
+/* ===== PROBLEM / SOLUTION ===== */
+.problem-section{background:var(--green-deep);color:var(--cream)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,64px);margin-top:10px}
+.problem-card{
+  background:rgba(247,243,233,.04);border:1px solid var(--line-light);
+  border-radius:22px;padding:clamp(28px,3.5vw,42px);
+  transition:transform .4s,background .3s;
+}
+.problem-card:hover{transform:translateY(-6px);background:rgba(247,243,233,.06)}
+.problem-card.solution{
+  background:rgba(227,166,60,.08);border-color:rgba(227,166,60,.3);
+}
+.pc-icon{
+  width:58px;height:58px;border-radius:16px;background:rgba(247,243,233,.08);
+  display:grid;place-items:center;margin-bottom:24px;
+}
+.pc-icon .ic{width:26px;height:26px;color:var(--amber)}
+.solution .pc-icon{background:rgba(227,166,60,.18)}
+.problem-card h3{
+  font-family:'Fraunces',serif;font-size:clamp(22px,2.6vw,28px);font-weight:600;
+  color:var(--cream);margin-bottom:14px;
+}
+.problem-card h3 em{font-style:italic;font-weight:500;color:var(--amber)}
+.problem-card p{color:rgba(247,243,233,.72);font-size:15px;line-height:1.75;margin-bottom:20px}
+.problem-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.problem-list li{
+  display:flex;gap:12px;align-items:flex-start;font-size:14px;color:rgba(247,243,233,.85);
+}
+.problem-list .ic{width:16px;height:16px;flex:none;margin-top:3px;color:var(--amber)}
+
+/* ===== MISSION / VISION ===== */
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.mv-card{
+  position:relative;padding:clamp(36px,4.5vw,52px);border-radius:22px;
+  background:var(--paper);border:1px solid var(--line);
+  box-shadow:var(--shadow-soft);overflow:hidden;
+  transition:transform .4s;
+}
+.mv-card:hover{transform:translateY(-6px)}
+.mv-card::before{
+  content:"";position:absolute;top:0;left:0;width:60px;height:4px;background:var(--amber);
+}
+.mv-card.vision::before{background:var(--green)}
+.mv-num{
+  font-family:'Fraunces',serif;font-size:100px;font-weight:700;line-height:.8;
+  color:var(--sage);letter-spacing:-.04em;margin-bottom:-14px;
+}
+.mv-card.vision .mv-num{color:rgba(30,91,64,.1)}
+.mv-card h3{
+  font-family:'Fraunces',serif;font-size:clamp(24px,2.8vw,30px);font-weight:600;
+  margin-bottom:14px;color:var(--ink);
+}
+.mv-card h3 em{font-style:italic;font-weight:500;color:var(--amber-deep)}
+.mv-card.vision h3 em{color:var(--green)}
+.mv-card p{color:var(--ink-soft);font-size:15.5px;line-height:1.75}
+
+/* ===== VALUES ===== */
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.value-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:20px;
+  padding:32px 28px;transition:transform .35s,box-shadow .35s,border-color .35s;
+  position:relative;overflow:hidden;
+}
+.value-card:hover{
+  transform:translateY(-6px);box-shadow:var(--shadow-soft);
+  border-color:rgba(30,91,64,.3);
+}
+.value-card::after{
+  content:"";position:absolute;top:-40px;right:-40px;width:120px;height:120px;
+  border-radius:50%;background:var(--sage);opacity:0;transition:opacity .4s;
+}
+.value-card:hover::after{opacity:.5}
+.vc-icon{
+  width:56px;height:56px;border-radius:16px;background:rgba(30,91,64,.08);
+  color:var(--green);display:grid;place-items:center;margin-bottom:20px;
+  position:relative;z-index:1;
+}
+.vc-icon .ic{width:24px;height:24px}
+.value-card:nth-child(2n) .vc-icon{background:rgba(227,166,60,.12);color:var(--amber-deep)}
+.value-card h3{
+  font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:10px;
+  position:relative;z-index:1;
+}
+.value-card p{color:var(--ink-soft);font-size:14.5px;line-height:1.7;position:relative;z-index:1}
+
+/* ===== TIMELINE ===== */
+.timeline{position:relative;padding:20px 0}
+.timeline::before{
+  content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,var(--amber),var(--green),var(--amber));
+  transform:translateX(-50%);
+}
+.tl-item{
+  position:relative;width:50%;padding:30px 60px;
+}
+.tl-item:nth-child(odd){left:0;text-align:right;padding-right:60px;padding-left:20px}
+.tl-item:nth-child(even){left:50%;padding-left:60px;padding-right:20px}
+.tl-dot{
+  position:absolute;top:40px;width:22px;height:22px;border-radius:50%;
+  background:var(--amber);border:4px solid var(--cream);
+  box-shadow:0 0 0 2px var(--green);
+  z-index:2;
+}
+.tl-item:nth-child(odd) .tl-dot{right:-11px}
+.tl-item:nth-child(even) .tl-dot{left:-11px}
+.tl-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:18px;
+  padding:26px;box-shadow:0 14px 30px -18px rgba(15,51,37,.25);
+  transition:transform .3s;
+}
+.tl-card:hover{transform:translateY(-4px)}
+.tl-year{
+  display:inline-block;font-family:'Fraunces',serif;font-size:14px;font-weight:600;
+  color:var(--amber-deep);background:rgba(227,166,60,.12);padding:4px 12px;
+  border-radius:999px;margin-bottom:10px;
+}
+.tl-card h4{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:8px}
+.tl-card p{color:var(--ink-soft);font-size:14px;line-height:1.65}
+
+/* ===== TEAM - SVG AVATARS ===== */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.team-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:22px;
+  overflow:hidden;transition:transform .4s,box-shadow .4s;
+}
+.team-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-soft)}
+
+.team-photo{
+  aspect-ratio:4/5;overflow:hidden;position:relative;
+  background:linear-gradient(135deg,var(--sage) 0%,#D5DFD0 100%);
+  display:grid;place-items:center;
+}
+.team-photo svg{
+  width:55%;height:auto;color:var(--green);opacity:.4;
+  transition:transform .5s, opacity .5s;
+}
+.team-card:hover .team-photo svg{
+  transform:scale(1.05);opacity:.55;
+}
+.team-photo-pattern{
+  position:absolute;inset:0;opacity:.15;pointer-events:none;
+  background-image:radial-gradient(circle at 20% 80%,var(--amber) 0%,transparent 40%),
+                   radial-gradient(circle at 80% 20%,var(--green) 0%,transparent 40%);
+}
+.team-badge{
+  position:absolute;top:14px;left:14px;
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(253,251,244,.96);padding:6px 12px;border-radius:999px;
+  font-size:10.5px;font-weight:600;color:var(--green);letter-spacing:.04em;
+  box-shadow:0 4px 12px -4px rgba(0,0,0,.15);
+}
+.team-badge .ic{width:12px;height:12px;color:var(--amber-deep)}
+
+.team-info{padding:24px}
+.team-info h4{
+  font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:4px;
+}
+.team-role{
+  font-size:12px;font-weight:600;color:var(--amber-deep);
+  letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;
+}
+.team-info p{color:var(--ink-soft);font-size:14px;line-height:1.65;margin-bottom:16px}
+.team-social{display:flex;gap:8px}
+.team-social a{
+  width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
+  display:grid;place-items:center;color:var(--ink-soft);transition:.25s;
+}
+.team-social a:hover{background:var(--green);border-color:var(--green);color:var(--cream)}
+.team-social .ic{width:15px;height:15px}
+
+/* ===== STATS ===== */
+.stats-about{background:var(--green-deep);padding:clamp(56px,7vw,84px) 0;position:relative;overflow:hidden}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.stat{padding:6px 30px;border-left:1px solid var(--line-light)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat-n{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,4.4vw,54px);color:var(--cream);line-height:1;display:flex;align-items:baseline;gap:3px;flex-wrap:wrap}
+.stat-n em{font-style:normal;font-size:.55em;color:var(--amber)}
+.stat-l{display:block;margin-top:10px;font-size:13px;font-weight:500;color:rgba(247,243,233,.62)}
+
+/* ===== PROMISE ===== */
+.promise-section{background:var(--paper)}
+.promise-wrap{
+  background:linear-gradient(135deg,var(--green-deep) 0%,var(--green-black) 100%);
+  border-radius:28px;padding:clamp(48px,6vw,80px);color:var(--cream);
+  position:relative;overflow:hidden;
+}
+.promise-wrap::before{
+  content:"";position:absolute;top:-100px;right:-100px;width:400px;height:400px;
+  border-radius:50%;background:radial-gradient(circle,rgba(227,166,60,.25) 0%,transparent 70%);
+}
+.promise-wrap::after{
+  content:"";position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;
+  border-radius:50%;background:radial-gradient(circle,rgba(30,91,64,.4) 0%,transparent 70%);
+}
+.promise-inner{position:relative;z-index:2;max-width:760px;margin:0 auto;text-align:center}
+.promise-inner .eyebrow{color:var(--amber)}
+.promise-inner h2{color:var(--cream);margin-bottom:22px}
+.promise-inner h2 .accent{color:var(--amber)}
+.promise-inner > p{
+  font-size:17px;color:rgba(247,243,233,.82);line-height:1.8;margin-bottom:36px;
+}
+.promise-list{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;
+  text-align:left;
+}
+.promise-item{
+  background:rgba(247,243,233,.05);border:1px solid rgba(247,243,233,.1);
+  border-radius:16px;padding:24px;
+}
+.promise-item .ic{
+  width:36px;height:36px;border-radius:10px;background:rgba(227,166,60,.18);
+  color:var(--amber);display:grid;place-items:center;margin-bottom:14px;
+}
+.promise-item .ic .ic{width:18px;height:18px}
+.promise-item h4{
+  font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--cream);margin-bottom:8px;
+}
+.promise-item p{color:rgba(247,243,233,.72);font-size:13.5px;line-height:1.6}
+
+/* ===== CTA ===== */
+.about-cta{background:var(--sage)}
+.cta-box{
+  display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(36px,5vw,64px);align-items:center;
+  background:var(--paper);border-radius:28px;padding:clamp(40px,5vw,64px);
+  box-shadow:var(--shadow-soft);
+}
+.cta-box h2{margin-bottom:16px}
+.cta-box p{color:var(--ink-soft);font-size:16px;line-height:1.75;margin-bottom:28px}
+.cta-buttons{display:flex;flex-wrap:wrap;gap:12px}
+.cta-side{
+  background:var(--green-deep);border-radius:20px;padding:36px;color:var(--cream);
+}
+.cta-side h4{
+  font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--cream);
+  margin-bottom:8px;
+}
+.cta-side h4 em{font-style:italic;color:var(--amber);font-weight:500}
+.cta-side > p{font-size:14px;color:rgba(247,243,233,.72);margin-bottom:24px}
+.cta-contact-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.cta-contact-list li{display:flex;align-items:center;gap:12px}
+.cta-contact-list .cc-ic{
+  width:40px;height:40px;flex:none;border-radius:11px;
+  background:rgba(247,243,233,.09);border:1px solid rgba(247,243,233,.15);
+  display:grid;place-items:center;color:var(--amber);
+}
+.cta-contact-list .cc-ic .ic{width:17px;height:17px}
+.cta-contact-list b{display:block;font-size:14px;font-weight:500;color:var(--cream)}
+.cta-contact-list span{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,243,233,.5);font-weight:600;margin-bottom:2px}
+.cta-contact-list a{color:var(--cream);text-decoration:none;transition:color .2s}
+.cta-contact-list a:hover{color:var(--amber)}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--green-black);color:rgba(247,243,233,.72);overflow:hidden}
+.foot-bottom{border-top:1px solid var(--line-light);padding:24px 0}
+.foot-bottom-in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+.foot-bottom-in .fb-links{display:flex;gap:22px}
+.foot-bottom-in button,.foot-bottom-in a{background:none;border:0;color:rgba(247,243,233,.62);font-size:13px;cursor:pointer;font-family:'Outfit';transition:.25s;padding:0;text-decoration:none}
+.foot-bottom-in button:hover,.foot-bottom-in a:hover{color:var(--amber)}
+.foot-made{display:inline-flex;align-items:center;gap:7px;color:rgba(247,243,233,.55)}
+.foot-made .ic{width:14px;height:14px;color:var(--amber)}
+.foot-water{
+  font-family:'Fraunces',serif;font-weight:700;text-align:center;line-height:.78;user-select:none;
+  font-size:clamp(42px,11vw,160px);letter-spacing:.02em;
+  color:transparent;-webkit-text-stroke:1px rgba(247,243,233,.1);
+  padding-top:8px;margin-bottom:10px;overflow:hidden;white-space:nowrap;
+}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s cubic-bezier(.2,.65,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:1024px){
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .origin-grid,.problem-grid,.mv-grid,.cta-box{grid-template-columns:1fr}
+  .values-grid,.team-grid,.promise-list{grid-template-columns:1fr 1fr}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:34px 0}
+  .stat:nth-child(3){border-left:0;padding-left:0}
+  .origin-quote-card{position:relative;left:0;bottom:0;max-width:100%;margin-top:24px;transform:none}
+  .origin-quote-card:hover{transform:translateY(-4px)}
+  .timeline::before{left:20px}
+  .tl-item{width:100%;left:0!important;padding:20px 20px 20px 56px!important;text-align:left!important}
+  .tl-dot{left:9px!important;right:auto!important}
+}
+@media (max-width:768px){
+  .nav-actions .btn{display:none}
+  .values-grid,.team-grid,.promise-list{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr}
+  .stat{border-left:0;padding:0}
+  .hero-meta{gap:18px}
+  .hm-item{flex:1 1 calc(50% - 9px)}
+  .cta-buttons{flex-direction:column;align-items:stretch}
+  .cta-buttons .btn{justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html" aria-label="Oriva Dairy home">
+      <img src="logo.png" alt="Oriva Dairy Logo" style="height:42px; width:auto;" onerror="this.style.display='none'">
+      <span class="brand-name">Oriva<span> Dairy</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#milk">Milk Data</a></li>
+        <li><a href="index.html#trace">Traceability</a></li>
+        <li><a href="index.html#market">Marketplace</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="index.html#contact" class="btn btn-amber btn-sm">Book a Demo</a>
+      <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <ul class="mnav-links">
+    <li><a href="index.html" style="--i:0"><i>01</i>Home</a></li>
+    <li><a href="about.html" style="--i:1"><i>02</i>About</a></li>
+    <li><a href="index.html#features" style="--i:2"><i>03</i>Features</a></li>
+    <li><a href="index.html#milk" style="--i:3"><i>04</i>Milk Data</a></li>
+    <li><a href="index.html#trace" style="--i:4"><i>05</i>Traceability</a></li>
+    <li><a href="index.html#market" style="--i:5"><i>06</i>Marketplace</a></li>
+    <li><a href="index.html#contact" style="--i:6"><i>07</i>Contact</a></li>
+  </ul>
+  <div class="mnav-foot">
+    <a href="tel:+923001234567">+92 300 123 4567</a>
+    <a href="index.html#contact" class="btn btn-amber btn-sm">Book a Demo</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="about-hero">
+  <div class="about-hero-bg">
+    <img src="hero-bg3.png" alt="Pakistani dairy farm at sunrise" fetchpriority="high">
+  </div>
+  <div class="about-hero-scrim"></div>
+  <div class="container about-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span>About Us</span>
+    </div>
+    <h1>
+      Built by farmers, <em>for farmers.</em><br>
+      Powered by data, <em>driven by trust.</em>
+    </h1>
+    <p class="hero-sub">
+      Oriva Dairy was born from a simple frustration - why should a dairy farm run on notebooks and phone calls in 2026? We're a team of technologists and livestock professionals building the digital backbone Pakistan's dairy industry deserves.
+    </p>
+    <div class="hero-meta">
+      <div class="hm-item"><i data-lucide="calendar" class="ic"></i><b>Founded</b><span>2024</span></div>
+      <div class="hm-item"><i data-lucide="map-pin" class="ic"></i><b>Headquarters</b><span>Lahore, Pakistan</span></div>
+      <div class="hm-item"><i data-lucide="users" class="ic"></i><b>Team</b><span>18 people</span></div>
+      <div class="hm-item"><i data-lucide="tractor" class="ic"></i><b>Farms Served</b><span>120+</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ORIGIN STORY ===== -->
+<section class="section">
+  <div class="container">
+    <div class="origin-grid">
+      <div class="origin-media reveal">
+        <div class="origin-media-main">
+          <img src="https://picsum.photos/seed/oriva-origin/800/1000.jpg" alt="Founder on the dairy farm" loading="lazy">
+        </div>
+        <div class="origin-quote-card">
+          <p>"I watched my uncle lose a buffalo sale because he couldn't prove its vaccination record. That night, we decided to build something that would end that problem."</p>
+          <div class="oq-author">
+            <div class="oq-avatar"><i data-lucide="user" class="ic"></i></div>
+            <div>
+              <b>Ahmad Raza</b>
+              <em>Co-founder & CEO</em>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="origin-copy reveal" data-delay="120">
+        <div class="sec-head" style="margin-bottom:0">
+          <span class="eyebrow">Where It All Started</span>
+          <h2>A notebook, a <span class="accent">missed opportunity,</span> and a better idea.</h2>
+        </div>
+        <p>
+          <span class="dropcap">I</span>n the winter of 2023, our founding team was visiting a dairy farm in Sahiwal when we witnessed something that changed everything. A buyer had travelled three hours to purchase a prized Sahiwal cow - and walked away empty-handed because the farmer couldn't produce a verifiable vaccination record. The notebook where the record lived was at the farmhouse, five kilometres away.
+        </p>
+        <p>
+          That moment crystallised a truth we'd been circling around: Pakistan's dairy industry, worth billions of rupees, was still running on paper registers, WhatsApp messages and memory. Farmers were losing money not because their animals weren't good, but because they couldn't prove it.
+        </p>
+        <div class="origin-highlight">
+          <p>We didn't want to build another app. We wanted to build a passport for every animal - and a marketplace where that passport meant something.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM / SOLUTION ===== -->
+<section class="section problem-section">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">The Gap We Fill</span>
+      <h2>The two sides of <span class="accent">the same coin.</span></h2>
+      <p class="lead">Every broken system creates an opportunity to build something fairer. Here's the problem we found - and the solution we're delivering.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="pc-icon"><i data-lucide="alert-triangle" class="ic"></i></div>
+        <h3>The <em>Problem</em> we saw</h3>
+        <p>Every dairy farm we visited had the same pain points, repeated across Punjab and beyond:</p>
+        <ul class="problem-list">
+          <li><i data-lucide="x" class="ic"></i>Paper registers scattered across notebooks - milk in one, medicine in another, money in someone's head</li>
+          <li><i data-lucide="x" class="ic"></i>No way to prove an animal's history to buyers - no vaccine record, no lineage proof, no milk yield data</li>
+          <li><i data-lucide="x" class="ic"></i>Brokers taking 8-15% commission on every sale because farmers had no direct access to buyers</li>
+          <li><i data-lucide="x" class="ic"></i>Dips in milk production noticed weeks too late - costing thousands of rupees</li>
+        </ul>
+      </div>
+      <div class="problem-card solution reveal" data-delay="150">
+        <div class="pc-icon"><i data-lucide="shield-check" class="ic"></i></div>
+        <h3>The <em>Solution</em> we built</h3>
+        <p>Oriva Dairy combines six tools into one simple system that any farmer can use, regardless of size or tech literacy:</p>
+        <ul class="problem-list">
+          <li><i data-lucide="check" class="ic"></i>One digital passport per animal with a dynamic QR code that lives for its entire lifetime</li>
+          <li><i data-lucide="check" class="ic"></i>Vaccination and health records buyers can verify in one scan - building instant trust</li>
+          <li><i data-lucide="check" class="ic"></i>Built-in marketplace with zero commissions - farmers deal directly with buyers</li>
+          <li><i data-lucide="check" class="ic"></i>Daily milk analytics that flag dips the same day they happen - not a month later</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MISSION / VISION ===== -->
+<section class="section bg-cream2">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">What Drives Us</span>
+      <h2>A mission for today. <span class="accent">A vision for tomorrow.</span></h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card reveal">
+        <div class="mv-num">01</div>
+        <h3>Our <em>Mission</em></h3>
+        <p>
+          To give every dairy farmer in Pakistan - from the 5-cow family farm to the 500-head operation - the digital tools and market access they need to run a profitable, transparent, and traceable business. We believe a farmer's reputation should be provable, and their hard work should be paid fairly.
+        </p>
+      </div>
+      <div class="mv-card vision reveal" data-delay="120">
+        <div class="mv-num">02</div>
+        <h3>Our <em>Vision</em></h3>
+        <p>
+          A dairy industry where every litre of milk, every animal sold, and every rupee earned can be traced back to its source - bringing trust to buyers, transparency to farmers, and safety to consumers. We see Oriva as the backbone of Pakistan's dairy supply chain within a decade.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUES ===== -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">How We Work</span>
+      <h2>Six values <span class="accent">we won't compromise.</span></h2>
+      <p class="lead">Every feature we build, every farmer we onboard, and every partnership we form is measured against these principles.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="vc-icon"><i data-lucide="handshake" class="ic"></i></div>
+        <h3>Farmer-first</h3>
+        <p>Every decision starts with a simple question: does this make the farmer's life easier and their business more profitable? If not, we don't build it.</p>
+      </div>
+      <div class="value-card reveal" data-delay="80">
+        <div class="vc-icon"><i data-lucide="shield-check" class="ic"></i></div>
+        <h3>Trust by design</h3>
+        <p>We verify records, we don't alter them. We protect data like it's our own. A farmer's information stays theirs - always - and is only shared when they choose.</p>
+      </div>
+      <div class="value-card reveal" data-delay="160">
+        <div class="vc-icon"><i data-lucide="zap" class="ic"></i></div>
+        <h3>Radically simple</h3>
+        <p>Our users are farmers, not techies. If a feature needs a manual, it's not finished. We obsess over making powerful tools feel effortless.</p>
+      </div>
+      <div class="value-card reveal" data-delay="240">
+        <div class="vc-icon"><i data-lucide="scale" class="ic"></i></div>
+        <h3>Fair markets</h3>
+        <p>Zero commissions isn't a marketing line - it's a promise. We believe the money a farmer earns belongs to the farmer, not to middlemen.</p>
+      </div>
+      <div class="value-card reveal" data-delay="320">
+        <div class="vc-icon"><i data-lucide="sprout" class="ic"></i></div>
+        <h3>Long-term thinking</h3>
+        <p>We're building for decades, not quarters. Our cattle passports are designed to last a lifetime. Our partnerships are built on mutual growth.</p>
+      </div>
+      <div class="value-card reveal" data-delay="400">
+        <div class="vc-icon"><i data-lucide="users" class="ic"></i></div>
+        <h3>Community-led</h3>
+        <p>We learn from the farmers we serve. Every feature request, every complaint, every success story shapes what Oriva becomes next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIMELINE ===== -->
+<section class="section bg-sage">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Our Journey</span>
+      <h2>From <span class="accent">an idea</span> to an industry platform.</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-year">Winter 2023</span>
+          <h4>The seed is planted</h4>
+          <p>After witnessing the Sahiwal sale that got away, our founding team begins six months of interviews with 40+ dairy farmers across Punjab.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal" data-delay="100">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-year">Q2 2024</span>
+          <h4>Oriva Dairy is founded</h4>
+          <p>The company is officially registered in Lahore. First prototype of the cattle passport system is built and tested on three pilot farms.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal" data-delay="200">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-year">Q4 2024</span>
+          <h4>Marketplace goes live</h4>
+          <p>The built-in marketplace launches with 28 verified livestock listings. First direct sale happens within the first week - zero brokerage.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal" data-delay="300">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-year">Q2 2025</span>
+          <h4>100 farms milestone</h4>
+          <p>We cross 100 onboarded farms and issue our 5,000th QR cattle passport. First bulk milk supply contract is signed through the platform.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal" data-delay="400">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-year">2026</span>
+          <h4>Scaling across Pakistan</h4>
+          <p>Now serving 120+ farms across 14 districts. Expanding into Sindh and KPK, with plans to reach 1,000 farms by end of year.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">The People</span>
+      <h2>Technologists who know <span class="accent">their way around a shed.</span></h2>
+      <p class="lead">We're a small, focused team - half engineers, half livestock professionals - all obsessed with making dairy farming work better.</p>
+    </div>
+    <div class="team-grid">
+      <!-- Ahmad Raza -->
+      <div class="team-card reveal">
+        <div class="team-photo">
+          <div class="team-photo-pattern"></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 21v-2a4 4 0 0 0-4-4H10a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span class="team-badge"><i data-lucide="award" class="ic"></i>Co-founder</span>
+        </div>
+        <div class="team-info">
+          <h4>Ahmad Raza</h4>
+          <div class="team-role">Chief Executive Officer</div>
+          <p>A third-generation livestock farmer turned software engineer. Ahmad bridges the gap between the field and the code, ensuring every feature solves a real problem.</p>
+          <div class="team-social">
+            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="ic"></i></a>
+            <a href="#" aria-label="X / Twitter"><i data-lucide="twitter" class="ic"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sara Malik -->
+      <div class="team-card reveal" data-delay="100">
+        <div class="team-photo">
+          <div class="team-photo-pattern"></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 21v-2a4 4 0 0 0-4-4H10a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span class="team-badge"><i data-lucide="award" class="ic"></i>Co-founder</span>
+        </div>
+        <div class="team-info">
+          <h4>Sara Malik</h4>
+          <div class="team-role">Chief Technology Officer</div>
+          <p>Former fintech lead with a decade building scalable systems. Sara architected Oriva's data model so every QR scan is instant, secure, and farmer-owned.</p>
+          <div class="team-social">
+            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="ic"></i></a>
+            <a href="#" aria-label="GitHub"><i data-lucide="github" class="ic"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dr. Ali Hassan -->
+      <div class="team-card reveal" data-delay="200">
+        <div class="team-photo">
+          <div class="team-photo-pattern"></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 21v-2a4 4 0 0 0-4-4H10a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span class="team-badge"><i data-lucide="stethoscope" class="ic"></i>Head of Livestock</span>
+        </div>
+        <div class="team-info">
+          <h4>Dr. Ali Hassan</h4>
+          <div class="team-role">Veterinary & Livestock Lead</div>
+          <p>A practicing veterinarian with 15 years on dairy farms. Ali ensures our vaccination schedules, health alerts and milk analytics align with real farm medicine.</p>
+          <div class="team-social">
+            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="ic"></i></a>
+            <a href="#" aria-label="Email"><i data-lucide="mail" class="ic"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats-about">
+  <div class="container">
+    <div class="sec-head center reveal" style="margin-bottom:50px">
+      <span class="eyebrow">By The Numbers</span>
+      <h2>The impact, <span class="accent">in figures.</span></h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat reveal"><span class="stat-n"><span class="count" data-count="2400">0</span><em>+</em></span><span class="stat-l">Cattle tracked with digital passports</span></div>
+      <div class="stat reveal" data-delay="100"><span class="stat-n"><span class="count" data-count="120">0</span><em>+</em></span><span class="stat-l">Farms onboarded across 14 districts</span></div>
+      <div class="stat reveal" data-delay="200"><span class="stat-n"><span class="count" data-count="3.2" data-decimals="1">0</span><em> Cr+</em></span><span class="stat-l">Marketplace trade enabled (zero brokerage)</span></div>
+      <div class="stat reveal" data-delay="300"><span class="stat-n"><span class="count" data-count="1.4" data-decimals="1">0</span><em> M+</em></span><span class="stat-l">Litres of milk logged on the platform</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROMISE ===== -->
+<section class="section promise-section">
+  <div class="container">
+    <div class="promise-wrap reveal">
+      <div class="promise-inner">
+        <span class="eyebrow">Our Promise</span>
+        <h2>The four commitments <span class="accent">we make to every farmer.</span></h2>
+        <p>When you join Oriva Dairy, you're not just signing up for software - you're entering into a partnership. These are the commitments we make to every farmer, from day one, without exception.</p>
+        <div class="promise-list">
+          <div class="promise-item">
+            <i data-lucide="lock" class="ic"></i>
+            <h4>Your data stays yours</h4>
+            <p>We never sell, rent, or share your farm data without your explicit permission. Export or delete it anytime.</p>
+          </div>
+          <div class="promise-item">
+            <i data-lucide="banknote" class="ic"></i>
+            <h4>Zero commissions, forever</h4>
+            <p>We will never take a cut from your livestock or dairy sales. Our model is built on subscriptions, not your margins.</p>
+          </div>
+          <div class="promise-item">
+            <i data-lucide="life-buoy" class="ic"></i>
+            <h4>Real human support</h4>
+            <p>WhatsApp, phone or in-person - a real team member who understands farming, not a chatbot, will answer you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section about-cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div>
+        <span class="eyebrow">Join Us</span>
+        <h2>Ready to see <span class="accent">what's possible?</span></h2>
+        <p>Book a free 20-minute walkthrough with our team. We'll show you the platform on a live demo farm, walk you through the setup process, and answer any questions - no commitment required.</p>
+        <div class="cta-buttons">
+          <a href="index.html#contact" class="btn btn-amber">Book a Free Demo <i data-lucide="arrow-right" class="ic"></i></a>
+          <a href="index.html#market" class="btn btn-green">Visit the Marketplace <i data-lucide="store" class="ic"></i></a>
+        </div>
+      </div>
+      <div class="cta-side">
+        <h4>Prefer to <em>talk first?</em></h4>
+        <p>Reach out directly - we respond within 24 hours, usually much sooner.</p>
+        <ul class="cta-contact-list">
+          <li>
+            <span class="cc-ic"><i data-lucide="phone" class="ic"></i></span>
+            <div><span>WhatsApp / Call</span><b><a href="tel:+923001234567">+92 300 123 4567</a></b></div>
+          </li>
+          <li>
+            <span class="cc-ic"><i data-lucide="mail" class="ic"></i></span>
+            <div><span>Email</span><b><a href="mailto:hello@orivadairy.com">hello@orivadairy.com</a></b></div>
+          </li>
+          <li>
+            <span class="cc-ic"><i data-lucide="map-pin" class="ic"></i></span>
+            <div><span>Visit</span><b>12-KM Ferozepur Road, Lahore</b></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-water" aria-hidden="true">ORIVA DAIRY</div>
+  </div>
+  <div class="foot-bottom">
+    <div class="container foot-bottom-in">
+      <span>© <span id="year"></span> Oriva Dairy. All rights reserved.</span>
+      <span class="fb-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+      </span>
+      <span class="foot-made"><i data-lucide="sprout" class="ic"></i>Grown with care for our farmers</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+const $  = (s, c=document) => c.querySelector(s);
+const $$ = (s, c=document) => [...c.querySelectorAll(s)];
+function refreshIcons(){ if (window.lucide) lucide.createIcons(); }
+
+// NAV SCROLL
+const nav = $('#nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, {passive:true});
+
+// MOBILE MENU
+const burger = $('#burger'), mnav = $('#mnav');
+function setMenu(open){
+  mnav.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+  burger.setAttribute('aria-expanded', open);
+}
+burger.addEventListener('click', () => setMenu(!mnav.classList.contains('open')));
+$$('.mnav-links a, .mnav-foot .btn').forEach(el => el.addEventListener('click', () => setMenu(false)));
+
+// REVEAL ANIMATIONS
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting){
+      const el = en.target;
+      if (el.dataset.delay) el.style.transitionDelay = el.dataset.delay + 'ms';
+      el.classList.add('in');
+      setTimeout(() => { el.style.transitionDelay = ''; }, 1000);
+      revealObs.unobserve(el);
+    }
+  });
+}, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+$$('.reveal').forEach(el => revealObs.observe(el));
+
+// COUNT ANIMATIONS
+const countObs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    const el = en.target, target = parseFloat(el.dataset.count), dec = +(el.dataset.decimals || 0);
+    const t0 = performance.now(), dur = 1600;
+    const fmt = v => dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-US');
+    (function tick(t){
+      const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(target * e);
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+    countObs.unobserve(el);
+  });
+}, {threshold:.5});
+$$('.count').forEach(el => countObs.observe(el));
+
+$('#year').textContent = new Date().getFullYear();
+refreshIcons();
+</script>
+</body>
+</html>
