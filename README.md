@@ -23,12 +23,6 @@
 ![REST API](https://img.shields.io/badge/API-RESTful-4C5F54?style=for-the-badge)
 ![QR Codes](https://img.shields.io/badge/QR-Traceability-1E5B40?style=for-the-badge&logo=qr&logoColor=white)
 
-![GitHub stars](https://img.shields.io/github/stars/khdcoder/Oriva-Dairy?style=for-the-badge&logo=github&color=gold)
-![GitHub forks](https://img.shields.io/github/forks/khdcoder/Oriva-Dairy?style=for-the-badge&logo=github&color=teal)
-![GitHub watchers](https://img.shields.io/github/watchers/khdcoder/Oriva-Dairy?style=for-the-badge&logo=github&color=blue)
-![GitHub last commit](https://img.shields.io/github/last-commit/khdcoder/Oriva-Dairy?style=for-the-badge&logo=git&color=orange)
-![GitHub issues](https://img.shields.io/github/issues/khdcoder/Oriva-Dairy?style=for-the-badge&logo=github&color=red)
-![GitHub license](https://img.shields.io/github/license/khdcoder/Oriva-Dairy?style=for-the-badge&color=0F3325)
 
 </div>
 
@@ -490,8 +484,13 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 [![Star History Chart](https://api.star-history.com/svg?repos=khdcoder/Oriva-Dairy&type=Date)](https://star-history.com/#khdcoder/Oriva-Dairy&Date)
 
 ---
-
+![GitHub stars](https://img.shields.io/github/stars/khdcoder/Oriva-Dairy?style=for-the-badge&logo=github&color=gold)
+![GitHub forks](https://img.shields.io/github/forks/khdcoder/Oriva-Dairy?style=for-the-badge&logo=github&color=teal)
+![GitHub watchers](https://img.shields.io/github/watchers/khdcoder/Oriva-Dairy?style=for-the-badge&logo=github&color=blue)
+![GitHub last commit](https://img.shields.io/github/last-commit/khdcoder/Oriva-Dairy?style=for-the-badge&logo=git&color=orange)
+![GitHub issues](https://img.shields.io/github/issues/khdcoder/Oriva-Dairy?style=for-the-badge&logo=github&color=red)
+![GitHub license](https://img.shields.io/github/license/khdcoder/Oriva-Dairy?style=for-the-badge&color=0F3325)
 <div align="center">
   <strong>Oriva Dairy</strong> — Grown with care for our farmers.
 </div>
-```
+
