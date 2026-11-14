@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="theme-color" content="#0F3325">
+<title>Features - Oriva Dairy | Smart Cattle & Farm Management Tools</title>
+<meta name="description" content="Explore all 6 tools in Oriva Dairy - cattle management, health tracking, milk analytics, expenses, reports, and a built-in marketplace. Everything in one platform.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#F7F3E9;
+  --cream-2:#F0EADB;
+  --paper:#FDFBF4;
+  --sage:#E7EEE2;
+  --ink:#16241B;
+  --ink-soft:#4C5F54;
+  --green:#1E5B40;
+  --green-deep:#0F3325;
+  --green-black:#0A231A;
+  --amber:#E3A63C;
+  --amber-deep:#B57E1F;
+  --line:rgba(22,36,27,.13);
+  --line-light:rgba(247,243,233,.14);
+  --r:18px;
+  --shadow-soft:0 24px 50px -22px rgba(15,51,37,.28);
+  --shadow-deep:0 40px 80px -30px rgba(0,0,0,.45);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+  max-width:100vw;
+  -webkit-font-smoothing:antialiased;
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+::selection{background:var(--amber);color:var(--green-deep)}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:var(--cream-2)}
+::-webkit-scrollbar-thumb{background:#B9C4B4;border-radius:99px;border:3px solid var(--cream-2)}
+::-webkit-scrollbar-thumb:hover{background:var(--green)}
+
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button{font-family:inherit}
+:focus-visible{outline:2.5px solid var(--amber-deep);outline-offset:3px;border-radius:4px}
+section[id]{scroll-margin-top:86px}
+.ic{width:18px;height:18px;flex:none}
+
+.container{width:min(1180px,92%);margin-inline:auto;max-width:100%}
+.section{padding:clamp(72px,9vw,118px) 0;position:relative;overflow:hidden;max-width:100%}
+.bg-sage{background:var(--sage)}
+.bg-cream2{background:var(--cream-2)}
+.bg-deep{background:var(--green-deep)}
+
+.sec-head{max-width:660px;margin-bottom:clamp(40px,6vw,62px)}
+.sec-head.center{margin-inline:auto;text-align:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:11px;
+  font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--green);margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:30px;height:2px;background:var(--amber);border-radius:2px}
+.bg-deep .eyebrow{color:var(--amber)}
+.bg-deep .eyebrow::before{background:var(--amber)}
+h2{
+  font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.015em;
+  font-size:clamp(30px,4.4vw,46px);line-height:1.12;color:var(--ink);
+}
+.bg-deep h2{color:var(--cream)}
+h2 .accent{font-style:italic;font-weight:500;color:var(--amber-deep)}
+.bg-deep h2 .accent{color:var(--amber)}
+.lead{font-size:16.5px;color:var(--ink-soft);margin-top:16px;line-height:1.75;font-weight:400}
+.bg-deep .lead{color:rgba(247,243,233,.78)}
+
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:15px 28px;border-radius:999px;border:1px solid transparent;
+  font-size:15px;font-weight:600;line-height:1;cursor:pointer;text-decoration:none;
+  transition:transform .25s,box-shadow .25s,background .25s,color .25s,border-color .25s;
+}
+.btn .ic{width:17px;height:17px;transition:transform .25s}
+.btn:hover .ic{transform:translateX(3px)}
+.btn-amber{background:var(--amber);color:var(--paper)}
+.btn-amber:hover{background:#EFB44F;transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(181,126,31,.5)}
+.btn-green{background:var(--green);color:var(--cream)}
+.btn-green:hover{background:#174A34;transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(15,51,37,.55)}
+.btn-ghost{border-color:rgba(247,243,233,.45);color:var(--cream);background:transparent}
+.btn-ghost:hover{background:rgba(247,243,233,.12);border-color:var(--cream);transform:translateY(-2px)}
+.btn-sm{padding:11px 20px;font-size:13.5px}
+.link-arrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;
+  color:var(--green);text-decoration:none;
+}
+.link-arrow .ic{width:16px;height:16px;transition:transform .25s}
+.link-arrow:hover .ic{transform:translateX(4px)}
+
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;letter-spacing:.05em;padding:5px 11px;border-radius:999px;line-height:1.2}
+.pill .ic{width:12px;height:12px}
+.pill-ok{background:rgba(30,91,64,.1);color:var(--green)}
+.pill-soft{background:rgba(22,36,27,.06);color:var(--ink-soft)}
+.pill-amber{background:var(--amber);color:var(--green-deep)}
+.pill-light{background:rgba(253,251,244,.94);color:var(--green-deep)}
+
+/* ===== NAV ===== */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px 0;transition:padding .3s,background .3s,box-shadow .3s;
+  width:100%;max-width:100vw;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:100%}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand-name{font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:var(--cream);letter-spacing:-.01em;transition:color .3s}
+.brand-name span{color:var(--amber);font-style:italic;font-weight:500}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{
+  position:relative;text-decoration:none;font-size:14px;font-weight:500;
+  color:rgba(247,243,233,.85);transition:color .25s;padding:4px 0;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:-2px;width:100%;height:2px;
+  background:var(--amber);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-links a:hover,.nav-links a.active{color:var(--cream)}
+.nav-actions{display:flex;align-items:center;gap:16px}
+.nav-burger{
+  display:none;width:44px;height:44px;border:1px solid rgba(247,243,233,.35);border-radius:50%;
+  background:transparent;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--cream);border-radius:2px}
+body.menu-open .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+body.menu-open .nav-burger span:nth-child(2){opacity:0}
+body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.nav.scrolled{background:rgba(253,251,244,.9);backdrop-filter:blur(12px);padding:10px 0;box-shadow:0 8px 24px -14px rgba(15,51,37,.2)}
+.nav.scrolled .brand-name{color:var(--ink)}
+.nav.scrolled .nav-links a{color:var(--ink-soft)}
+.nav.scrolled .nav-links a:hover,.nav.scrolled .nav-links a.active{color:var(--green)}
+.nav.scrolled .nav-burger{border-color:var(--line)}
+.nav.scrolled .nav-burger span{background:var(--ink)}
+
+.mnav{
+  position:fixed;inset:0;z-index:95;background:var(--green-deep);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:110px 8% 140px;transform:translateX(100%);
+  transition:transform .45s cubic-bezier(.75,0,.2,1);overflow-y:auto;
+  max-width:100vw;
+}
+.mnav.open{transform:none}
+.mnav-links{list-style:none;display:flex;flex-direction:column;gap:4px}
+.mnav-links a{
+  display:flex;align-items:baseline;gap:14px;text-decoration:none;
+  font-family:'Fraunces',serif;font-size:clamp(26px,6.5vw,36px);font-weight:600;color:var(--cream);
+  padding:8px 0;opacity:0;transform:translateY(34px);
+  transition:opacity .4s,transform .45s cubic-bezier(.2,.65,.2,1),color .25s;
+}
+.mnav-links a i{font-family:'Outfit';font-style:normal;font-size:12px;font-weight:600;color:var(--amber);letter-spacing:.15em}
+.mnav-links a:hover{color:var(--amber)}
+.mnav.open .mnav-links a{opacity:1;transform:none;transition-delay:calc(.08s * var(--i) + .15s)}
+.mnav-foot{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;
+  opacity:0;transform:translateY(20px);transition:.45s .6s}
+.mnav.open .mnav-foot{opacity:1;transform:none}
+.mnav-foot a{color:rgba(247,243,233,.75);text-decoration:none;font-size:14px;font-weight:500}
+
+/* ===== HERO ===== */
+.features-hero{
+  position:relative;min-height:92vh;min-height:92svh;
+  display:flex;align-items:center;overflow:hidden;color:var(--cream);
+  padding:140px 0 80px;
+}
+.features-hero-bg{position:absolute;inset:0;overflow:hidden}
+.features-hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.05)}
+.features-hero-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,26,18,.95) 0%,rgba(7,26,18,.7) 55%,rgba(7,26,18,.55) 100%)}
+.features-hero-inner{position:relative;z-index:2;max-width:100%}
+.breadcrumb{
+  display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:500;
+  color:rgba(247,243,233,.7);margin-bottom:24px;letter-spacing:.08em;
+}
+.breadcrumb a{color:rgba(247,243,233,.7);text-decoration:none;transition:color .25s}
+.breadcrumb a:hover{color:var(--amber)}
+.breadcrumb .sep{color:rgba(247,243,233,.4)}
+
+.features-hero h1{
+  font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.02em;
+  font-size:clamp(2.4rem,5.8vw,5rem);line-height:1.05;margin-bottom:24px;
+  max-width:920px;
+}
+.features-hero h1 em{font-style:italic;font-weight:500;color:var(--amber)}
+.features-hero .hero-sub{
+  font-size:17.5px;line-height:1.75;color:rgba(247,243,233,.82);max-width:680px;
+}
+
+/* Six feature pills preview */
+.hero-pill-grid{
+  display:grid;grid-template-columns:repeat(6,auto);gap:10px;
+  margin-top:36px;flex-wrap:wrap;
+}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 16px;border-radius:999px;
+  background:rgba(247,243,233,.08);border:1px solid rgba(247,243,233,.14);
+  font-size:13px;font-weight:500;color:rgba(247,243,233,.9);
+  transition:background .25s,border-color .25s,transform .25s;
+}
+.hero-pill:hover{background:rgba(247,243,233,.14);border-color:var(--amber);transform:translateY(-2px)}
+.hero-pill .ic{width:14px;height:14px;color:var(--amber)}
+
+.hero-stats-row{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  margin-top:44px;padding-top:32px;border-top:1px solid var(--line-light);
+  max-width:680px;
+}
+.hsr-item b{
+  font-family:'Fraunces',serif;font-size:clamp(28px,3.2vw,40px);font-weight:600;
+  color:var(--cream);line-height:1;display:block;
+}
+.hsr-item b em{font-style:normal;color:var(--amber);font-size:.55em;margin-left:2px}
+.hsr-item span{display:block;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,243,233,.6);margin-top:6px}
+
+/* ===== OVERVIEW GRID ===== */
+.overview-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.overview-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:22px;
+  padding:32px 28px;transition:transform .35s,box-shadow .35s,border-color .35s;
+  position:relative;overflow:hidden;cursor:pointer;
+}
+.overview-card:hover{
+  transform:translateY(-6px);box-shadow:var(--shadow-soft);
+  border-color:rgba(30,91,64,.3);
+}
+.overview-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--amber);transform:scaleX(0);transform-origin:left;
+  transition:transform .4s;
+}
+.overview-card:hover::before{transform:scaleX(1)}
+.overview-card:nth-child(2)::before{background:var(--green)}
+.overview-card:nth-child(3)::before{background:var(--amber-deep)}
+.overview-card:nth-child(4)::before{background:var(--green)}
+.overview-card:nth-child(5)::before{background:var(--amber)}
+.overview-card:nth-child(6)::before{background:var(--green-deep)}
+
+.oc-icon{
+  width:64px;height:64px;border-radius:18px;background:rgba(30,91,64,.08);
+  color:var(--green);display:grid;place-items:center;margin-bottom:22px;
+}
+.oc-icon .ic{width:28px;height:28px}
+.overview-card:nth-child(even) .oc-icon{background:rgba(227,166,60,.12);color:var(--amber-deep)}
+
+.overview-card .oc-num{
+  font-family:'Fraunces',serif;font-size:11px;font-weight:600;
+  color:var(--ink-soft);letter-spacing:.2em;margin-bottom:8px;
+}
+.overview-card h3{
+  font-family:'Fraunces',serif;font-size:20px;font-weight:600;
+  margin-bottom:10px;line-height:1.25;
+}
+.overview-card p{color:var(--ink-soft);font-size:14px;line-height:1.65;margin-bottom:16px}
+.overview-card .oc-tags{display:flex;flex-wrap:wrap;gap:6px}
+.overview-card .oc-tags span{
+  font-size:10.5px;padding:4px 10px;border-radius:999px;
+  background:rgba(30,91,64,.06);color:var(--green);font-weight:600;
+}
+
+/* ===== DETAILED FEATURE SECTIONS ===== */
+.feature-deep{
+  padding:clamp(80px,10vw,120px) 0;
+  border-bottom:1px solid var(--line);
+}
+.feature-deep:last-of-type{border-bottom:0}
+.feature-deep.reverse .fd-grid{grid-template-columns:1.05fr 1fr}
+
+.fd-grid{
+  display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(44px,6vw,84px);align-items:center;
+}
+
+.fd-info .fd-num{
+  font-family:'Fraunces',serif;font-size:120px;font-weight:700;line-height:.8;
+  color:var(--sage);letter-spacing:-.04em;margin-bottom:8px;
+}
+.feature-deep:nth-child(even) .fd-num{color:rgba(227,166,60,.14)}
+
+.fd-info h2{margin-bottom:18px}
+.fd-info > p{
+  color:var(--ink-soft);font-size:16px;line-height:1.8;margin-bottom:24px;
+}
+.fd-features{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:28px}
+.fd-features li{display:flex;gap:14px;align-items:flex-start}
+.fd-features .ff-ic{
+  width:42px;height:42px;flex:none;border-radius:12px;
+  background:var(--green);color:var(--cream);
+  display:grid;place-items:center;
+}
+.feature-deep:nth-child(even) .fd-features .ff-ic{background:var(--amber);color:var(--green-deep)}
+.fd-features .ff-ic .ic{width:19px;height:19px}
+.fd-features strong{display:block;font-size:15px;font-weight:600;margin-bottom:2px}
+.fd-features em{display:block;font-style:normal;font-size:13.5px;color:var(--ink-soft)}
+
+/* ===== MOCKUPS ===== */
+.mockup-wrap{
+  position:relative;
+  perspective:1500px;
+}
+.mockup{
+  background:var(--paper);border:1px solid var(--line);border-radius:20px;
+  overflow:hidden;box-shadow:var(--shadow-deep);
+  transition:transform .5s;
+}
+.mockup:hover{transform:rotateY(-2deg) rotateX(2deg) translateY(-4px)}
+
+.mock-chrome{
+  display:flex;align-items:center;gap:7px;padding:12px 15px;
+  border-bottom:1px solid var(--line);background:var(--cream);
+}
+.mdot{width:10px;height:10px;border-radius:50%;background:rgba(22,36,27,.14)}
+.mock-url{
+  margin-left:9px;flex:1;background:var(--paper);border:1px solid var(--line);
+  border-radius:999px;padding:6px 14px;font-size:11px;color:var(--ink-soft);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+
+.mock-body{padding:20px}
+
+/* Floating stats card next to mockup */
+.float-stat{
+  position:absolute;width:220px;background:var(--paper);border-radius:16px;
+  padding:16px 18px;box-shadow:var(--shadow-deep);
+  z-index:3;transition:transform .4s;
+}
+.float-stat:hover{transform:translateY(-4px) rotate(0deg)!important}
+.float-stat.top-right{top:-20px;right:-30px;transform:rotate(2.5deg)}
+.float-stat.bottom-left{bottom:-20px;left:-30px;transform:rotate(-2deg)}
+.float-stat .fs-label{
+  font-size:10.5px;font-weight:600;color:var(--ink-soft);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;
+  display:flex;align-items:center;gap:6px;
+}
+.float-stat .fs-label .ic{width:12px;height:12px;color:var(--amber-deep)}
+.float-stat .fs-num{
+  font-family:'Fraunces',serif;font-size:26px;font-weight:600;
+  color:var(--ink);line-height:1;
+}
+.float-stat .fs-delta{
+  display:inline-flex;align-items:center;gap:3px;
+  font-size:10.5px;font-weight:700;color:var(--green);
+  background:rgba(30,91,64,.08);padding:3px 8px;border-radius:999px;
+  margin-top:6px;
+}
+.float-stat .fs-delta .ic{width:11px;height:11px}
+
+/* === MOCKUP 1: CATTLE MANAGEMENT === */
+.mock-herd-head{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;
+}
+.mock-herd-head strong{font-family:'Fraunces',serif;font-size:15px;font-weight:600}
+.mock-search{
+  display:flex;align-items:center;gap:10px;background:var(--cream);
+  border:1px solid var(--line);border-radius:10px;padding:9px 12px;
+  font-size:11.5px;color:var(--ink-soft);margin-bottom:14px;
+}
+.mock-search .ic{width:13px;height:13px;flex:none}
+.mock-search span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.mock-cow-card{
+  background:var(--cream);border:1px solid var(--line);border-radius:14px;
+  padding:14px;margin-bottom:10px;display:grid;grid-template-columns:auto 1fr auto;
+  gap:14px;align-items:center;
+  transition:transform .3s,border-color .3s;
+}
+.mock-cow-card:hover{transform:translateX(4px);border-color:var(--green)}
+.mock-cow-card:last-child{margin-bottom:0}
+
+.mcc-photo{
+  width:54px;height:54px;border-radius:12px;background:var(--sage);
+  display:grid;place-items:center;color:var(--green);flex:none;position:relative;
+  overflow:hidden;
+}
+.mcc-photo svg{width:28px;height:28px;opacity:.7}
+.mcc-photo::after{
+  content:"";position:absolute;bottom:-2px;right:-2px;width:14px;height:14px;
+  border-radius:50%;background:var(--amber);border:2px solid var(--paper);
+}
+
+.mcc-info b{display:block;font-size:13px;font-weight:600}
+.mcc-info em{display:block;font-style:normal;font-size:11px;color:var(--ink-soft);margin:2px 0 6px}
+.mcc-info .mcc-tags{display:flex;gap:4px;flex-wrap:wrap}
+.mcc-info .mcc-tags span{font-size:9.5px;padding:2px 7px;border-radius:999px;background:rgba(30,91,64,.08);color:var(--green);font-weight:600}
+
+.mcc-qr{
+  width:42px;height:42px;background:#fff;border:1px solid var(--line);
+  border-radius:8px;padding:4px;color:var(--ink);flex:none;
+}
+.mcc-qr svg{width:100%;height:100%;shape-rendering:crispEdges}
+
+/* === MOCKUP 2: HEALTH === */
+.mock-health-head{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;
+}
+.mock-health-head strong{font-family:'Fraunces',serif;font-size:15px;font-weight:600}
+
+.mock-vax-timeline{position:relative;padding-left:26px}
+.mock-vax-timeline::before{
+  content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(to bottom,var(--green),var(--amber),var(--line));
+}
+.mv-item{
+  position:relative;padding:10px 0 10px 16px;
+}
+.mv-item::before{
+  content:"";position:absolute;left:-22px;top:14px;width:14px;height:14px;
+  border-radius:50%;background:var(--paper);border:2px solid var(--green);
+  box-shadow:0 0 0 3px rgba(30,91,64,.1);
+}
+.mv-item.done::before{background:var(--green)}
+.mv-item.upcoming::before{border-color:var(--amber);background:rgba(227,166,60,.15)}
+
+.mv-item b{display:block;font-size:13px;font-weight:600}
+.mv-item em{display:block;font-style:normal;font-size:11px;color:var(--ink-soft);margin-top:2px}
+.mv-item .mv-status{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:10px;font-weight:600;padding:2px 8px;border-radius:999px;margin-top:4px;
+}
+.mv-item.done .mv-status{background:rgba(30,91,64,.1);color:var(--green)}
+.mv-item.upcoming .mv-status{background:rgba(227,166,60,.15);color:var(--amber-deep)}
+.mv-item .mv-status .ic{width:10px;height:10px}
+
+/* === MOCKUP 3: MILK ANALYTICS === */
+.mock-milk-head{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;
+}
+.mock-milk-head strong{font-family:'Fraunces',serif;font-size:15px;font-weight:600}
+.mock-milk-head .pill{font-size:10px}
+
+.mock-milk-big{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;
+}
+.mmb{
+  background:var(--cream);border-radius:12px;padding:12px;text-align:center;
+}
+.mmb b{
+  display:block;font-family:'Fraunces',serif;font-size:20px;font-weight:600;line-height:1;
+}
+.mmb b em{font-style:normal;font-size:10px;color:var(--ink-soft);margin-left:2px;font-family:'Outfit';font-weight:600}
+.mmb span{display:block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.mmb.up b{color:var(--green)}
+.mmb.amber b{color:var(--amber-deep)}
+
+.mock-chart{
+  background:var(--cream);border-radius:12px;padding:14px;height:140px;position:relative;
+}
+.mc-bars{
+  display:flex;align-items:flex-end;gap:6px;height:90px;
+}
+.mc-bar{
+  flex:1;background:var(--green);border-radius:3px 3px 2px 2px;
+  opacity:.85;position:relative;
+  transition:opacity .3s,transform .3s;
+}
+.mc-bar:hover{opacity:1;transform:scaleY(1.05)}
+.mc-bar.max{background:var(--amber);opacity:1}
+.mc-target{
+  position:absolute;left:14px;right:14px;top:24px;
+  border-top:1.5px dashed var(--amber-deep);
+}
+.mc-target::after{
+  content:"Target 600L";position:absolute;right:0;top:-14px;
+  font-size:9px;font-weight:600;color:var(--amber-deep);
+}
+.mc-xaxis{
+  display:flex;gap:6px;margin-top:8px;
+}
+.mc-xaxis span{
+  flex:1;text-align:center;font-size:9px;font-weight:600;
+  color:var(--ink-soft);letter-spacing:.05em;
+}
+
+/* === MOCKUP 4: EXPENSES === */
+.mock-exp-head{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;
+}
+.mock-exp-head strong{font-family:'Fraunces',serif;font-size:15px;font-weight:600}
+
+.mock-exp-summary{
+  background:var(--cream);border-radius:12px;padding:14px;margin-bottom:12px;
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;
+}
+.mes b{
+  display:block;font-family:'Fraunces',serif;font-size:18px;font-weight:600;line-height:1;
+}
+.mes b em{font-style:normal;font-size:10px;color:var(--ink-soft);margin-left:2px;font-family:'Outfit'}
+.mes.income b{color:var(--green)}
+.mes.expense b{color:var(--amber-deep)}
+.mes span{
+  display:block;font-size:10px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:4px;
+}
+
+.mock-exp-row{
+  display:flex;align-items:center;gap:12px;padding:10px 0;
+  border-bottom:1px dashed var(--line);font-size:12px;
+}
+.mock-exp-row:last-child{border-bottom:0}
+.mer-icon{
+  width:32px;height:32px;border-radius:9px;
+  display:grid;place-items:center;flex:none;
+}
+.mer-icon .ic{width:16px;height:16px}
+.mer-icon.feed{background:rgba(30,91,64,.08);color:var(--green)}
+.mer-icon.med{background:rgba(227,166,60,.15);color:var(--amber-deep)}
+.mer-icon.labor{background:rgba(22,36,27,.08);color:var(--ink-soft)}
+.mer-icon.sale{background:rgba(30,91,64,.15);color:var(--green)}
+
+.mer-info{flex:1;min-width:0}
+.mer-info b{display:block;font-size:12.5px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mer-info em{display:block;font-style:normal;font-size:10.5px;color:var(--ink-soft);margin-top:1px}
+.mer-amt{font-family:'Fraunces',serif;font-size:13px;font-weight:600;flex:none}
+.mer-amt.out{color:var(--amber-deep)}
+.mer-amt.in{color:var(--green)}
+
+/* === MOCKUP 5: REPORTS === */
+.mock-report-head{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;
+}
+.mock-report-head strong{font-family:'Fraunces',serif;font-size:15px;font-weight:600}
+.seg{
+  display:inline-flex;background:var(--cream);border:1px solid var(--line);
+  border-radius:999px;padding:3px;gap:2px;
+}
+.seg-btn{
+  border:0;background:none;padding:6px 14px;border-radius:999px;
+  font-size:11px;font-weight:600;color:var(--ink-soft);cursor:pointer;
+  transition:.2s;
+}
+.seg-btn.active{background:var(--green);color:var(--cream)}
+
+.mock-pl{
+  background:var(--cream);border-radius:14px;padding:16px;margin-bottom:12px;
+}
+.mpl-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 0;font-size:12.5px;
+}
+.mpl-row:not(:last-child){border-bottom:1px dashed var(--line)}
+.mpl-row b{font-weight:500;color:var(--ink)}
+.mpl-row span{font-family:'Fraunces',serif;font-weight:600}
+.mpl-row.total{padding-top:12px;margin-top:4px;border-top:1.5px solid var(--line)}
+.mpl-row.total b{font-weight:600;font-size:13px}
+.mpl-row.total span{color:var(--green);font-size:16px}
+
+.mock-roi{
+  background:linear-gradient(135deg,var(--green-deep) 0%,var(--green) 100%);
+  border-radius:14px;padding:16px;color:var(--cream);
+  display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;
+}
+.mock-roi b{
+  display:block;font-family:'Fraunces',serif;font-size:24px;font-weight:600;line-height:1;
+  color:var(--amber);
+}
+.mock-roi em{display:block;font-style:normal;font-size:10.5px;color:rgba(247,243,233,.7);margin-top:4px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.mock-roi .roi-chart{
+  width:58px;height:58px;position:relative;
+}
+.mock-roi .roi-chart svg{width:100%;height:100%;transform:rotate(-90deg)}
+
+/* === MOCKUP 6: MARKETPLACE === */
+.mock-mp-head{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;
+}
+.mock-mp-head strong{font-family:'Fraunces',serif;font-size:15px;font-weight:600}
+
+.mock-mp-listing{
+  display:grid;grid-template-columns:80px 1fr;gap:12px;
+  background:var(--cream);border-radius:14px;padding:12px;margin-bottom:10px;
+  transition:transform .3s;
+}
+.mock-mp-listing:hover{transform:translateX(4px)}
+.mock-mp-listing:last-child{margin-bottom:0}
+
+.mml-photo{
+  width:80px;height:70px;border-radius:10px;background:var(--sage);
+  display:grid;place-items:center;color:var(--green);position:relative;
+  overflow:hidden;flex:none;
+}
+.mml-photo svg{width:36px;height:36px;opacity:.6}
+.mml-photo::after{
+  content:"";position:absolute;top:6px;left:6px;
+  width:36px;height:14px;border-radius:999px;
+  background:var(--amber);color:var(--green-deep);
+  font-size:8px;font-weight:700;display:grid;place-items:center;
+  letter-spacing:.05em;
+}
+
+.mml-info{min-width:0}
+.mml-info b{
+  display:block;font-size:13px;font-weight:600;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.mml-info em{display:block;font-style:normal;font-size:11px;color:var(--ink-soft);margin:2px 0 6px}
+.mml-foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.mml-foot .mml-price{
+  font-family:'Fraunces',serif;font-size:14px;font-weight:600;color:var(--green);
+}
+.mml-foot .mml-price small{font-family:'Outfit';font-size:10px;color:var(--ink-soft);font-weight:500;margin-left:2px}
+.mml-inq{
+  font-size:10.5px;font-weight:600;color:var(--amber-deep);
+  background:rgba(227,166,60,.12);padding:5px 10px;border-radius:999px;
+  border:0;cursor:pointer;transition:background .2s;
+}
+.mml-inq:hover{background:rgba(227,166,60,.22)}
+
+/* ===== INTEGRATION / WORKFLOW ===== */
+.workflow-wrap{
+  background:var(--paper);border:1px solid var(--line);border-radius:28px;
+  padding:clamp(32px,5vw,56px);box-shadow:var(--shadow-soft);
+}
+.workflow-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:10px;
+  position:relative;
+}
+.workflow-grid::before{
+  content:"";position:absolute;top:40px;left:10%;right:10%;height:2px;
+  background:repeating-linear-gradient(to right,var(--amber) 0 8px,transparent 8px 16px);
+  opacity:.4;z-index:0;
+}
+.wf-step{
+  text-align:center;position:relative;z-index:1;
+}
+.wf-icon{
+  width:80px;height:80px;border-radius:50%;background:var(--cream);
+  border:2px solid var(--line);
+  display:grid;place-items:center;margin:0 auto 16px;
+  color:var(--green);transition:.3s;
+}
+.wf-step:nth-child(even) .wf-icon{color:var(--amber-deep)}
+.wf-icon .ic{width:32px;height:32px}
+.wf-step:hover .wf-icon{
+  background:var(--green);color:var(--cream);border-color:var(--green);
+  transform:translateY(-4px);
+}
+.wf-step:nth-child(even):hover .wf-icon{background:var(--amber);color:var(--green-deep);border-color:var(--amber)}
+.wf-step .wf-num{
+  display:inline-block;font-family:'Fraunces',serif;font-size:11px;
+  font-weight:600;color:var(--amber-deep);letter-spacing:.15em;margin-bottom:6px;
+}
+.wf-step h4{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:6px}
+.wf-step p{font-size:12.5px;color:var(--ink-soft);line-height:1.55}
+
+/* ===== REPLACEMENT TABLE ===== */
+.replace-grid{
+  display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:stretch;
+}
+.replace-col{
+  background:var(--paper);border:1px solid var(--line);border-radius:22px;
+  padding:32px;
+}
+.replace-col.old{background:var(--cream-2)}
+.replace-col.new{
+  background:linear-gradient(135deg,var(--green-deep) 0%,var(--green) 100%);
+  color:var(--cream);border:0;
+}
+.replace-col h3{
+  font-family:'Fraunces',serif;font-size:22px;font-weight:600;margin-bottom:6px;
+}
+.replace-col .rc-sub{font-size:13px;color:var(--ink-soft);margin-bottom:22px}
+.replace-col.new .rc-sub{color:rgba(247,243,233,.7)}
+
+.replace-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.replace-col li{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.5}
+.replace-col.old li{color:var(--ink-soft)}
+.replace-col.new li{color:rgba(247,243,233,.9)}
+.replace-col li .ic{width:18px;height:18px;flex:none;margin-top:2px}
+.replace-col.old li .ic{color:var(--amber-deep)}
+.replace-col.new li .ic{color:var(--amber)}
+
+.replace-arrow{
+  display:grid;place-items:center;color:var(--green);
+}
+.replace-arrow .ra-circle{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--amber);color:var(--green-deep);
+  display:grid;place-items:center;
+  box-shadow:0 12px 30px -8px rgba(227,166,60,.5);
+}
+.replace-arrow .ic{width:24px;height:24px}
+
+/* ===== DEVICE SUPPORT ===== */
+.devices-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.device-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:22px;
+  padding:36px 28px;text-align:center;
+  transition:transform .35s,box-shadow .35s,border-color .35s;
+}
+.device-card:hover{
+  transform:translateY(-6px);box-shadow:var(--shadow-soft);
+  border-color:rgba(30,91,64,.3);
+}
+.dc-icon{
+  width:80px;height:80px;border-radius:20px;background:rgba(30,91,64,.08);
+  color:var(--green);display:grid;place-items:center;margin:0 auto 20px;
+}
+.dc-icon .ic{width:34px;height:34px}
+.device-card:nth-child(2) .dc-icon{background:rgba(227,166,60,.12);color:var(--amber-deep)}
+.device-card:nth-child(3) .dc-icon{background:var(--green-deep);color:var(--amber)}
+.device-card h3{
+  font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:8px;
+}
+.device-card p{color:var(--ink-soft);font-size:14px;line-height:1.6}
+
+/* ===== CTA ===== */
+.features-cta{background:var(--sage)}
+.cta-box{
+  display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(36px,5vw,64px);align-items:center;
+  background:var(--paper);border-radius:28px;padding:clamp(40px,5vw,64px);
+  box-shadow:var(--shadow-soft);
+}
+.cta-box h2{margin-bottom:16px}
+.cta-box p{color:var(--ink-soft);font-size:16px;line-height:1.75;margin-bottom:28px}
+.cta-buttons{display:flex;flex-wrap:wrap;gap:12px}
+.cta-side{
+  background:var(--green-deep);border-radius:20px;padding:36px;color:var(--cream);
+}
+.cta-side h4{
+  font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--cream);
+  margin-bottom:8px;
+}
+.cta-side h4 em{font-style:italic;color:var(--amber);font-weight:500}
+.cta-side > p{font-size:14px;color:rgba(247,243,233,.72);margin-bottom:24px}
+.cta-contact-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.cta-contact-list li{display:flex;align-items:center;gap:12px}
+.cta-contact-list .cc-ic{
+  width:40px;height:40px;flex:none;border-radius:11px;
+  background:rgba(247,243,233,.09);border:1px solid rgba(247,243,233,.15);
+  display:grid;place-items:center;color:var(--amber);
+}
+.cta-contact-list .cc-ic .ic{width:17px;height:17px}
+.cta-contact-list b{display:block;font-size:14px;font-weight:500;color:var(--cream)}
+.cta-contact-list span{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,243,233,.5);font-weight:600;margin-bottom:2px}
+.cta-contact-list a{color:var(--cream);text-decoration:none;transition:color .2s}
+.cta-contact-list a:hover{color:var(--amber)}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--green-black);color:rgba(247,243,233,.72);overflow:hidden}
+.foot-bottom{border-top:1px solid var(--line-light);padding:24px 0}
+.foot-bottom-in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+.foot-bottom-in .fb-links{display:flex;gap:22px}
+.foot-bottom-in a{color:rgba(247,243,233,.62);font-size:13px;text-decoration:none;transition:.25s}
+.foot-bottom-in a:hover{color:var(--amber)}
+.foot-made{display:inline-flex;align-items:center;gap:7px;color:rgba(247,243,233,.55)}
+.foot-made .ic{width:14px;height:14px;color:var(--amber)}
+.foot-water{
+  font-family:'Fraunces',serif;font-weight:700;text-align:center;line-height:.78;user-select:none;
+  font-size:clamp(42px,11vw,160px);letter-spacing:.02em;
+  color:transparent;-webkit-text-stroke:1px rgba(247,243,233,.1);
+  padding-top:8px;margin-bottom:10px;overflow:hidden;white-space:nowrap;
+}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s cubic-bezier(.2,.65,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1024px){
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .overview-grid,.fd-grid,.feature-deep.reverse .fd-grid,
+  .replace-grid,.devices-grid,.workflow-grid{grid-template-columns:1fr}
+  .overview-grid{grid-template-columns:1fr 1fr}
+  .fd-grid,.feature-deep.reverse .fd-grid{gap:50px}
+  .fd-info .fd-num{font-size:80px}
+  .replace-arrow{transform:rotate(90deg)}
+  .workflow-grid::before{display:none}
+  .workflow-grid{grid-template-columns:1fr 1fr}
+  .float-stat{position:relative;top:0;left:0;right:0;bottom:0;margin:12px 0;transform:none!important;width:auto}
+  .cta-box{grid-template-columns:1fr}
+}
+@media (max-width:768px){
+  .nav-actions .btn{display:none}
+  .overview-grid,.devices-grid,.workflow-grid{grid-template-columns:1fr}
+  .hero-pill-grid{grid-template-columns:repeat(2,auto);gap:8px}
+  .hero-stats-row{grid-template-columns:1fr;gap:16px}
+  .mock-milk-big{grid-template-columns:1fr}
+  .cta-buttons{flex-direction:column;align-items:stretch}
+  .cta-buttons .btn{justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html" aria-label="Oriva Dairy home">
+      <img src="logo.png" alt="Oriva Dairy Logo" style="height:42px; width:auto;" onerror="this.style.display='none'">
+      <span class="brand-name">Oriva<span> Dairy</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="features.html" class="active">Features</a></li>
+        <li><a href="index.html#milk">Milk Data</a></li>
+        <li><a href="index.html#trace">Traceability</a></li>
+        <li><a href="index.html#market">Marketplace</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="index.html#contact" class="btn btn-amber btn-sm">Book a Demo</a>
+      <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <ul class="mnav-links">
+    <li><a href="index.html" style="--i:0"><i>01</i>Home</a></li>
+    <li><a href="about.html" style="--i:1"><i>02</i>About</a></li>
+    <li><a href="features.html" style="--i:2"><i>03</i>Features</a></li>
+    <li><a href="index.html#milk" style="--i:3"><i>04</i>Milk Data</a></li>
+    <li><a href="index.html#trace" style="--i:4"><i>05</i>Traceability</a></li>
+    <li><a href="index.html#market" style="--i:5"><i>06</i>Marketplace</a></li>
+    <li><a href="index.html#contact" style="--i:6"><i>07</i>Contact</a></li>
+  </ul>
+  <div class="mnav-foot">
+    <a href="tel:+003001234567">+00 300 123 4567</a>
+    <a href="index.html#contact" class="btn btn-amber btn-sm">Book a Demo</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="features-hero">
+  <div class="features-hero-bg">
+    <img src="hero-bg3.png" alt="Dairy farm with smart management" fetchpriority="high">
+  </div>
+  <div class="features-hero-scrim"></div>
+  <div class="container features-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Features</span>
+    </div>
+    <h1>
+      Six tools. <em>One platform.</em><br>
+      A drawer full of registers, <em>replaced.</em>
+    </h1>
+    <p class="hero-sub">
+      Every feature in Oriva Dairy was built after sitting with farmers and asking one question: "What do you wish you didn't have to do on paper?" Here's what we built back.
+    </p>
+
+    <div class="hero-pill-grid">
+      <a href="#cattle" class="hero-pill"><i data-lucide="qr-code" class="ic"></i>Cattle Management</a>
+      <a href="#health" class="hero-pill"><i data-lucide="heart-pulse" class="ic"></i>Health & Vaccination</a>
+      <a href="#milk" class="hero-pill"><i data-lucide="milk" class="ic"></i>Milk Production</a>
+      <a href="#expenses" class="hero-pill"><i data-lucide="wallet" class="ic"></i>Expenses & Income</a>
+      <a href="#reports" class="hero-pill"><i data-lucide="trending-up" class="ic"></i>Reports & Analytics</a>
+      <a href="#market" class="hero-pill"><i data-lucide="store" class="ic"></i>Marketplace</a>
+    </div>
+
+    <div class="hero-stats-row">
+      <div class="hsr-item"><b>6<em>tools</em></b><span>In one platform</span></div>
+      <div class="hsr-item"><b>0<em>downloads</em></b><span>Works in browser</span></div>
+      <div class="hsr-item"><b>24/7<em>access</em></b><span>Any device, anywhere</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OVERVIEW GRID ===== -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Platform Overview</span>
+      <h2>Everything your farm needs. <span class="accent">Nothing it doesn't.</span></h2>
+      <p class="lead">Six focused tools that talk to each other - one record entered once, everywhere it needs to be.</p>
+    </div>
+
+    <div class="overview-grid">
+      <a href="#cattle" class="overview-card reveal">
+        <div class="oc-icon"><i data-lucide="qr-code" class="ic"></i></div>
+        <div class="oc-num">FEATURE 01</div>
+        <h3>Cattle Management</h3>
+        <p>Every animal gets a unique Tag ID and a living digital passport that buyers can scan and verify.</p>
+        <div class="oc-tags"><span>Tag + QR</span><span>Lineage</span><span>Photo timeline</span></div>
+      </a>
+      <a href="#health" class="overview-card reveal" data-delay="80">
+        <div class="oc-icon"><i data-lucide="heart-pulse" class="ic"></i></div>
+        <div class="oc-num">FEATURE 02</div>
+        <h3>Health & Vaccination</h3>
+        <p>Schedule FMD, HS and deworming cycles. Log every treatment - verifiable by buyers in one scan.</p>
+        <div class="oc-tags"><span>Calendar</span><span>Treatment logs</span><span>Verified</span></div>
+      </a>
+      <a href="#milk" class="overview-card reveal" data-delay="160">
+        <div class="oc-icon"><i data-lucide="milk" class="ic"></i></div>
+        <div class="oc-num">FEATURE 03</div>
+        <h3>Milk Production</h3>
+        <p>Log AM/PM yields per cow or whole herd. Spot a dip the same day it happens, not a month later.</p>
+        <div class="oc-tags"><span>AM/PM logs</span><span>Trends</span><span>Rankings</span></div>
+      </a>
+      <a href="#expenses" class="overview-card reveal" data-delay="240">
+        <div class="oc-icon"><i data-lucide="wallet" class="ic"></i></div>
+        <div class="oc-num">FEATURE 04</div>
+        <h3>Expenses & Income</h3>
+        <p>Feed, medicine, labour, sales - auto-categorised as you enter. Know your cost per litre instantly.</p>
+        <div class="oc-tags"><span>Auto-categorise</span><span>Cost/litre</span><span>Receipts</span></div>
+      </a>
+      <a href="#reports" class="overview-card reveal" data-delay="320">
+        <div class="oc-icon"><i data-lucide="trending-up" class="ic"></i></div>
+        <div class="oc-num">FEATURE 05</div>
+        <h3>Reports & Analytics</h3>
+        <p>One-tap P&L summaries, per-animal profitability, and herd performance. Run the farm on numbers.</p>
+        <div class="oc-tags"><span>P&L</span><span>Per-animal</span><span>Rankings</span></div>
+      </a>
+      <a href="#market" class="overview-card reveal" data-delay="400">
+        <div class="oc-icon"><i data-lucide="store" class="ic"></i></div>
+        <div class="oc-num">FEATURE 06</div>
+        <h3>Built-in Marketplace</h3>
+        <p>List livestock and dairy with verified records. Buyers send inquiries straight to you - zero brokerage.</p>
+        <div class="oc-tags"><span>Livestock</span><span>Bulk milk</span><span>Direct deals</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURE 01: CATTLE MANAGEMENT ===== -->
+<section class="feature-deep" id="cattle">
+  <div class="container">
+    <div class="fd-grid">
+      <div class="fd-info reveal">
+        <div class="fd-num">01</div>
+        <span class="eyebrow">Herd Registry</span>
+        <h2>A living passport <span class="accent">for every animal.</span></h2>
+        <p>
+          Every animal on your farm gets a unique Tag ID and a dynamic QR code that stays current for its entire life. Breed, age, weight, lineage, lactation stage and a photo history - all in one profile that updates with every milking, vaccination and weight check.
+        </p>
+        <ul class="fd-features">
+          <li>
+            <span class="ff-ic"><i data-lucide="tag" class="ic"></i></span>
+            <div><strong>Unique Tag ID per animal</strong><em>Print QR tags as ear tags or neck collars - scan to open the full live profile.</em></div>
+          </li>
+          <li>
+            <span class="ff-ic"><i data-lucide="git-branch" class="ic"></i></span>
+            <div><strong>Lineage tracking</strong><em>Dam, sire, siblings and offspring - every relationship mapped automatically.</em></div>
+          </li>
+          <li>
+            <span class="ff-ic"><i data-lucide="camera" class="ic"></i></span>
+            <div><strong>Photo timeline</strong><em>Snap pictures at every stage - buyers see the animal grow over its lifetime.</em></div>
+          </li>
+        </ul>
+        <a href="index.html#trace" class="link-arrow">See how traceability works <i data-lucide="arrow-right" class="ic"></i></a>
+      </div>
+
+      <div class="mockup-wrap reveal" data-delay="150">
+        <div class="mockup">
+          <div class="mock-chrome">
+            <span class="mdot"></span><span class="mdot"></span><span class="mdot"></span>
+            <span class="mock-url">app.orivadairy.com/herd</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-herd-head">
+              <strong>Herd Overview</strong>
+              <span class="pill pill-soft">148 animals</span>
+            </div>
+            <div class="mock-search">
+              <i data-lucide="search" class="ic"></i>
+              <span>Search tag, breed or name…</span>
+              <i data-lucide="sliders-horizontal" class="ic"></i>
+            </div>
+            <div class="mock-cow-card">
+              <div class="mcc-photo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.763 1.612 2 2.5 2a6.72 6.72 0 0 0 3.5-1.915"/><path d="M14 5.172C14 3.782 15.577 2.679 17.5 3c2.823.47 4.113 6.006 4 7-.08.763-1.612 2-2.5 2a6.72 6.72 0 0 1-3.5-1.915"/><path d="M8 14v.5a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V14"/><path d="M8.5 14h7"/><circle cx="10" cy="9" r="1"/><circle cx="14" cy="9" r="1"/></svg>
+              </div>
+              <div class="mcc-info">
+                <b>Sahiwal · ORV-0847</b>
+                <em>4 yr · 480 kg · 16.2 L/day</em>
+                <div class="mcc-tags"><span>Top producer</span><span>Vaccinated</span></div>
+              </div>
+              <div class="mcc-qr" id="qr1"></div>
+            </div>
+            <div class="mock-cow-card">
+              <div class="mcc-photo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.763 1.612 2 2.5 2a6.72 6.72 0 0 0 3.5-1.915"/><path d="M14 5.172C14 3.782 15.577 2.679 17.5 3c2.823.47 4.113 6.006 4 7-.08.763-1.612 2-2.5 2a6.72 6.72 0 0 1-3.5-1.915"/><path d="M8 14v.5a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V14"/><path d="M8.5 14h7"/><circle cx="10" cy="9" r="1"/><circle cx="14" cy="9" r="1"/></svg>
+              </div>
+              <div class="mcc-info">
+                <b>H. Friesian · ORV-0912</b>
+                <em>3 yr 6 mo · 590 kg · 24 L/day</em>
+                <div class="mcc-tags"><span>High yield</span><span>Vaccinated</span></div>
+              </div>
+              <div class="mcc-qr" id="qr2"></div>
+            </div>
+            <div class="mock-cow-card">
+              <div class="mcc-photo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.763 1.612 2 2.5 2a6.72 6.72 0 0 0 3.5-1.915"/><path d="M14 5.172C14 3.782 15.577 2.679 17.5 3c2.823.47 4.113 6.006 4 7-.08.763-1.612 2-2.5 2a6.72 6.72 0 0 1-3.5-1.915"/><path d="M8 14v.5a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V14"/><path d="M8.5 14h7"/><circle cx="10" cy="9" r="1"/><circle cx="14" cy="9" r="1"/></svg>
+              </div>
+              <div class="mcc-info">
+                <b>Nili-Ravi · ORV-1043</b>
+                <em>5 yr · 620 kg · 12 L/day</em>
+                <div class="mcc-tags"><span>Buffalo</span><span>Vaccinated</span></div>
+              </div>
+              <div class="mcc-qr" id="qr3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-stat top-right">
+          <div class="fs-label"><i data-lucide="activity" class="ic"></i>Active animals</div>
+          <div class="fs-num">148</div>
+          <div class="fs-delta"><i data-lucide="trending-up" class="ic"></i>+12 this month</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURE 02: HEALTH ===== -->
+<section class="feature-deep reverse" id="health">
+  <div class="container">
+    <div class="fd-grid">
+      <div class="mockup-wrap reveal">
+        <div class="mockup">
+          <div class="mock-chrome">
+            <span class="mdot"></span><span class="mdot"></span><span class="mdot"></span>
+            <span class="mock-url">app.orivadairy.com/health/ORV-0847</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-health-head">
+              <strong>ORV-0847 · Health Record</strong>
+              <span class="pill pill-ok"><i data-lucide="shield-check" class="ic"></i>Verified</span>
+            </div>
+            <div class="mock-vax-timeline">
+              <div class="mv-item done">
+                <b>FMD Vaccination</b>
+                <em>Dr. Hassan · 12 Jan 2025</em>
+                <span class="mv-status"><i data-lucide="check" class="ic"></i>Completed</span>
+              </div>
+              <div class="mv-item done">
+                <b>HS Vaccination</b>
+                <em>Dr. Hassan · 03 Mar 2025</em>
+                <span class="mv-status"><i data-lucide="check" class="ic"></i>Completed</span>
+              </div>
+              <div class="mv-item done">
+                <b>Deworming - Albendazole</b>
+                <em>Farm staff · 18 Apr 2025</em>
+                <span class="mv-status"><i data-lucide="check" class="ic"></i>Completed</span>
+              </div>
+              <div class="mv-item upcoming">
+                <b>FMD Booster</b>
+                <em>Scheduled · 12 Jul 2025</em>
+                <span class="mv-status"><i data-lucide="clock" class="ic"></i>Upcoming</span>
+              </div>
+              <div class="mv-item upcoming">
+                <b>Annual Health Check</b>
+                <em>Scheduled · 03 Aug 2025</em>
+                <span class="mv-status"><i data-lucide="clock" class="ic"></i>Upcoming</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-stat bottom-left">
+          <div class="fs-label"><i data-lucide="calendar-check" class="ic"></i>Compliance</div>
+          <div class="fs-num">100%</div>
+          <div class="fs-delta"><i data-lucide="shield-check" class="ic"></i>All up-to-date</div>
+        </div>
+      </div>
+
+      <div class="fd-info reveal" data-delay="150">
+        <div class="fd-num">02</div>
+        <span class="eyebrow">Health Records</span>
+        <h2>Every jab and treatment, <span class="accent">on record.</span></h2>
+        <p>
+          Vaccinations, deworming, antibiotics, vet visits - nothing gets forgotten, nothing gets disputed. Schedule FMD, HS and deworming cycles so the system reminds you weeks ahead. Every treatment is timestamped, vet-signed and QR-verifiable by any buyer.
+        </p>
+        <ul class="fd-features">
+          <li>
+            <span class="ff-ic"><i data-lucide="calendar" class="ic"></i></span>
+            <div><strong>Vaccination calendar</strong><em>FMD, HS, brucellosis, deworming - automated reminders two weeks before each dose.</em></div>
+          </li>
+          <li>
+            <span class="ff-ic"><i data-lucide="file-text" class="ic"></i></span>
+            <div><strong>Treatment logs</strong><em>Drug name, dosage, vet name, withdrawal period - all recorded in 30 seconds.</em></div>
+          </li>
+          <li>
+            <span class="ff-ic"><i data-lucide="badge-check" class="ic"></i></span>
+            <div><strong>Buyer-verifiable records</strong><em>Scan the tag and the buyer sees the full history - no questions, no haggling.</em></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURE 03: MILK ===== -->
+<section class="feature-deep" id="milk">
+  <div class="container">
+    <div class="fd-grid">
+      <div class="fd-info reveal">
+        <div class="fd-num">03</div>
+        <span class="eyebrow">Production Tracking</span>
+        <h2>Morning & evening, <span class="accent">per animal.</span></h2>
+        <p>
+          Log AM and PM yields per cow or for the whole herd in seconds. Daily totals, weekly trends, monthly comparisons and best-producer rankings - all automatic. Spot a drop the day it happens, not when you see it in the month-end numbers.
+        </p>
+        <ul class="fd-features">
+          <li>
+            <span class="ff-ic"><i data-lucide="droplets" class="ic"></i></span>
+            <div><strong>AM / PM logging</strong><em>Two-tap entry per cow - the system handles totals, averages and rankings.</em></div>
+          </li>
+          <li>
+            <span class="ff-ic"><i data-lucide="trending-up" class="ic"></i></span>
+            <div><strong>Weekly & monthly trends</strong><em>Compare against last week, last month, or the same week last year.</em></div>
+          </li>
+          <li>
+            <span class="ff-ic"><i data-lucide="award" class="ic"></i></span>
+            <div><strong>Top-producer rankings</strong><em>Know which cows carry your farm - and which need attention.</em></div>
+          </li>
+        </ul>
+        <a href="index.html#milk" class="link-arrow">See live milk analytics <i data-lucide="arrow-right" class="ic"></i></a>
+      </div>
+
+      <div class="mockup-wrap reveal" data-delay="150">
+        <div class="mockup">
+          <div class="mock-chrome">
+            <span class="mdot"></span><span class="mdot"></span><span class="mdot"></span>
+            <span class="mock-url">app.orivadairy.com/milk/this-week</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-milk-head">
+              <strong>Herd Yield · This week</strong>
+              <span class="pill pill-ok"><i data-lucide="trending-up" class="ic"></i>+8.8%</span>
+            </div>
+            <div class="mock-milk-big">
+              <div class="mmb up"><b>655<em>L</em></b><span>Today</span></div>
+              <div class="mmb"><b>4,214<em>L</em></b><span>This week</span></div>
+              <div class="mmb amber"><b>16.0<em>L</em></b><span>Avg / cow</span></div>
+            </div>
+            <div class="mock-chart">
+              <div class="mc-target"></div>
+              <div class="mc-bars">
+                <div class="mc-bar" style="height:72%"></div>
+                <div class="mc-bar" style="height:78%"></div>
+                <div class="mc-bar" style="height:81%"></div>
+                <div class="mc-bar" style="height:76%"></div>
+                <div class="mc-bar" style="height:85%"></div>
+                <div class="mc-bar" style="height:82%"></div>
+                <div class="mc-bar max" style="height:95%"></div>
+              </div>
+              <div class="mc-xaxis">
+                <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-stat top-right">
+          <div class="fs-label"><i data-lucide="droplets" class="ic"></i>Peak yield</div>
+          <div class="fs-num">655 L</div>
+          <div class="fs-delta"><i data-lucide="trending-up" class="ic"></i>Today's record</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURE 04: EXPENSES ===== -->
+<section class="feature-deep reverse" id="expenses">
+  <div class="container">
+    <div class="fd-grid">
+      <div class="mockup-wrap reveal">
+        <div class="mockup">
+          <div class="mock-chrome">
+            <span class="mdot"></span><span class="mdot"></span><span class="mdot"></span>
+            <span class="mock-url">app.orivadairy.com/finance/this-month</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-exp-head">
+              <strong>Finance · November</strong>
+              <span class="pill pill-soft">Live</span>
+            </div>
+            <div class="mock-exp-summary">
+              <div class="mes income"><b>Rs 485,200</b><span>Income</span></div>
+              <div class="mes expense"><b>Rs 312,600</b><span>Expenses</span></div>
+            </div>
+            <div class="mock-exp-row">
+              <div class="mer-icon sale"><i data-lucide="milk" class="ic"></i></div>
+              <div class="mer-info">
+                <b>Milk sale · Nestle bulk</b>
+                <em>14 Nov · 1,240 litres</em>
+              </div>
+              <div class="mer-amt in">+ Rs 148,800</div>
+            </div>
+            <div class="mock-exp-row">
+              <div class="mer-icon feed"><i data-lucide="wheat" class="ic"></i></div>
+              <div class="mer-info">
+                <b>Wanda feed · Chaman Traders</b>
+                <em>12 Nov · 500 kg</em>
+              </div>
+              <div class="mer-amt out">- Rs 62,500</div>
+            </div>
+            <div class="mock-exp-row">
+              <div class="mer-icon med"><i data-lucide="syringe" class="ic"></i></div>
+              <div class="mer-info">
+                <b>Vet visit · Dr. Hassan</b>
+                <em>10 Nov · 3 animals treated</em>
+              </div>
+              <div class="mer-amt out">- Rs 4,500</div>
+            </div>
+            <div class="mock-exp-row">
+              <div class="mer-icon labor"><i data-lucide="users" class="ic"></i></div>
+              <div class="mer-info">
+                <b>Labour wages · Weekly</b>
+                <em>09 Nov · 4 staff</em>
+              </div>
+              <div class="mer-amt out">- Rs 28,000</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-stat bottom-left">
+          <div class="fs-label"><i data-lucide="calculator" class="ic"></i>Cost per litre</div>
+          <div class="fs-num">Rs 78</div>
+          <div class="fs-delta"><i data-lucide="trending-down" class="ic"></i>-4% vs Oct</div>
+        </div>
+      </div>
+
+      <div class="fd-info reveal" data-delay="150">
+        <div class="fd-num">04</div>
+        <span class="eyebrow">Finance</span>
+        <h2>Every rupee in and out, <span class="accent">categorised.</span></h2>
+        <p>
+          Feed, medicine, labour, equipment, milk sales - recorded and auto-categorised as you enter them. Know your cost per litre without touching a calculator. See your actual profit - not the one you imagine after a good sale.
+        </p>
+        <ul class="fd-features">
+          <li>
+            <span class="ff-ic"><i data-lucide="tags" class="ic"></i></span>
+            <div><strong>Auto-categorisation</strong><em>Smart categories learn your vendors - enter once, tagged forever.</em></div>
+          </li>
+          <li>
+            <span class="ff-ic"><i data-lucide="receipt" class="ic"></i></span>
+            <div><strong>Photo receipts</strong><em>Snap the bill - searchable, backed up, never lost.</em></div>
+          </li>
+          <li>
+            <span class="ff-ic"><i data-lucide="calculator" class="ic"></i></span>
+            <div><strong>Cost per litre</strong><em>Real production cost, updated with every expense and every milking.</em></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURE 05: REPORTS ===== -->
+<section class="feature-deep" id="reports">
+  <div class="container">
+    <div class="fd-grid">
+      <div class="fd-info reveal">
+        <div class="fd-num">05</div>
+        <span class="eyebrow">Insights</span>
+        <h2>Profit & loss <span class="accent">without the accountant.</span></h2>
+        <p>
+          One-tap financial summaries - profit & loss, per-animal profitability, herd performance rankings. Know which cows are earning their keep, which are costing more than they make, and whether the farm is actually profitable this month.
+        </p>
+        <ul class="fd-features">
+          <li>
+            <span class="ff-ic"><i data-lucide="pie-chart" class="ic"></i></span>
+            <div><strong>P&L summary</strong><em>Monthly, quarterly, yearly - tap and see it in seconds.</em></div>
+          </li>
+          <li>
+            <span class="ff-ic"><i data-lucide="cow" class="ic"></i></span>
+            <div><strong>Per-animal profitability</strong><em>Every cow ranked by actual profit contribution, not just litres.</em></div>
+          </li>
+          <li>
+            <span class="ff-ic"><i data-lucide="bar-chart-3" class="ic"></i></span>
+            <div><strong>Herd performance</strong><em>Compare against last month, last year, or industry benchmarks.</em></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mockup-wrap reveal" data-delay="150">
+        <div class="mockup">
+          <div class="mock-chrome">
+            <span class="mdot"></span><span class="mdot"></span><span class="mdot"></span>
+            <span class="mock-url">app.orivadairy.com/reports/nov-2026</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-report-head">
+              <strong>November Report</strong>
+              <div class="seg">
+                <button class="seg-btn active">Month</button>
+                <button class="seg-btn">Quarter</button>
+                <button class="seg-btn">Year</button>
+              </div>
+            </div>
+            <div class="mock-pl">
+              <div class="mpl-row"><b>Total Income</b><span>Rs 485,200</span></div>
+              <div class="mpl-row"><b>Feed & Medicine</b><span>Rs 198,400</span></div>
+              <div class="mpl-row"><b>Labour & Utilities</b><span>Rs 86,200</span></div>
+              <div class="mpl-row"><b>Maintenance</b><span>Rs 28,000</span></div>
+              <div class="mpl-row total"><b>Net Profit</b><span>Rs 172,600</span></div>
+            </div>
+            <div class="mock-roi">
+              <div>
+                <b>35.6%</b>
+                <em>Net margin</em>
+              </div>
+              <div class="roi-chart">
+                <svg viewBox="0 0 36 36">
+                  <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(247,243,233,.15)" stroke-width="3"/>
+                  <circle cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" stroke-width="3"
+                          stroke-dasharray="35.6, 100" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-stat top-right">
+          <div class="fs-label"><i data-lucide="award" class="ic"></i>Top performer</div>
+          <div class="fs-num">ORV-0912</div>
+          <div class="fs-delta"><i data-lucide="trending-up" class="ic"></i>Rs 18,400 / month</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURE 06: MARKETPLACE ===== -->
+<section class="feature-deep reverse" id="market">
+  <div class="container">
+    <div class="fd-grid">
+      <div class="mockup-wrap reveal">
+        <div class="mockup">
+          <div class="mock-chrome">
+            <span class="mdot"></span><span class="mdot"></span><span class="mdot"></span>
+            <span class="mock-url">orivadairy.com/marketplace</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-mp-head">
+              <strong>Live Listings</strong>
+              <span class="pill pill-ok"><i data-lucide="shield-check" class="ic"></i>Verified</span>
+            </div>
+            <div class="mock-mp-listing">
+              <div class="mml-photo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.763 1.612 2 2.5 2a6.72 6.72 0 0 0 3.5-1.915"/><path d="M14 5.172C14 3.782 15.577 2.679 17.5 3c2.823.47 4.113 6.006 4 7-.08.763-1.612 2-2.5 2a6.72 6.72 0 0 1-3.5-1.915"/><path d="M8 14v.5a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V14"/><path d="M8.5 14h7"/></svg>
+              </div>
+              <div class="mml-info">
+                <b>Sahiwal · ORV-0847</b>
+                <em>4 yr · 16.2 L/day · Top producer</em>
+                <div class="mml-foot">
+                  <span class="mml-price">Rs 135,000<small>/ negotiable</small></span>
+                  <button class="mml-inq">Send Inquiry</button>
+                </div>
+              </div>
+            </div>
+            <div class="mock-mp-listing">
+              <div class="mml-photo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.763 1.612 2 2.5 2a6.72 6.72 0 0 0 3.5-1.915"/><path d="M14 5.172C14 3.782 15.577 2.679 17.5 3c2.823.47 4.113 6.006 4 7-.08.763-1.612 2-2.5 2a6.72 6.72 0 0 1-3.5-1.915"/><path d="M8 14v.5a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V14"/><path d="M8.5 14h7"/></svg>
+              </div>
+              <div class="mml-info">
+                <b>H. Friesian · ORV-0912</b>
+                <em>3 yr 6 mo · 24 L/day · High yield</em>
+                <div class="mml-foot">
+                  <span class="mml-price">Rs 185,000<small>/ firm</small></span>
+                  <button class="mml-inq">Send Inquiry</button>
+                </div>
+              </div>
+            </div>
+            <div class="mock-mp-listing">
+              <div class="mml-photo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12M6 12h12M6 16h8"/><rect width="18" height="16" x="3" y="4" rx="2"/></svg>
+              </div>
+              <div class="mml-info">
+                <b>Fresh Cow Milk · Bulk Supply</b>
+                <em>Daily · 4.8% fat · 30-300 L/day</em>
+                <div class="mml-foot">
+                  <span class="mml-price">Rs 120<small>/litre</small></span>
+                  <button class="mml-inq">Bulk Request</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-stat bottom-left">
+          <div class="fs-label"><i data-lucide="store" class="ic"></i>Active listings</div>
+          <div class="fs-num">47</div>
+          <div class="fs-delta"><i data-lucide="message-circle" class="ic"></i>12 new inquiries</div>
+        </div>
+      </div>
+
+      <div class="fd-info reveal" data-delay="150">
+        <div class="fd-num">06</div>
+        <span class="eyebrow">Marketplace</span>
+        <h2>Sell direct. <span class="accent">Keep the margin.</span></h2>
+        <p>
+          List livestock and dairy products with their verified records attached. Buyers send inquiries straight to you - no broker, no commission, no waiting. Every listing carries the animal's full history, so buyers trust what they see.
+        </p>
+        <ul class="fd-features">
+          <li>
+            <span class="ff-ic"><i data-lucide="beef" class="ic"></i></span>
+            <div><strong>Livestock listings</strong><em>Cows, buffaloes, heifers - every listing linked to its live QR passport.</em></div>
+          </li>
+          <li>
+            <span class="ff-ic"><i data-lucide="package" class="ic"></i></span>
+            <div><strong>Dairy & bulk milk</strong><em>Desi ghee, A2 milk, bulk supply contracts for cafes and hotels.</em></div>
+          </li>
+          <li>
+            <span class="ff-ic"><i data-lucide="handshake" class="ic"></i></span>
+            <div><strong>Direct inquiries</strong><em>Buyers message you directly - you negotiate, you close, you keep 100%.</em></div>
+          </li>
+        </ul>
+        <a href="index.html#market" class="link-arrow">Browse live marketplace <i data-lucide="arrow-right" class="ic"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW THEY WORK TOGETHER ===== -->
+<section class="section bg-cream2">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">How It All Connects</span>
+      <h2>One record. <span class="accent">Everywhere it needs to be.</span></h2>
+      <p class="lead">Enter data once - it flows where it needs to go. A vaccination logged automatically shows on the marketplace listing. A milk dip updates your profitability report. Nothing is duplicated, nothing is missed.</p>
+    </div>
+
+    <div class="workflow-wrap reveal">
+      <div class="workflow-grid">
+        <div class="wf-step">
+          <div class="wf-icon"><i data-lucide="qr-code" class="ic"></i></div>
+          <span class="wf-num">STEP 01</span>
+          <h4>Register</h4>
+          <p>Tag the animal and its passport goes live.</p>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon"><i data-lucide="droplets" class="ic"></i></div>
+          <span class="wf-num">STEP 02</span>
+          <h4>Record daily</h4>
+          <p>Milk, health, expenses - all flow in.</p>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon"><i data-lucide="trending-up" class="ic"></i></div>
+          <span class="wf-num">STEP 03</span>
+          <h4>Analyse</h4>
+          <p>Reports update in real time.</p>
+        </div>
+        <div class="wf-step">
+          <div class="wf-icon"><i data-lucide="store" class="ic"></i></div>
+          <span class="wf-num">STEP 04</span>
+          <h4>Sell verified</h4>
+          <p>Buyers scan and trust instantly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEFORE / AFTER ===== -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Before & After</span>
+      <h2>Your drawer of registers, <span class="accent">replaced.</span></h2>
+      <p class="lead">Here's what the switch actually looks like, day to day.</p>
+    </div>
+
+    <div class="replace-grid reveal">
+      <div class="replace-col old">
+        <h3>Before Oriva</h3>
+        <div class="rc-sub">Paper registers & memory</div>
+        <ul>
+          <li><i data-lucide="book-open" class="ic"></i>3 separate notebooks for milk, health and expenses</li>
+          <li><i data-lucide="alert-circle" class="ic"></i>Vaccinations missed because the date was forgotten</li>
+          <li><i data-lucide="phone-call" class="ic"></i>Brokers calling with lowball offers, no way to verify</li>
+          <li><i data-lucide="calculator" class="ic"></i>Month-end profit calculated on a calculator with guesswork</li>
+          <li><i data-lucide="x-circle" class="ic"></i>No way to prove an animal's history to a buyer</li>
+        </ul>
+      </div>
+
+      <div class="replace-arrow">
+        <div class="ra-circle"><i data-lucide="arrow-right" class="ic"></i></div>
+      </div>
+
+      <div class="replace-col new">
+        <h3>With Oriva</h3>
+        <div class="rc-sub">One platform, live data</div>
+        <ul>
+          <li><i data-lucide="check" class="ic"></i>Every record in one place, accessible from any device</li>
+          <li><i data-lucide="bell" class="ic"></i>Automated reminders two weeks before every vaccination</li>
+          <li><i data-lucide="store" class="ic"></i>Buyers message you directly - zero brokerage</li>
+          <li><i data-lucide="bar-chart-3" class="ic"></i>Real-time P&L updated with every entry</li>
+          <li><i data-lucide="qr-code" class="ic"></i>QR passport that proves every claim in one scan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEVICE SUPPORT ===== -->
+<section class="section bg-sage">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Works Everywhere</span>
+      <h2>Your phone. Your laptop. <span class="accent">Your farm office.</span></h2>
+      <p class="lead">Oriva runs in any modern browser - no app to download, no device to buy. Open it on whatever screen you have.</p>
+    </div>
+
+    <div class="devices-grid">
+      <div class="device-card reveal">
+        <div class="dc-icon"><i data-lucide="smartphone" class="ic"></i></div>
+        <h3>Mobile</h3>
+        <p>Log milk, snap receipts, check records in the shed - on any phone, any network.</p>
+      </div>
+      <div class="device-card reveal" data-delay="100">
+        <div class="dc-icon"><i data-lucide="tablet" class="ic"></i></div>
+        <h3>Tablet</h3>
+        <p>Perfect for the farm office - bigger charts, easier data entry, still portable.</p>
+      </div>
+      <div class="device-card reveal" data-delay="200">
+        <div class="dc-icon"><i data-lucide="monitor" class="ic"></i></div>
+        <h3>Desktop</h3>
+        <p>Full dashboard for serious analysis - reports, marketplace, herd planning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section features-cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div>
+        <span class="eyebrow">See It In Action</span>
+        <h2>Ready to try <span class="accent">all six tools?</span></h2>
+        <p>Book a free 20-minute walkthrough. We'll show you the platform on a live demo farm, walk through every feature, and answer every question - no commitment, no card required.</p>
+        <div class="cta-buttons">
+          <a href="index.html#contact" class="btn btn-amber">Book a Free Demo <i data-lucide="arrow-right" class="ic"></i></a>
+          <a href="index.html#market" class="btn btn-green">Visit the Marketplace <i data-lucide="store" class="ic"></i></a>
+        </div>
+      </div>
+      <div class="cta-side">
+        <h4>Prefer to <em>talk first?</em></h4>
+        <p>Reach out directly - we respond within 24 hours, usually much sooner.</p>
+        <ul class="cta-contact-list">
+          <li>
+            <span class="cc-ic"><i data-lucide="phone" class="ic"></i></span>
+            <div><span>WhatsApp / Call</span><b><a href="tel:+000001234567">+00 300 123 4567</a></b></div>
+          </li>
+          <li>
+            <span class="cc-ic"><i data-lucide="mail" class="ic"></i></span>
+            <div><span>Email</span><b><a href="mailto:hello@orivadairy.com">hello@orivadairy.com</a></b></div>
+          </li>
+          <li>
+            <span class="cc-ic"><i data-lucide="map-pin" class="ic"></i></span>
+            <div><span>Visit</span><b>123 Maple Street, Anytown, CA 90210, USA</b></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-water" aria-hidden="true">ORIVA DAIRY</div>
+  </div>
+  <div class="foot-bottom">
+    <div class="container foot-bottom-in">
+      <span>© <span id="year"></span> Oriva Dairy. All rights reserved.</span>
+      <span class="fb-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="index.html#contact">Contact</a>
+      </span>
+      <span class="foot-made"><i data-lucide="sprout" class="ic"></i>Grown with care for our farmers</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+const $  = (s, c=document) => c.querySelector(s);
+const $$ = (s, c=document) => [...c.querySelectorAll(s)];
+function refreshIcons(){ if (window.lucide) lucide.createIcons(); }
+
+// Build QR codes for the cattle management mockup
+function buildQRTarget(container){
+  const N = 21, svgNS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${N} ${N}`);
+  let seed = container.id.charCodeAt(2) * 1000 + 20250407;
+  const rnd = () => (seed = seed * 16807 % 2147483647) / 2147483647;
+  const inFinder = (x,y) => (x<7 && y<7) || (x>=N-7 && y<7) || (x<7 && y>=N-7);
+  let cells = '';
+  for (let yy=0; yy<N; yy++) for (let xx=0; xx<N; xx++){
+    if (inFinder(xx,yy)) continue;
+    if (rnd() > 0.52) cells += `<rect x="${xx}" y="${yy}" width="1" height="1" fill="currentColor"></rect>`;
+  }
+  const finder = (x0,y0) => `<rect x="${x0}" y="${y0}" width="7" height="7" fill="currentColor"></rect>
+    <rect x="${x0+1}" y="${y0+1}" width="5" height="5" fill="#fff"></rect>
+    <rect x="${x0+2}" y="${y0+2}" width="3" height="3" fill="currentColor"></rect>`;
+  svg.innerHTML = cells + finder(0,0) + finder(N-7,0) + finder(0,N-7);
+  container.appendChild(svg);
+}
+['qr1','qr2','qr3'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) buildQRTarget(el);
+});
+
+// NAV SCROLL
+const nav = $('#nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, {passive:true});
+
+// MOBILE MENU
+const burger = $('#burger'), mnav = $('#mnav');
+function setMenu(open){
+  mnav.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+  burger.setAttribute('aria-expanded', open);
+}
+burger.addEventListener('click', () => setMenu(!mnav.classList.contains('open')));
+$$('.mnav-links a, .mnav-foot .btn').forEach(el => el.addEventListener('click', () => setMenu(false)));
+
+// Smooth scroll to feature sections from hero pills
+$$('.hero-pill').forEach(pill => {
+  pill.addEventListener('click', e => {
+    const href = pill.getAttribute('href');
+    if (href && href.startsWith('#')){
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target){
+        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+      }
+    }
+  });
+});
+
+// REVEAL ANIMATIONS
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting){
+      const el = en.target;
+      if (el.dataset.delay) el.style.transitionDelay = el.dataset.delay + 'ms';
+      el.classList.add('in');
+      setTimeout(() => { el.style.transitionDelay = ''; }, 1000);
+      revealObs.unobserve(el);
+    }
+  });
+}, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+$$('.reveal').forEach(el => revealObs.observe(el));
+
+$('#year').textContent = new Date().getFullYear();
+refreshIcons();
+</script>
+</body>
+</html>
