@@ -84,7 +84,7 @@ Livestock farming in South Asia still runs largely on paper. This creates a chai
 
 Oriva Dairy provides **one centralized platform with three doors** — each built for a different side of the trade:
 
-### 1. Public Marketplaces
+### 1. Public Marketplace
 - Browse available livestock and dairy products — no account needed
 - View animal details: breed, age, weight, milk yield and health status
 - Send purchase inquiries and bulk milk supply requests
